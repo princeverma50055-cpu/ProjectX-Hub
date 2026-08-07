@@ -1,4 +1,4 @@
-ho gaya<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -632,6 +632,226 @@ ho gaya<!DOCTYPE html>
   .link-info .link-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
   .link-info .link-name { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--text); margin-top: 3px; }
 
+  /* ── AI STUDIO SECTION ── */
+  .studio-banner {
+    background: linear-gradient(135deg, rgba(123,92,250,0.1), rgba(0,240,255,0.05));
+    border: 1px solid rgba(123,92,250,0.25);
+    border-radius: 24px;
+    padding: 12px;
+  }
+
+  .studio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 16px;
+  }
+
+  .studio-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+
+  .studio-card:hover { transform: translateY(-6px); border-color: rgba(0,240,255,0.3); }
+
+  .studio-img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--surface2), var(--surface));
+  }
+
+  .studio-img svg { width: 56%; height: 56%; }
+
+  .studio-caption {
+    padding: 16px 18px 20px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--text);
+  }
+
+  .studio-cta-wrap { text-align: center; margin-top: 36px; }
+
+  /* ── AI STUDIO SECTION ── */
+  .studio-banner {
+    background: linear-gradient(135deg, rgba(123,92,250,0.1), rgba(0,240,255,0.06));
+    border: 1px solid rgba(123,92,250,0.25);
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+
+  .studio-banner-img {
+    flex: 1 1 320px;
+    max-width: 420px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  .studio-banner-img img { width: 100%; display: block; }
+
+  .studio-banner-text {
+    flex: 1 1 320px;
+  }
+
+  .studio-banner-text h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+
+  .studio-banner-text p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    max-width: 460px;
+    line-height: 1.6;
+  }
+
+  .studio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .studio-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+
+  .studio-card:hover { transform: translateY(-6px); border-color: rgba(0,240,255,0.3); }
+
+  .studio-illo {
+    width: 100%;
+    aspect-ratio: 16/10;
+    display: block;
+    object-fit: cover;
+  }
+
+  .studio-card-body { padding: 20px 22px 24px; }
+
+  .studio-card-title {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.98rem;
+    margin-bottom: 6px;
+  }
+
+  .studio-card-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+
+  /* ── FOUNDER CARD ── */
+  .founder-strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 32px 40px 0;
+    flex-wrap: wrap;
+    text-align: left;
+  }
+
+  .founder-avatar {
+    width: 68px; height: 68px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, var(--accent2), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: #050810;
+    box-shadow: 0 8px 28px rgba(123,92,250,0.4);
+    border: 2px solid rgba(255,255,255,0.15);
+  }
+
+  .founder-info .founder-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text);
+  }
+
+  .founder-info .founder-role {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ── CLIENT SHOWCASE ── */
+  .showcase-strip {
+    max-width: 720px;
+    margin: 32px auto 0;
+    padding: 0 40px;
+    text-align: center;
+  }
+
+  .showcase-strip img {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  }
+
+  .showcase-caption {
+    margin-top: 14px;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  /* ── SOCIAL ICONS ── */
+  .social-section {
+    text-align: center;
+    padding: 60px 40px 20px;
+  }
+
+  .social-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  .social-icon {
+    width: 46px; height: 46px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--muted);
+    transition: transform 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+  }
+
+  .social-icon svg { width: 19px; height: 19px; fill: currentColor; }
+
+  .social-icon:hover {
+    transform: translateY(-4px);
+    color: var(--accent);
+    border-color: rgba(0,240,255,0.35);
+    box-shadow: 0 10px 28px rgba(0,240,255,0.15);
+  }
+
   /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--border);
@@ -737,6 +957,7 @@ ho gaya<!DOCTYPE html>
     <li><a href="#services">Services</a></li>
     <li><a href="#how">Process</a></li>
     <li><a href="#why">Why Us</a></li>
+    <li><a href="#ai-studio">AI Studio</a></li>
     <li><a href="https://www.linkedin.com/in/prince-verma-2b100240a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a></li>
     <li><a href="#apply" class="nav-cta">Apply Now →</a></li>
   </ul>
@@ -755,9 +976,24 @@ ho gaya<!DOCTYPE html>
     <p class="hero-sub">"Ideas are easy. Execution is everything." — Prince Verma</p>
     <div class="hero-actions">
       <a href="#apply" class="btn-primary">🚀 Start Your Project</a>
-      <a href="https://prince-digital.preview.emergentagent.com/" target="_blank" class="btn-secondary">🌐 Visit Full Website</a>
+      <a href="https://www.linkedin.com/company/projectx-hub/" target="_blank" class="btn-secondary">🏢 Visit Company Page</a>
     </div>
   </div>
+</div>
+
+<!-- FOUNDER STRIP -->
+<div class="founder-strip reveal">
+  <div class="founder-avatar">PV</div>
+  <div class="founder-info">
+    <div class="founder-name">Prince Verma</div>
+    <div class="founder-role">Founder & Lead Strategist, ProjectX HUB</div>
+  </div>
+</div>
+
+<!-- CLIENT SHOWCASE -->
+<div class="showcase-strip reveal">
+  <img src="images/client-showcase.jpg" alt="Client reviewing a live website project delivered by ProjectX HUB">
+  <div class="showcase-caption">A recent client project reviewed and delivered — built, tested, and handed over smoothly.</div>
 </div>
 
 <!-- STATS -->
@@ -894,6 +1130,79 @@ end project support — from concept to final delivery. You share the idea, we m
   </div>
 </section>
 
+<section id="ai-studio">
+  <div class="reveal">
+    <div class="section-tag">New Launch</div>
+    <h2 class="section-title">ProjectX AI Studio</h2>
+    <p class="section-desc">Our dedicated AI-powered platform for building, automating, and scaling digital projects faster.</p>
+  </div>
+
+  <div class="studio-banner reveal">
+    <div class="studio-banner-text">
+      <h3>🤖 Explore ProjectX AI Studio</h3>
+      <p>A separate AI-first workspace built by ProjectX HUB — for smarter project planning, content generation, and automation workflows.</p>
+      <div style="margin-top:20px;">
+        <a href="https://project-x-ai-studio-v2.vercel.app" target="_blank" class="btn-primary">🚀 Open AI Studio</a>
+      </div>
+    </div>
+    <div class="studio-banner-img">
+      <img src="images/projectx-hub-banner.jpg" alt="ProjectX HUB — Building Digital Solutions for Tomorrow">
+    </div>
+  </div>
+
+  <div class="studio-grid">
+
+    <div class="studio-card reveal">
+      <img class="studio-illo" src="images/web-development.jpg" alt="Team collaborating on web development">
+      <div class="studio-card-body">
+        <div class="studio-card-title">Web Development</div>
+        <div class="studio-card-desc">Building responsive, modern websites from idea to live deployment.</div>
+      </div>
+    </div>
+
+    <div class="studio-card reveal">
+      <img class="studio-illo" src="images/data-reporting.jpg" alt="Dashboard showing data and scheduling reports">
+      <div class="studio-card-body">
+        <div class="studio-card-title">Data & Analytics</div>
+        <div class="studio-card-desc">Turning raw numbers into dashboards, insights, and clear reports.</div>
+      </div>
+    </div>
+
+    <div class="studio-card reveal">
+      <img class="studio-illo" src="images/team-collaboration.jpg" alt="Team working together on laptops">
+      <div class="studio-card-body">
+        <div class="studio-card-title">Team Collaboration</div>
+        <div class="studio-card-desc">A connected workflow between strategists, designers, and clients.</div>
+      </div>
+    </div>
+
+    <div class="studio-card reveal">
+      <img class="studio-illo" src="images/project-review.jpg" alt="Reviewing project details on laptop screen">
+      <div class="studio-card-body">
+        <div class="studio-card-title">Project Review & Feedback</div>
+        <div class="studio-card-desc">Walking through progress together until every detail is right.</div>
+      </div>
+    </div>
+
+    <div class="studio-card reveal">
+      <img class="studio-illo" src="images/deployment-automation.jpg" alt="Terminal screen showing deployment and network commands">
+      <div class="studio-card-body">
+        <div class="studio-card-title">Deployment & Automation</div>
+        <div class="studio-card-desc">Shipping projects live with automated, AI-assisted workflows.</div>
+      </div>
+    </div>
+
+    <div class="studio-card reveal">
+      <img class="studio-illo" src="images/client-service.jpg" alt="Client service and support">
+      <div class="studio-card-body">
+        <div class="studio-card-title">Client Support & Service</div>
+        <div class="studio-card-desc">Reliable communication and support at every stage of your project.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section id="apply">
   <div class="reveal" style="text-align:center; margin-bottom: 48px;">
     <div class="section-tag" style="justify-content: center;">Get Started</div>
@@ -973,7 +1282,7 @@ end project support — from concept to final delivery. You share the idea, we m
   <div class="links-grid">
     <a href="https://princeverma50055-cpu.github.io/Join-projectX-Hub/" target="_blank" class="link-card reveal">
       <div class="link-icon">💼</div>
-      <div class="link-info"><div class="link-label">Hire Prince</div><div class="link-name">Work With Prince →</div></div>
+      <div class="link-info"><div class="link-label">Careers</div><div class="link-name">Apply For Job →</div></div>
     </a>
     <a href="https://princeverma50055-cpu.github.io/ProjectX-store-/" target="_blank" class="link-card reveal">
       <div class="link-icon">🚀</div>
@@ -994,6 +1303,39 @@ end project support — from concept to final delivery. You share the idea, we m
     <a href="https://prince-digital.preview.emergentagent.com/" target="_blank" class="link-card reveal" style="border-color: rgba(255,107,53,0.25); grid-column: 1 / -1;">
       <div class="link-icon" style="background: linear-gradient(135deg, rgba(255,107,53,0.25), rgba(255,209,102,0.15));">🌐</div>
       <div class="link-info"><div class="link-label">Full Website — Apply Here</div><div class="link-name">Prince Digital — Explore & Apply for Services →</div></div>
+    </a>
+  </div>
+</section>
+
+<section class="social-section">
+  <div class="reveal">
+    <div class="section-tag" style="justify-content:center;">Follow & Connect</div>
+    <h2 class="section-title" style="font-size: clamp(1.4rem, 3vw, 2rem);">Find Us Everywhere</h2>
+  </div>
+  <div class="social-row reveal">
+    <a href="https://x.com/PrinceProjectX" target="_blank" class="social-icon" title="Twitter / X" aria-label="Twitter / X">
+      <svg viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.8l-5.3-6.9L5 22H1.9l8.1-9.3L1 2h7l4.8 6.3L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>
+    </a>
+    <a href="https://bsky.app/profile/princeverma.bsky.social" target="_blank" class="social-icon" title="Bluesky" aria-label="Bluesky">
+      <svg viewBox="0 0 24 24"><path d="M12 8.4C10.6 5.7 7.7 3 4.9 3 3 3 2 4 2 5.6c0 1.3.7 3.6 4.2 4.4-3.5.6-6.2 2.2-6.2 4.8 0 2.7 2.5 3.9 4.9 3.9 2.6 0 5.2-1.6 7.1-4.9 1.9 3.3 4.5 4.9 7.1 4.9 2.4 0 4.9-1.2 4.9-3.9 0-2.6-2.7-4.2-6.2-4.8 3.5-.8 4.2-3.1 4.2-4.4 0-1.6-1-2.6-2.9-2.6-2.8 0-5.7 2.7-7.1 5.4z"/></svg>
+    </a>
+    <a href="https://www.threads.com/@__dynamic_prince3" target="_blank" class="social-icon" title="Threads" aria-label="Threads">
+      <svg viewBox="0 0 24 24"><path d="M16.5 11.2c-.1-3.7-2.2-5.9-5.8-6-2.7 0-4.8 1.1-5.9 3.1l1.9 1.3c.6-1.1 1.7-1.7 3.2-1.7 1.9 0 3.1.9 3.4 2.5-.9-.2-1.9-.3-2.9-.2-3 .2-4.9 1.8-4.7 4.2.1 2.1 2 3.5 4.6 3.4 2.1-.1 3.5-1 4.2-2.4.5.4.9.9 1.2 1.5l2-1.1c-.4-.8-1-1.5-1.7-2.1.4-.8.6-1.7.5-2.7l-.0.0-0.0 0zm-5.6 4.6c-1.3.1-2.2-.5-2.3-1.4-.1-1 .8-1.8 2.6-1.9.5 0 1.1 0 1.7.2-.2 2-1 3-2 3.1z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/__dynamic_prince3?igsh=MXMzMWlrM3FzbmNoeA==" target="_blank" class="social-icon" title="Instagram" aria-label="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.3.4.6.2 1 .5 1.4.9.4.4.7.9.9 1.4.2.4.3 1.1.4 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.4 2.3-.2.6-.5 1-.9 1.4-.4.4-.9.7-1.4.9-.4.2-1.1.3-2.3.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.3-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.9-.9-1.4-.2-.4-.3-1.1-.4-2.3-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.9-.7 1.4-.9.4-.2 1.1-.3 2.3-.4 1.3-.1 1.7-.1 4.9-.1zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4 .6c-.8.3-1.5.7-2.2 1.4C1.1 2.7.7 3.4.4 4.2.1 5 0 5.9 0 7.2 0 8.4 0 8.8 0 12s0 3.6.1 4.8c.1 1.3.3 2.2.6 3 .3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.7.5 3 .6 1.3.1 1.7.1 4.9.1s3.6 0 4.9-.1c1.3-.1 2.2-.3 3-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.7.6-3 .1-1.3.1-1.7.1-4.9s0-3.6-.1-4.9c-.1-1.3-.3-2.2-.6-3-.3-.8-.7-1.5-1.4-2.2C21.3 1.1 20.6.7 19.8.4 19 .1 18.1 0 16.8 0 15.6 0 15.2 0 12 0zm0 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.2a4 4 0 110-8 4 4 0 010 8zm7.9-10.5a1.4 1.4 0 11-2.9 0 1.4 1.4 0 012.9 0z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/share/1Hs6uJpxtA/" target="_blank" class="social-icon" title="Facebook" aria-label="Facebook">
+      <svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+    </a>
+    <a href="https://explurger.com/pf/jx3fb7fs7k2sg6rt0" target="_blank" class="social-icon" title="Explurger" aria-label="Explurger">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.9 6h-3.2a15.6 15.6 0 00-1.4-3.4A8.03 8.03 0 0118.9 8zM12 4.1c.7 1 1.3 2.3 1.7 3.9h-3.4c.4-1.6 1-2.9 1.7-3.9zM4.3 14a8.2 8.2 0 010-4h3.7a17 17 0 000 4H4.3zm.8 2h3.2c.3 1.3.8 2.4 1.4 3.4A8.03 8.03 0 015.1 16zm3.2-8H5.1a8.03 8.03 0 014.6-3.4A15.6 15.6 0 008.3 8zM12 19.9c-.7-1-1.3-2.3-1.7-3.9h3.4c-.4 1.6-1 2.9-1.7 3.9zM13.9 14h-3.8a14.7 14.7 0 010-4h3.8a14.7 14.7 0 010 4zm.2 5.4c.6-1 1.1-2.1 1.4-3.4h3.2a8.03 8.03 0 01-4.6 3.4zM15.9 14a17 17 0 000-4h3.7a8.2 8.2 0 010 4h-3.7z"/></svg>
+    </a>
+    <a href="https://princeverma50055-cpu.github.io" target="_blank" class="social-icon" title="GitHub" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path d="M12 .5C5.7.5.8 5.4.8 11.7c0 5 3.2 9.2 7.7 10.7.6.1.8-.2.8-.6v-2.2c-3.1.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.6.1-.6 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2 1 .1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 1.1a10.4 10.4 0 015.5 0c2.1-1.4 3-1.1 3-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.5-1.5 7.7-5.7 7.7-10.7C23.2 5.4 18.3.5 12 .5z"/></svg>
+    </a>
+    <a href="https://wa.me/916392492378" target="_blank" class="social-icon" title="WhatsApp Business" aria-label="WhatsApp Business">
+      <svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 00-9.9 17.3L.5 23.5l5.9-1.5A11.5 11.5 0 1012 .5zm0 21a9.4 9.4 0 01-4.8-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9.5 9.5 0 1112 21.5zm5.2-7.1c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1s-.8.9-.9 1.1-.3.2-.6.1a7.8 7.8 0 01-2.3-1.4 8.6 8.6 0 01-1.6-2c-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.2-.5s0-.4-.1-.5c-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4S6 7.4 6 8.7s.9 2.6 1 2.8c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3z"/></svg>
     </a>
   </div>
 </section>
