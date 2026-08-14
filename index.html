@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>ProjectX Hub — AI, Web Development & Digital Solutions</title>
 <meta name="description" content="ProjectX Hub provides digital solutions across web and app development, AI, automation, software, design, digital marketing, SEO and more. Founded by Prince Verma.">
 <link rel="canonical" href="https://projectxhub.in/">
@@ -39,7 +41,8 @@
 <meta property="og:description" content="Digital services studio offering web development, AI strategy, data analysis, marketing, and more.">
 <meta property="og:image" content="projectx-hub-banner.jpg">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.projectxhub.in">
+<meta property="og:url" content="https://projectxhub.in/">
+<meta property="og:site_name" content="ProjectX Hub">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ProjectX Hub — Ideas Into Powerful Projects">
 <meta name="twitter:description" content="Digital services studio offering web development, AI strategy, data analysis, marketing, and more.">
@@ -111,6 +114,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .nav-logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
   }
 
   .nav-links {
@@ -942,10 +951,65 @@
 
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
+  /* ── MOBILE NAV TOGGLE ── */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 42px; height: 42px;
+    background: rgba(0,240,255,0.08);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 210;
+    position: relative;
+  }
+  .nav-toggle span {
+    width: 20px; height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 90;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .nav-overlay.open { display: block; opacity: 1; }
+
   /* ── MOBILE ── */
   @media (max-width: 768px) {
-    nav { padding: 16px 20px; }
-    .nav-links { display: none; }
+    nav { padding: 14px 20px; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      top: 0; right: -85%;
+      width: 78%;
+      max-width: 320px;
+      height: 100vh;
+      background: #0a0e1a;
+      padding: 90px 30px 40px;
+      gap: 22px;
+      transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+      z-index: 200;
+      border-left: 1px solid var(--border);
+      box-shadow: -20px 0 60px rgba(0,0,0,0.5);
+    }
+    .nav-links.open { right: 0; }
+    .nav-links a { font-size: 1.05rem; color: var(--text) !important; font-weight: 600; opacity: 1; }
+    .nav-links .nav-cta { margin-top: 8px; }
     section { padding: 70px 20px; }
     .apply-section { padding: 36px 24px; }
     .form-row { grid-template-columns: 1fr; }
@@ -1253,8 +1317,8 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">ProjectX Hub</div>
-  <ul class="nav-links">
+  <img src="logo.png" alt="ProjectX Hub" class="nav-logo-img">
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="projects.html">Projects</a></li>
@@ -1263,7 +1327,11 @@
     <li><a href="blog.html">Resources</a></li>
     <li><a href="start-a-project.html" class="nav-cta">Start a Project →</a></li>
   </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-overlay" id="nav-overlay"></div>
 
 <!-- HERO -->
 <div class="hero">
@@ -1295,7 +1363,7 @@
 
 <!-- CLIENT SHOWCASE -->
 <div class="showcase-strip reveal">
-  <img src="client-showcase.jpg" alt="Client reviewing a live website project delivered by ProjectX Hub">
+  <img src="client-showcase.jpg" width="900" height="600" loading="lazy" alt="Client reviewing a live website project delivered by ProjectX Hub">
   <div class="showcase-caption">A recent client project reviewed and delivered — built, tested, and handed over smoothly.</div>
 </div>
 
@@ -1449,14 +1517,14 @@ end project support — from concept to final delivery. You share the idea, we m
       </div>
     </div>
     <div class="studio-banner-img">
-      <img src="projectx-hub-banner.jpg" alt="ProjectX Hub — Building Digital Solutions for Tomorrow">
+      <img src="projectx-hub-banner.jpg" width="900" height="900" loading="lazy" alt="ProjectX Hub — Building Digital Solutions for Tomorrow">
     </div>
   </div>
 
   <div class="studio-grid">
 
     <div class="studio-card reveal">
-      <img class="studio-illo" src="web-development.jpg" alt="Team collaborating on web development">
+      <img class="studio-illo" src="web-development.jpg" width="1000" height="665" loading="lazy" alt="Team collaborating on web development">
       <div class="studio-card-body">
         <div class="studio-card-title">Web Development</div>
         <div class="studio-card-desc">Building responsive, modern websites from idea to live deployment.</div>
@@ -1464,7 +1532,7 @@ end project support — from concept to final delivery. You share the idea, we m
     </div>
 
     <div class="studio-card reveal">
-      <img class="studio-illo" src="data-reporting.jpg" alt="Dashboard showing data and scheduling reports">
+      <img class="studio-illo" src="data-reporting.jpg" width="1000" height="667" loading="lazy" alt="Dashboard showing data and scheduling reports">
       <div class="studio-card-body">
         <div class="studio-card-title">Data & Analytics</div>
         <div class="studio-card-desc">Turning raw numbers into dashboards, insights, and clear reports.</div>
@@ -1472,7 +1540,7 @@ end project support — from concept to final delivery. You share the idea, we m
     </div>
 
     <div class="studio-card reveal">
-      <img class="studio-illo" src="team-collaboration.jpg" alt="Team working together on laptops">
+      <img class="studio-illo" src="team-collaboration.jpg" width="1000" height="667" loading="lazy" alt="Team working together on laptops">
       <div class="studio-card-body">
         <div class="studio-card-title">Team Collaboration</div>
         <div class="studio-card-desc">A connected workflow between strategists, designers, and clients.</div>
@@ -1480,7 +1548,7 @@ end project support — from concept to final delivery. You share the idea, we m
     </div>
 
     <div class="studio-card reveal">
-      <img class="studio-illo" src="project-review.jpg" alt="Reviewing project details on laptop screen">
+      <img class="studio-illo" src="project-review.jpg" width="1000" height="667" loading="lazy" alt="Reviewing project details on laptop screen">
       <div class="studio-card-body">
         <div class="studio-card-title">Project Review & Feedback</div>
         <div class="studio-card-desc">Walking through progress together until every detail is right.</div>
@@ -1488,7 +1556,7 @@ end project support — from concept to final delivery. You share the idea, we m
     </div>
 
     <div class="studio-card reveal">
-      <img class="studio-illo" src="deployment-automation.jpg" alt="Terminal screen showing deployment and network commands">
+      <img class="studio-illo" src="deployment-automation.jpg" width="1000" height="667" loading="lazy" alt="Terminal screen showing deployment and network commands">
       <div class="studio-card-body">
         <div class="studio-card-title">Deployment & Automation</div>
         <div class="studio-card-desc">Shipping projects live with automated, AI-assisted workflows.</div>
@@ -1496,7 +1564,7 @@ end project support — from concept to final delivery. You share the idea, we m
     </div>
 
     <div class="studio-card reveal">
-      <img class="studio-illo" src="client-service.jpg" alt="Client service and support">
+      <img class="studio-illo" src="client-service.jpg" width="1000" height="667" loading="lazy" alt="Client service and support">
       <div class="studio-card-body">
         <div class="studio-card-title">Client Support & Service</div>
         <div class="studio-card-desc">Reliable communication and support at every stage of your project.</div>
@@ -1670,7 +1738,7 @@ end project support — from concept to final delivery. You share the idea, we m
   </div>
   <div class="blog-grid">
     <a href="blog.html#post-1" class="blog-card reveal">
-      <img class="blog-card-img" src="web-development.jpg" alt="Why every small business needs a website">
+      <img class="blog-card-img" src="web-development.jpg" width="1000" height="665" loading="lazy" alt="Why every small business needs a website">
       <div class="blog-card-body">
         <div class="blog-tag">Web Development</div>
         <div class="blog-card-title">Why Every Small Business Needs a Website in 2026</div>
@@ -1679,7 +1747,7 @@ end project support — from concept to final delivery. You share the idea, we m
       </div>
     </a>
     <a href="blog.html#post-2" class="blog-card reveal">
-      <img class="blog-card-img" src="data-reporting.jpg" alt="AI tools for small teams">
+      <img class="blog-card-img" src="data-reporting.jpg" width="1000" height="667" loading="lazy" alt="AI tools for small teams">
       <div class="blog-card-body">
         <div class="blog-tag">AI & Strategy</div>
         <div class="blog-card-title">5 AI Tools That Save Small Teams Hours Every Week</div>
@@ -1688,7 +1756,7 @@ end project support — from concept to final delivery. You share the idea, we m
       </div>
     </a>
     <a href="blog.html#post-3" class="blog-card reveal">
-      <img class="blog-card-img" src="deployment-automation.jpg" alt="Choosing the right freelancer">
+      <img class="blog-card-img" src="deployment-automation.jpg" width="1000" height="667" loading="lazy" alt="Choosing the right freelancer">
       <div class="blog-card-body">
         <div class="blog-tag">Business</div>
         <div class="blog-card-title">How to Choose the Right Digital Partner for Your Project</div>
@@ -1717,7 +1785,7 @@ end project support — from concept to final delivery. You share the idea, we m
       <div class="link-icon">🖥️</div>
       <div class="link-info"><div class="link-label">Platform</div><div class="link-name">ProjectX Hub Platform →</div></div>
     </a>
-    <a href="https://princeverma50055-cpu.github.io/ProjectX-store-/" target="_blank" class="link-card reveal">
+    <a href="https://princeverma50055-cpu.github.io/ProjectX-store/" target="_blank" class="link-card reveal">
       <div class="link-icon">🚀</div>
       <div class="link-info"><div class="link-label">Store</div><div class="link-name">ProjectX Store →</div></div>
     </a>
@@ -1729,7 +1797,7 @@ end project support — from concept to final delivery. You share the idea, we m
       <div class="link-icon">📩</div>
       <div class="link-info"><div class="link-label">Direct Email</div><div class="link-name">princeverma50055@gmail.com →</div></div>
     </a>
-    <a href="https://www.linkedin.com/company/projectx-hub/" target="_blank" class="link-card reveal">
+    <a href="https://www.linkedin.com/company/project-x-hub/" target="_blank" class="link-card reveal">
       <div class="link-icon">🏢</div>
       <div class="link-info"><div class="link-label">Company Page</div><div class="link-name">ProjectX Hub on LinkedIn →</div></div>
     </a>
@@ -1774,9 +1842,14 @@ end project support — from concept to final delivery. You share the idea, we m
 </section>
 
 <footer>
-  <div class="footer-logo">ProjectX Hub</div>
+  <img src="logo.png" alt="ProjectX Hub" style="height:32px; width:auto;">
   <div class="footer-quote">⭐ "Ideas are easy. Execution is everything." — Prince Verma</div>
   <a href="mailto:princeverma50055@gmail.com" class="footer-email">princeverma50055@gmail.com</a>
+  <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+    <a href="privacy-policy.html" style="font-size:0.8rem; color:var(--muted); text-decoration:none;">Privacy Policy</a>
+    <a href="terms-and-conditions.html" style="font-size:0.8rem; color:var(--muted); text-decoration:none;">Terms & Conditions</a>
+    <a href="disclaimer.html" style="font-size:0.8rem; color:var(--muted); text-decoration:none;">Disclaimer</a>
+  </div>
 </footer>
 
 <a href="#apply" class="float-email">🚀 Start Project</a>
@@ -1793,6 +1866,24 @@ end project support — from concept to final delivery. You share the idea, we m
       }
     });
   }, { threshold: 0.1 });
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinksEl = document.getElementById('nav-links');
+  const navOverlay = document.getElementById('nav-overlay');
+  if (navToggle && navLinksEl && navOverlay) {
+    const closeMenu = () => {
+      navToggle.classList.remove('open');
+      navLinksEl.classList.remove('open');
+      navOverlay.classList.remove('open');
+    };
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinksEl.classList.toggle('open');
+      navOverlay.classList.toggle('open');
+    });
+    navOverlay.addEventListener('click', closeMenu);
+    navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  }
+
   reveals.forEach(el => observer.observe(el));
 
   document.querySelectorAll('.faq-item').forEach(item => {
