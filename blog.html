@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Blog — ProjectX Hub</title>
+<link rel="canonical" href="https://projectxhub.in/blog.html">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2748503847431228" crossorigin="anonymous"></script>
-<meta name="description" content="ProjectX Hub — digital services studio led by Prince Verma. Web development, AI strategy, data analysis, digital marketing, and more.">
-<meta property="og:title" content="ProjectX Hub — Ideas Into Powerful Projects">
-<meta property="og:description" content="Digital services studio offering web development, AI strategy, data analysis, marketing, and more.">
+<meta name="description" content="Insights and guides from ProjectX Hub on web development, AI tools, and choosing the right digital partner for your project.">
+<meta property="og:title" content="Blog — ProjectX Hub">
+<meta property="og:description" content="Practical articles on web development, AI, and building a digital business.">
 <meta property="og:image" content="projectx-hub-banner.jpg">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.projectxhub.in">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ProjectX Hub — Ideas Into Powerful Projects">
-<meta name="twitter:description" content="Digital services studio offering web development, AI strategy, data analysis, marketing, and more.">
-<meta name="twitter:image" content="projectx-hub-banner.jpg">
+<meta property="og:url" content="https://projectxhub.in/blog.html">
+<meta property="og:site_name" content="ProjectX Hub">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -82,6 +82,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .nav-logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
   }
 
   .nav-links {
@@ -913,10 +919,65 @@
 
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
+  /* ── MOBILE NAV TOGGLE ── */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 42px; height: 42px;
+    background: rgba(0,240,255,0.08);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 210;
+    position: relative;
+  }
+  .nav-toggle span {
+    width: 20px; height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-overlay {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 90;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .nav-overlay.open { display: block; opacity: 1; }
+
   /* ── MOBILE ── */
   @media (max-width: 768px) {
-    nav { padding: 16px 20px; }
-    .nav-links { display: none; }
+    nav { padding: 14px 20px; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      top: 0; right: -85%;
+      width: 78%;
+      max-width: 320px;
+      height: 100vh;
+      background: #0a0e1a;
+      padding: 90px 30px 40px;
+      gap: 22px;
+      transition: right 0.35s cubic-bezier(0.4,0,0.2,1);
+      z-index: 200;
+      border-left: 1px solid var(--border);
+      box-shadow: -20px 0 60px rgba(0,0,0,0.5);
+    }
+    .nav-links.open { right: 0; }
+    .nav-links a { font-size: 1.05rem; color: var(--text) !important; font-weight: 600; opacity: 1; }
+    .nav-links .nav-cta { margin-top: 8px; }
     section { padding: 70px 20px; }
     .apply-section { padding: 36px 24px; }
     .form-row { grid-template-columns: 1fr; }
@@ -1222,8 +1283,8 @@
 
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo" style="text-decoration:none;">ProjectX Hub</a>
-  <ul class="nav-links">
+  <a href="index.html" style="display:flex; align-items:center;"><img src="logo.png" alt="ProjectX Hub" class="nav-logo-img"></a>
+  <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="projects.html">Projects</a></li>
@@ -1232,7 +1293,11 @@
     <li><a href="blog.html">Resources</a></li>
     <li><a href="start-a-project.html" class="nav-cta">Start a Project →</a></li>
   </ul>
+  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-overlay" id="nav-overlay"></div>
 <!-- PAGE HERO -->
 <div class="page-hero reveal">
   <div class="hero-badge" style="margin-left:auto;margin-right:auto;"><span class="badge-dot"></span> Blog</div>
@@ -1245,7 +1310,7 @@
     <div class="blog-tag">Web Development</div>
     <h2 class="section-title" style="font-size: clamp(1.5rem, 3.5vw, 2.2rem);">Why Every Small Business Needs a Website in 2026</h2>
     <div class="blog-card-meta" style="margin-bottom: 24px;">5 min read</div>
-    <img src="web-development.jpg" alt="Web development" style="width:100%; border-radius: 20px; margin-bottom: 28px; border: 1px solid var(--border);">
+    <img src="web-development.jpg" width="1000" height="665" loading="lazy" alt="Web development" style="width:100%; border-radius: 20px; margin-bottom: 28px; border: 1px solid var(--border);">
     <div class="about-story">
       <p>It's easy to assume that a strong social media presence is enough. A business page on Instagram, a WhatsApp catalog, maybe a Google listing — and that feels like "being online." But a website still does something none of these platforms can fully replace: it gives a business a permanent, professional home that it fully owns and controls.</p>
       <p>Social platforms change their algorithms constantly. A post that reaches thousands of people today might reach almost no one next month. A website doesn't have that problem — once it's built and optimized, it keeps working for the business around the clock, without depending on any platform's mood.</p>
@@ -1261,7 +1326,7 @@
     <div class="blog-tag">AI & Strategy</div>
     <h2 class="section-title" style="font-size: clamp(1.5rem, 3.5vw, 2.2rem);">5 AI Tools That Save Small Teams Hours Every Week</h2>
     <div class="blog-card-meta" style="margin-bottom: 24px;">4 min read</div>
-    <img src="data-reporting.jpg" alt="AI tools for teams" style="width:100%; border-radius: 20px; margin-bottom: 28px; border: 1px solid var(--border);">
+    <img src="data-reporting.jpg" width="1000" height="667" loading="lazy" alt="AI tools for teams" style="width:100%; border-radius: 20px; margin-bottom: 28px; border: 1px solid var(--border);">
     <div class="about-story">
       <p>Small teams don't have the luxury of large departments to handle every task, which is exactly why AI tools have become so valuable — they let a small team punch above its weight without hiring more people.</p>
       <p>Content drafting tools help write first drafts of emails, product descriptions, and social captions in minutes instead of hours, leaving the team to focus on editing and strategy rather than staring at a blank page.</p>
@@ -1278,7 +1343,7 @@
     <div class="blog-tag">Business</div>
     <h2 class="section-title" style="font-size: clamp(1.5rem, 3.5vw, 2.2rem);">How to Choose the Right Digital Partner for Your Project</h2>
     <div class="blog-card-meta" style="margin-bottom: 24px;">6 min read</div>
-    <img src="deployment-automation.jpg" alt="Choosing a digital partner" style="width:100%; border-radius: 20px; margin-bottom: 28px; border: 1px solid var(--border);">
+    <img src="deployment-automation.jpg" width="1000" height="667" loading="lazy" alt="Choosing a digital partner" style="width:100%; border-radius: 20px; margin-bottom: 28px; border: 1px solid var(--border);">
     <div class="about-story">
       <p>Choosing who builds your website or runs your marketing is one of the more consequential decisions a small business owner makes, yet it's often rushed based purely on price. A slightly cheaper option that delivers late, communicates poorly, or produces work that needs to be redone almost always ends up costing more in the long run.</p>
       <p>Start by looking at how someone communicates before you've even signed anything. Do they ask clarifying questions about your business, or do they just quote a price without understanding what you actually need? Clear, proactive communication early on is usually a good sign of how the rest of the project will go.</p>
@@ -1330,9 +1395,14 @@
 </section>
 
 <footer>
-  <div class="footer-logo">ProjectX Hub</div>
+  <img src="logo.png" alt="ProjectX Hub" style="height:32px; width:auto;">
   <div class="footer-quote">⭐ "Ideas are easy. Execution is everything." — Prince Verma</div>
   <a href="mailto:princeverma50055@gmail.com" class="footer-email">princeverma50055@gmail.com</a>
+  <div style="display:flex; gap:16px; flex-wrap:wrap; justify-content:center;">
+    <a href="privacy-policy.html" style="font-size:0.8rem; color:var(--muted); text-decoration:none;">Privacy Policy</a>
+    <a href="terms-and-conditions.html" style="font-size:0.8rem; color:var(--muted); text-decoration:none;">Terms & Conditions</a>
+    <a href="disclaimer.html" style="font-size:0.8rem; color:var(--muted); text-decoration:none;">Disclaimer</a>
+  </div>
 </footer>
 
 <a href="index.html#apply" class="float-email">🚀 Start Project</a>
@@ -1349,6 +1419,24 @@
       }
     });
   }, { threshold: 0.1 });
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinksEl = document.getElementById('nav-links');
+  const navOverlay = document.getElementById('nav-overlay');
+  if (navToggle && navLinksEl && navOverlay) {
+    const closeMenu = () => {
+      navToggle.classList.remove('open');
+      navLinksEl.classList.remove('open');
+      navOverlay.classList.remove('open');
+    };
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('open');
+      navLinksEl.classList.toggle('open');
+      navOverlay.classList.toggle('open');
+    });
+    navOverlay.addEventListener('click', closeMenu);
+    navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+  }
+
   reveals.forEach(el => observer.observe(el));
 
   document.querySelectorAll('.faq-item').forEach(item => {
