@@ -1,0 +1,14 @@
+Copyright © 2026 Prince Verma / ProjectX Hub. All Rights Reserved.
+
+This repository and its contents (including but not limited to source code,
+design, text, images, and other assets) are the proprietary property of
+Prince Verma and ProjectX Hub.
+
+No part of this repository may be copied, modified, distributed, sublicensed,
+or used in any form, in whole or in part, without prior written permission
+from the copyright holder.
+
+Unauthorized use, reproduction, or distribution of this material is strictly
+prohibited and may result in legal action.
+
+For permissions or inquiries, contact: princeverma50055@gmail.com
