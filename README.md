@@ -45,7 +45,7 @@ ProjectX Hub provides digital solutions across technology, AI, development, auto
 - **Founder LinkedIn:** [Prince Verma](https://www.linkedin.com/in/prince-verma-2b100240a)
 - **Company LinkedIn:** [ProjectX Hub](https://www.linkedin.com/company/project-x-hub/)
 - **ProjectX AI Studio:** [project-x-ai-studio-v2.vercel.app](https://project-x-ai-studio-v2.vercel.app/)
-- **ProjectX Hub Platform:** [project-x-hub.vercel.app](https://project-x-hub.vercel.app/)
+- **ProjectX Hub Platform:** [project-x-hub.vercel.app](https://projectxhub.in)
 - **ProjectX Store:** [princeverma50055-cpu.github.io/ProjectX-store](https://princeverma50055-cpu.github.io/ProjectX-store/)
 
 ## Contact
