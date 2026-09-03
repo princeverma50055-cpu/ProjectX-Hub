@@ -719,7 +719,7 @@
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
   }
 
-  .studio-banner-img img { width: 100%; display: block; }
+  .studio-banner-img img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block; }
 
   .studio-banner-text {
     flex: 1 1 320px;
@@ -757,6 +757,7 @@
 
   .studio-illo {
     width: 100%;
+    height: auto;
     aspect-ratio: 16/10;
     display: block;
     object-fit: cover;
@@ -823,6 +824,9 @@
 
   .showcase-strip img {
     width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+    object-fit: cover;
     border-radius: 18px;
     border: 1px solid var(--border);
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
@@ -1018,6 +1022,8 @@
   @keyframes floatPop {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+
   /* ── TRUST BAR ── */
   .trust-bar {
     display: flex;
@@ -1169,7 +1175,7 @@
 
   .blog-card:hover { transform: translateY(-6px); border-color: rgba(99,91,255,0.3); }
 
-  .blog-card-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+  .blog-card-img { width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; display: block; }
 
   .blog-card-body { padding: 22px 24px; }
 
@@ -1277,6 +1283,12 @@
   @media (max-width: 768px) {
     .contact-grid { grid-template-columns: 1fr; }
     .page-hero { padding: 120px 20px 40px; }
+    .studio-illo { aspect-ratio: 16/11; }
+    .studio-banner-img { max-width: 100%; }
+    .studio-banner-img img { aspect-ratio: 16/9; max-height: 220px; }
+    .showcase-strip { padding: 0 20px; }
+    .showcase-strip img { aspect-ratio: 16/10; max-height: 220px; }
+    .blog-card-img { max-height: 200px; }
   }
   /* ── COOKIE CONSENT ── */
   .cookie-banner {
@@ -1362,7 +1374,7 @@
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
+        <li><a href="about.html">About</a></li>
     <li><a href="founder.html">Founder</a></li>
     <li><a href="blog.html">Resources</a></li>
     <li><a href="start-a-project.html" class="nav-cta">Start a Project →</a></li>
@@ -1385,7 +1397,7 @@
     <p>This is not a guarantee of employment, fixed salary, equity, or a specific project — it's an invitation to explore what fits, based on what ProjectX Hub needs and what you bring to the table.</p>
   </div>
   <div style="margin-top: 32px;">
-    <a href="https://join-project-x-hub.vercel.app/" target="_blank" class="btn-primary">🚀 Join ProjectX Hub →</a>
+    <a href="https://project-x-hub-careers.vercel.app/" target="_blank" class="btn-primary">🚀 Join ProjectX Hub →</a>
   </div>
 </section>
 
