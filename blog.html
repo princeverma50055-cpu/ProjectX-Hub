@@ -720,7 +720,7 @@
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
   }
 
-  .studio-banner-img img { width: 100%; display: block; }
+  .studio-banner-img img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block; }
 
   .studio-banner-text {
     flex: 1 1 320px;
@@ -758,6 +758,7 @@
 
   .studio-illo {
     width: 100%;
+    height: auto;
     aspect-ratio: 16/10;
     display: block;
     object-fit: cover;
@@ -824,6 +825,9 @@
 
   .showcase-strip img {
     width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+    object-fit: cover;
     border-radius: 18px;
     border: 1px solid var(--border);
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
@@ -1019,6 +1023,8 @@
   @keyframes floatPop {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+
   /* ── TRUST BAR ── */
   .trust-bar {
     display: flex;
@@ -1170,7 +1176,18 @@
 
   .blog-card:hover { transform: translateY(-6px); border-color: rgba(99,91,255,0.3); }
 
-  .blog-card-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+  .blog-card-img { width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; display: block; }
+
+  .article-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    border: 1px solid var(--border);
+    display: block;
+  }
 
   .blog-card-body { padding: 22px 24px; }
 
@@ -1278,6 +1295,13 @@
   @media (max-width: 768px) {
     .contact-grid { grid-template-columns: 1fr; }
     .page-hero { padding: 120px 20px 40px; }
+    .studio-illo { aspect-ratio: 16/11; }
+    .studio-banner-img { max-width: 100%; }
+    .studio-banner-img img { aspect-ratio: 16/9; max-height: 220px; }
+    .showcase-strip { padding: 0 20px; }
+    .showcase-strip img { aspect-ratio: 16/10; max-height: 220px; }
+    .blog-card-img { max-height: 200px; }
+    .article-img { max-height: 220px; }
   }
   /* ── COOKIE CONSENT ── */
   .cookie-banner {
@@ -1363,7 +1387,7 @@
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
+        <li><a href="about.html">About</a></li>
     <li><a href="founder.html">Founder</a></li>
     <li><a href="blog.html">Resources</a></li>
     <li><a href="start-a-project.html" class="nav-cta">Start a Project →</a></li>
@@ -1385,7 +1409,7 @@
     <div class="blog-tag">Web Development</div>
     <h2 class="section-title" style="font-size: clamp(1.5rem, 3.5vw, 2.2rem);">Why Every Small Business Needs a Website in 2026</h2>
     <div class="blog-card-meta" style="margin-bottom: 24px;">5 min read</div>
-    <img src="web-development.jpg" width="1000" height="665" loading="lazy" alt="Web development" style="width:100%; border-radius: 20px; margin-bottom: 28px; border: 1px solid var(--border);">
+    <img src="web-development.jpg" width="1000" height="665" loading="lazy" alt="Web development" class="article-img">
     <div class="about-story">
       <p>It's easy to assume that a strong social media presence is enough. A business page on Instagram, a WhatsApp catalog, maybe a Google listing — and that feels like "being online." But a website still does something none of these platforms can fully replace: it gives a business a permanent, professional home that it fully owns and controls.</p>
       <p>Social platforms change their algorithms constantly. A post that reaches thousands of people today might reach almost no one next month. A website doesn't have that problem — once it's built and optimized, it keeps working for the business around the clock, without depending on any platform's mood.</p>
@@ -1401,7 +1425,7 @@
     <div class="blog-tag">AI & Strategy</div>
     <h2 class="section-title" style="font-size: clamp(1.5rem, 3.5vw, 2.2rem);">5 AI Tools That Save Small Teams Hours Every Week</h2>
     <div class="blog-card-meta" style="margin-bottom: 24px;">4 min read</div>
-    <img src="data-reporting.jpg" width="1000" height="667" loading="lazy" alt="AI tools for teams" style="width:100%; border-radius: 20px; margin-bottom: 28px; border: 1px solid var(--border);">
+    <img src="data-reporting.jpg" width="1000" height="667" loading="lazy" alt="AI tools for teams" class="article-img">
     <div class="about-story">
       <p>Small teams don't have the luxury of large departments to handle every task, which is exactly why AI tools have become so valuable — they let a small team punch above its weight without hiring more people.</p>
       <p>Content drafting tools help write first drafts of emails, product descriptions, and social captions in minutes instead of hours, leaving the team to focus on editing and strategy rather than staring at a blank page.</p>
@@ -1418,7 +1442,7 @@
     <div class="blog-tag">Business</div>
     <h2 class="section-title" style="font-size: clamp(1.5rem, 3.5vw, 2.2rem);">How to Choose the Right Digital Partner for Your Project</h2>
     <div class="blog-card-meta" style="margin-bottom: 24px;">6 min read</div>
-    <img src="deployment-automation.jpg" width="1000" height="667" loading="lazy" alt="Choosing a digital partner" style="width:100%; border-radius: 20px; margin-bottom: 28px; border: 1px solid var(--border);">
+    <img src="deployment-automation.jpg" width="1000" height="667" loading="lazy" alt="Choosing a digital partner" class="article-img">
     <div class="about-story">
       <p>Choosing who builds your website or runs your marketing is one of the more consequential decisions a small business owner makes, yet it's often rushed based purely on price. A slightly cheaper option that delivers late, communicates poorly, or produces work that needs to be redone almost always ends up costing more in the long run.</p>
       <p>Start by looking at how someone communicates before you've even signed anything. Do they ask clarifying questions about your business, or do they just quote a price without understanding what you actually need? Clear, proactive communication early on is usually a good sign of how the rest of the project will go.</p>
