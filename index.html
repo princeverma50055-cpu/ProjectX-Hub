@@ -751,7 +751,7 @@
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
   }
 
-  .studio-banner-img img { width: 100%; display: block; }
+  .studio-banner-img img { width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; display: block; }
 
   .studio-banner-text {
     flex: 1 1 320px;
@@ -789,6 +789,7 @@
 
   .studio-illo {
     width: 100%;
+    height: auto;
     aspect-ratio: 16/10;
     display: block;
     object-fit: cover;
@@ -855,6 +856,9 @@
 
   .showcase-strip img {
     width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+    object-fit: cover;
     border-radius: 18px;
     border: 1px solid var(--border);
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
@@ -1202,7 +1206,7 @@
 
   .blog-card:hover { transform: translateY(-6px); border-color: rgba(99,91,255,0.3); }
 
-  .blog-card-img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+  .blog-card-img { width: 100%; height: auto; aspect-ratio: 16/10; object-fit: cover; display: block; }
 
   .blog-card-body { padding: 22px 24px; }
 
@@ -1310,6 +1314,12 @@
   @media (max-width: 768px) {
     .contact-grid { grid-template-columns: 1fr; }
     .page-hero { padding: 120px 20px 40px; }
+    .studio-illo { aspect-ratio: 16/11; }
+    .studio-banner-img { max-width: 100%; }
+    .studio-banner-img img { aspect-ratio: 16/9; max-height: 220px; }
+    .showcase-strip { padding: 0 20px; }
+    .showcase-strip img { aspect-ratio: 16/10; max-height: 220px; }
+    .blog-card-img { max-height: 200px; }
   }
   /* ── COOKIE CONSENT ── */
   .cookie-banner {
@@ -1396,7 +1406,7 @@
   <ul class="nav-links" id="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
+        <li><a href="about.html">About</a></li>
     <li><a href="founder.html">Founder</a></li>
     <li><a href="blog.html">Resources</a></li>
     <li><a href="start-a-project.html" class="nav-cta">Start a Project →</a></li>
@@ -1656,7 +1666,7 @@ end project support — from concept to final delivery. You share the idea, we m
   <div class="pricing-grid">
     <div class="price-card reveal">
       <div class="price-tier">Starter</div>
-      <div class="price-amount">₹1,099+</div>
+      <div class="price-amount">₹1,999+</div>
       <div class="price-note">For small, focused projects</div>
       <ul class="price-list">
         <li>Single-page website / landing page</li>
@@ -1668,7 +1678,7 @@ end project support — from concept to final delivery. You share the idea, we m
     <div class="price-card featured reveal">
       <div class="price-badge">Most Popular</div>
       <div class="price-tier">Growth</div>
-      <div class="price-amount">₹3,999+</div>
+      <div class="price-amount">₹5,999+</div>
       <div class="price-note">For growing businesses</div>
       <ul class="price-list">
         <li>Multi-page website + basic SEO</li>
@@ -1858,7 +1868,7 @@ end project support — from concept to final delivery. You share the idea, we m
       <div class="link-icon">🖥️</div>
       <div class="link-info"><div class="link-label">Platform</div><div class="link-name">ProjectX Hub Platform →</div></div>
     </a>
-    <a href="https://princeverma50055-cpu.github.io/ProjectX-store-/" target="_blank" class="link-card reveal">
+    <a href="https://princeverma50055-cpu.github.io/ProjectX-store/" target="_blank" class="link-card reveal">
       <div class="link-icon">🚀</div>
       <div class="link-info"><div class="link-label">Store</div><div class="link-name">ProjectX Store →</div></div>
     </a>
@@ -1870,7 +1880,7 @@ end project support — from concept to final delivery. You share the idea, we m
       <div class="link-icon">📩</div>
       <div class="link-info"><div class="link-label">Direct Email</div><div class="link-name">princeverma50055@gmail.com →</div></div>
     </a>
-    <a href="https://www.linkedin.com/company/projectx-hub/" target="_blank" class="link-card reveal">
+    <a href="https://www.linkedin.com/company/project-x-hub/" target="_blank" class="link-card reveal">
       <div class="link-icon">🏢</div>
       <div class="link-info"><div class="link-label">Company Page</div><div class="link-name">ProjectX Hub on LinkedIn →</div></div>
     </a>
