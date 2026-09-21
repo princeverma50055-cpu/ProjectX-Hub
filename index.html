@@ -161,8 +161,18 @@
   </div>
 </nav>
 
+<!-- TOP GLOBE SECTION (Professional Placement 1 - Upar) -->
+<header class="pt-32 pb-4 px-6 text-center max-w-5xl mx-auto">
+  <div class="relative w-48 h-48 mx-auto mb-4 reveal-node">
+    <canvas id="globeCanvasTop" width="192" height="192" class="mx-auto"></canvas>
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <span class="text-[9px] uppercase tracking-[0.2em] text-sqMuted font-mono">Global Innovation</span>
+    </div>
+  </div>
+</header>
+
 <!-- HERO SECTION -->
-<header class="pt-40 pb-20 px-6 text-center max-w-5xl mx-auto">
+<section class="pb-20 px-6 text-center max-w-5xl mx-auto">
   <div class="reveal-node">
     <p class="text-xs uppercase tracking-[0.25em] text-sqMuted mb-6">A website makes it real.</p>
     <h1 class="text-5xl md:text-8xl font-normal tracking-tight font-serif mb-8 leading-[1.08]">
@@ -201,7 +211,7 @@
     </div>
   </div>
   <div class="mt-8 text-xs text-sqMuted reveal-node">✅ Replies within 24 hrs · 🔒 Secure & Confidential · 🇮🇳 India-based</div>
-</header>
+</section>
 
 <!-- STATS BAR -->
 <section class="border-y border-sqBorder bg-sqDark/40 py-12 px-6">
@@ -718,17 +728,17 @@
   </div>
 </section>
 
-<!-- 3D PARTICLE GLOBE & CALL TO ACTION -->
-<section class="py-32 px-6 text-center border-t border-sqBorder relative overflow-hidden">
-  <div class="relative w-72 h-72 mx-auto mb-8">
-    <canvas id="globeCanvas" width="288" height="288" class="mx-auto"></canvas>
+<!-- BOTTOM GLOBE SECTION (Professional Placement 2 - Niche) -->
+<section class="py-20 px-6 text-center border-t border-sqBorder relative overflow-hidden">
+  <div class="relative w-72 h-72 mx-auto mb-8 reveal-node">
+    <canvas id="globeCanvasBottom" width="288" height="288" class="mx-auto"></canvas>
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
       <span class="text-[10px] uppercase tracking-[0.25em] text-sqMuted font-mono">ProjectX Core</span>
     </div>
   </div>
-  <h2 class="text-3xl md:text-5xl font-serif max-w-xl mx-auto mb-4">Start your digital transformation today</h2>
-  <p class="text-xs text-sqMuted max-w-md mx-auto mb-8">No commitment required. Confidential roadmap delivered directly to your inbox.</p>
-  <a href="#apply" class="px-8 py-4 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition inline-block">
+  <h2 class="text-3xl md:text-5xl font-serif max-w-xl mx-auto mb-4 reveal-node">Start your digital transformation today</h2>
+  <p class="text-xs text-sqMuted max-w-md mx-auto mb-8 reveal-node">No commitment required. Confidential roadmap delivered directly to your inbox.</p>
+  <a href="#apply" class="px-8 py-4 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition inline-block reveal-node">
     Get Started Now
   </a>
 </section>
@@ -942,7 +952,7 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  // Form Submission Logic (Retaining Original Mailto API)
+  // Form Submission Logic
   function submitForm() {
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
@@ -985,15 +995,16 @@ Sent via ProjectX Hub App`
     }, 700);
   }
 
-  // 3D Particle Rotating Globe (Canvas)
-  const canvas = document.getElementById('globeCanvas');
-  if (canvas) {
+  // Dual 3D Particle Rotating Globes (Canvas Setup for Top and Bottom)
+  function initGlobe(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const width = canvas.width;
     const height = canvas.height;
     const cx = width / 2;
     const cy = height / 2;
-    const radius = 100;
+    const radius = canvasId === 'globeCanvasTop' ? 70 : 100;
     const numPoints = 260;
     const points = [];
 
@@ -1033,6 +1044,9 @@ Sent via ProjectX Hub App`
     }
     renderGlobe();
   }
+
+  initGlobe('globeCanvasTop');
+  initGlobe('globeCanvasBottom');
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
