@@ -128,12 +128,14 @@
 </head>
 <body class="selection:bg-white selection:text-black antialiased">
 
-<!-- NAVBAR -->
-<nav class="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-md border-b border-sqBorder">
-  <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between">
-    <a href="index.html" class="flex items-center gap-3">
-      <img src="logo.png" alt="ProjectX Hub" class="h-8 w-auto">
-      <span class="font-heading tracking-wider font-extrabold text-lg text-white">PROJECTX HUB</span>
+<!-- NAVBAR (Fixed Logo with mini rotating globe & clean button) -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-sqBorder">
+  <div class="max-w-7xl mx-auto px-4 md:px-12 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <div class="w-8 h-8 relative flex items-center justify-center">
+        <canvas id="navGlobe" width="32" height="32" class="absolute inset-0"></canvas>
+      </div>
+      <span class="font-heading tracking-tight font-bold text-sm md:text-base text-white">ProjectX Hub</span>
     </a>
 
     <ul class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest text-sqMuted font-medium">
@@ -144,15 +146,15 @@
       <li><a href="blog.html" class="hover:text-white transition">Resources</a></li>
     </ul>
 
-    <div class="flex items-center gap-4">
-      <a href="start-a-project.html" class="px-5 py-2.5 rounded-full bg-white text-black text-xs font-semibold uppercase tracking-wider hover:bg-neutral-200 transition shadow-sm">
+    <div class="flex items-center gap-3">
+      <a href="start-a-project.html" class="px-4 py-2 rounded-full bg-white text-black text-[11px] md:text-xs font-semibold uppercase tracking-wider hover:bg-neutral-200 transition shadow-sm whitespace-nowrap">
         Start a Project
       </a>
-      <button id="mobile-toggle" class="md:hidden text-white text-2xl focus:outline-none" aria-label="Toggle Navigation">☰</button>
+      <button id="mobile-toggle" class="md:hidden text-white text-xl focus:outline-none p-1" aria-label="Toggle Navigation">☰</button>
     </div>
   </div>
 
-  <div id="mobile-dropdown" class="hidden md:hidden px-6 py-8 bg-sqDark border-b border-sqBorder flex flex-col gap-5 text-sm uppercase tracking-wider font-semibold">
+  <div id="mobile-dropdown" class="hidden md:hidden px-6 py-6 bg-sqDark border-b border-sqBorder flex flex-col gap-4 text-xs uppercase tracking-wider font-semibold">
     <a href="index.html" class="text-white">Home</a>
     <a href="services.html" class="text-sqMuted hover:text-white">Services</a>
     <a href="about.html" class="text-sqMuted hover:text-white">About</a>
@@ -161,7 +163,7 @@
   </div>
 </nav>
 
-<!-- TOP GLOBE SECTION (Professional Placement 1 - Upar) -->
+<!-- TOP GLOBE SECTION -->
 <header class="pt-32 pb-4 px-6 text-center max-w-5xl mx-auto">
   <div class="relative w-48 h-48 mx-auto mb-4 reveal-node">
     <canvas id="globeCanvasTop" width="192" height="192" class="mx-auto"></canvas>
@@ -728,7 +730,7 @@
   </div>
 </section>
 
-<!-- BOTTOM GLOBE SECTION (Professional Placement 2 - Niche) -->
+<!-- BOTTOM GLOBE SECTION -->
 <section class="py-20 px-6 text-center border-t border-sqBorder relative overflow-hidden">
   <div class="relative w-72 h-72 mx-auto mb-8 reveal-node">
     <canvas id="globeCanvasBottom" width="288" height="288" class="mx-auto"></canvas>
@@ -743,7 +745,7 @@
   </a>
 </section>
 
-<!-- SOCIAL ICON ROW (All 8 Original SVGs) -->
+<!-- SOCIAL ICON ROW -->
 <div class="py-12 border-t border-sqBorder text-center">
   <p class="text-xs uppercase tracking-widest text-sqMuted mb-6">Follow & Connect</p>
   <div class="flex flex-wrap justify-center items-center gap-6">
@@ -995,8 +997,8 @@ Sent via ProjectX Hub App`
     }, 700);
   }
 
-  // Dual 3D Particle Rotating Globes (Canvas Setup for Top and Bottom)
-  function initGlobe(canvasId) {
+  // 3D Particle Rotating Globes (Canvas Setup for Navbar, Top and Bottom)
+  function initGlobe(canvasId, particleCount, pointSize, radiusSize) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -1004,8 +1006,8 @@ Sent via ProjectX Hub App`
     const height = canvas.height;
     const cx = width / 2;
     const cy = height / 2;
-    const radius = canvasId === 'globeCanvasTop' ? 70 : 100;
-    const numPoints = 260;
+    const radius = radiusSize;
+    const numPoints = particleCount;
     const points = [];
 
     for (let i = 0; i < numPoints; i++) {
@@ -1035,7 +1037,7 @@ Sent via ProjectX Hub App`
         const alpha = Math.max(0.15, (zRot + radius) / (2 * radius));
 
         ctx.beginPath();
-        ctx.arc(x2d, y2d, 1.3 * scale, 0, Math.PI * 2);
+        ctx.arc(x2d, y2d, pointSize * scale, 0, Math.PI * 2);
         ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
         ctx.fill();
       });
@@ -1045,8 +1047,9 @@ Sent via ProjectX Hub App`
     renderGlobe();
   }
 
-  initGlobe('globeCanvasTop');
-  initGlobe('globeCanvasBottom');
+  initGlobe('navGlobe', 90, 1.1, 14);
+  initGlobe('globeCanvasTop', 260, 1.3, 70);
+  initGlobe('globeCanvasBottom', 260, 1.3, 100);
 
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
