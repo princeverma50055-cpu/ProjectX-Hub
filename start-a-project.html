@@ -1,672 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#ffffff">
-<title>Start Your Project — ProjectX Hub</title>
+<meta name="theme-color" content="#000000">
+
+<title>Start a Project — ProjectX Hub</title>
 <link rel="canonical" href="https://projectxhub.in/start-a-project.html">
-<meta name="description" content="Partner with ProjectX Hub to bring your digital vision to life. Tell us about your requirements, and let's build something extraordinary together.">
-<meta property="og:title" content="Start Your Project — ProjectX Hub">
-<meta property="og:description" content="Ready to innovate? Share your project details with ProjectX Hub and get a consultation within 24 hours.">
+<meta name="description" content="Tell ProjectX Hub about your project. Share your requirements and Prince will get back to you within 24 hours.">
+<meta property="og:title" content="Start a Project — ProjectX Hub">
+<meta property="og:description" content="Tell ProjectX Hub about your project and get a response within 24 hours.">
 <meta property="og:image" content="projectx-hub-banner.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://projectxhub.in/start-a-project.html">
 <meta property="og:site_name" content="ProjectX Hub">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #ffffff;
-    --surface: #f7f8fc;
-    --surface2: #eef0f7;
-    --accent: #635bff;
-    --accent2: #4f46e5;
-    --accent3: #22d3ee;
-    --gold: #f5b94d;
-    --text: #1a1d29;
-    --muted: #5b6478;
-    --border: rgba(99,91,255,0.18);
-    --glow: 0 0 60px rgba(99,91,255,0.12);
-  }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-    cursor: default;
-    line-height: 1.6;
-  }
-
-  /* ── NOISE OVERLAY ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.5;
-  }
-
-  /* ── SCROLLBAR ── */
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: var(--accent2); border-radius: 2px; }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 40px;
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  /* ── UPDATED LOGO (GLOBE + NAME) ── */
-  .nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-    color: var(--text);
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-  }
-
-  .nav-brand span {
-    font-size: 1.6rem;
-    line-height: 1;
-    margin-top: -2px;
-  }
-
-  .nav-brand strong {
-    font-weight: 800;
-    letter-spacing: -0.5px;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--accent); }
-
-  .nav-cta {
-    background: linear-gradient(135deg, var(--accent2), var(--accent));
-    color: #050810 !important;
-    padding: 10px 22px;
-    border-radius: 50px;
-    font-weight: 600 !important;
-    font-size: 0.85rem !important;
-    transition: opacity 0.2s, transform 0.2s !important;
-  }
-
-  .nav-cta:hover { opacity: 0.85; transform: scale(1.04) !important; color: #050810 !important; }
-
-  /* ── HERO (Home Page Style) ── */
-  .page-hero {
-    padding: 150px 40px 80px;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    border-bottom: 1px solid var(--border);
-  }
-  
-  .hero-orb1 {
-    position: absolute;
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(79,70,229,0.12) 0%, transparent 70%);
-    top: -150px; left: -200px;
-    animation: drift1 8s ease-in-out infinite alternate;
-    pointer-events: none;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(99,91,255,0.08);
-    border: 1px solid rgba(99,91,255,0.25);
-    border-radius: 50px;
-    padding: 8px 18px;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 28px;
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .badge-dot {
-    width: 7px; height: 7px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: pulse 1.5s ease infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.7); }
-  }
-
-  .page-hero h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -2px;
-    animation: fadeUp 0.6s ease 0.1s both;
-  }
-  
-  .page-hero h1 span {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% auto;
-    animation: gradMove 3s linear infinite;
-  }
-
-  @keyframes gradMove { to { background-position: 200% center; } }
-
-  .page-hero p {
-    font-size: 1.1rem;
-    color: var(--muted);
-    max-width: 650px;
-    margin: 24px auto 0;
-    line-height: 1.7;
-    font-weight: 300;
-    animation: fadeUp 0.6s ease 0.3s both;
-  }
-  
-  @keyframes drift1 { from { transform: translate(0,0); } to { transform: translate(60px, 40px); } }
-
-  /* ── FORM SECTION ── */
-  .project-form-section {
-    padding: 80px 40px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .form-box {
-    background: #ffffff;
-    padding: 60px;
-    border-radius: 28px;
-    border: 1px solid var(--border);
-    box-shadow: var(--glow);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .form-box::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 350px; height: 350px;
-    background: radial-gradient(circle, rgba(79,70,229,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-
-  .form-intro { margin-bottom: 50px; text-align: center; }
-  .form-intro h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: 2.2rem;
-    margin-bottom: 16px;
-  }
-  .form-intro p {
-    color: var(--muted);
-    font-size: 1rem;
-    max-width: 500px;
-    margin: 0 auto;
-    font-weight: 300;
-  }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-
-  .form-group { margin-bottom: 24px; }
-
-  .form-group label {
-    display: block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: 10px;
-  }
-
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 18px 20px;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.2s, box-shadow 0.2s;
-  }
-
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus {
-    border-color: var(--accent2);
-    box-shadow: 0 0 0 3px rgba(79,70,229,0.15);
-  }
-
-  .form-group textarea { resize: vertical; min-height: 160px; }
-
-  .form-tip { font-size: 0.78rem; color: var(--muted); margin-top: -8px; margin-bottom: 16px; font-style: italic;}
-
-  .btn-submit {
-    width: 100%;
-    background: linear-gradient(135deg, var(--accent2) 0%, var(--accent) 100%);
-    color: #050810;
-    border: none;
-    padding: 20px;
-    border-radius: 16px;
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 12px 36px rgba(79,70,229,0.4);
-    margin-top: 16px;
-  }
-
-  .btn-submit:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 48px rgba(79,70,229,0.5);
-  }
-  
-  /* ── SUCCESS MESSAGE ── */
-  .success-msg {
-    display: none;
-    text-align: center;
-    padding: 60px 20px;
-  }
-  
-  .success-icon { font-size: 5rem; margin-bottom: 24px; animation: popIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both; }
-  
-  @keyframes popIn { from { transform: scale(0); opacity: 0; } to { transform: scale(1); opacity: 1; } }
-  
-  .success-msg h3 {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.8rem;
-    margin-bottom: 16px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  
-  .success-msg p { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 500px; margin: 0 auto; }
-
-  /* ── FOOTER (Home Page Style) ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 60px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 32px;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-size: 0.85rem;
-    color: var(--muted);
-  }
-
-  .footer-col { display: flex; flex-direction: column; gap: 12px; }
-  .footer-col h5 { font-family: 'Syne', sans-serif; font-size: 0.9rem; color: var(--text); margin-bottom: 8px; }
-  .footer-col a { text-decoration: none; color: var(--muted); transition: color 0.2s; }
-  .footer-col a:hover { color: var(--accent); }
-  
-  .footer-bottom {
-    width: 100%;
-    border-top: 1px solid var(--border);
-    margin-top: 60px;
-    padding-top: 40px;
-    text-align: center;
-    font-size: 0.8rem;
-  }
-  
-  .footer-logo-img { height: 32px; width: auto; display: block; }
-
-  /* ── ANIMATIONS & MOBILE ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  .nav-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 42px; height: 42px;
-    background: rgba(99,91,255,0.08);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    cursor: pointer;
-    z-index: 210;
-  }
-  .nav-toggle span {
-    width: 20px; height: 2px;
-    background: var(--accent);
-    border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.2s ease;
-  }
-  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-toggle.open span:nth-child(2) { opacity: 0; }
-  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  .nav-overlay {
-    display: none;
-    position: fixed; inset: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: 90;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .nav-overlay.open { display: block; opacity: 1; }
-
-  @media (max-width: 768px) {
-    nav { padding: 18px 20px; }
-    .nav-toggle { display: flex; }
-    .nav-links {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      position: fixed;
-      top: 0; right: -85%;
-      width: 78%;
-      max-width: 320px;
-      height: 100vh;
-      background: #ffffff;
-      padding: 100px 30px 40px;
-      gap: 24px;
-      transition: right 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      z-index: 200;
-      border-left: 1px solid var(--border);
-      box-shadow: -20px 0 60px rgba(0,0,0,0.1);
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          serif: ['"Playfair Display"', 'serif'],
+          heading: ['"Syne"', 'sans-serif'],
+        },
+        colors: {
+          sqDark: '#0a0a0a',
+          sqMuted: '#8e8e93',
+          sqBorder: 'rgba(255, 255, 255, 0.12)'
+        }
+      }
     }
-    .nav-links.open { right: 0; }
-    .nav-links a { font-size: 1rem; color: var(--text); font-weight: 600; }
-    .nav-links .nav-cta { margin-top: 16px; width: 100%; text-align: center; }
-    
-    .page-hero { padding: 120px 20px 60px; }
-    .page-hero h1 { font-size: 3.2rem; }
-    .project-form-section { padding: 60px 20px; }
-    .form-box { padding: 32px; }
-    .form-row { grid-template-columns: 1fr; gap: 0; }
-    footer { padding: 60px 20px; flex-direction: column; text-align: center; gap: 40px; }
-    .footer-col { align-items: center; }
+  }
+</script>
+
+<style>
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+  .reveal-node {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-node.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>
 </head>
-<body>
+<body class="selection:bg-white selection:text-black antialiased">
 
-<!-- NAV -->
-<nav>
-  <!-- !!! YE HAI UPDATED LOGO !!! -->
-  <a href="index.html" class="nav-brand">
-    <span>&#127760;</span>
-    <strong>ProjectX Hub</strong>
-  </a>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="founder.html">Founder</a></li>
-    <li><a href="blog.html">Resources</a></li>
-    <li><a href="start-a-project.html" class="nav-cta">Start a Project →</a></li>
-  </ul>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-sqBorder">
+  <div class="max-w-7xl mx-auto px-4 md:px-12 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <div class="w-8 h-8 relative flex items-center justify-center">
+        <canvas id="navGlobe" width="32" height="32" class="absolute inset-0"></canvas>
+      </div>
+      <span class="font-heading tracking-tight font-bold text-sm md:text-base text-white">ProjectX Hub</span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest text-sqMuted font-medium">
+      <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+      <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+      <li><a href="about.html" class="hover:text-white transition">About</a></li>
+      <li><a href="founder.html" class="hover:text-white transition">Founder</a></li>
+      <li><a href="blog.html" class="hover:text-white transition">Resources</a></li>
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <a href="start-a-project.html" class="px-4 py-2 rounded-full bg-white text-black text-[11px] md:text-xs font-semibold uppercase tracking-wider hover:bg-neutral-200 transition shadow-sm whitespace-nowrap">
+        Start a Project
+      </a>
+      <button id="mobile-toggle" class="md:hidden text-white text-xl focus:outline-none p-1" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </div>
+
+  <div id="mobile-dropdown" class="hidden md:hidden px-6 py-6 bg-sqDark border-b border-sqBorder flex flex-col gap-4 text-xs uppercase tracking-wider font-semibold">
+    <a href="index.html" class="text-sqMuted hover:text-white">Home</a>
+    <a href="services.html" class="text-sqMuted hover:text-white">Services</a>
+    <a href="about.html" class="text-sqMuted hover:text-white">About</a>
+    <a href="founder.html" class="text-sqMuted hover:text-white">Founder</a>
+    <a href="blog.html" class="text-sqMuted hover:text-white">Resources</a>
+  </div>
 </nav>
-<div class="nav-overlay" id="nav-overlay"></div>
 
 <!-- PAGE HERO -->
-<header class="page-hero reveal">
-  <div class="hero-orb1"></div>
-  <div class="hero-badge"><span class="badge-dot"></span> LET'S INNOVATE</div>
-  <h1>Start Your Next <span>Project</span> With Us</h1>
-  <p>Ready to bring your digital vision to life? Fill out the form below with your project details, and our team will get back to you within 24 hours to discuss how we can help you succeed.</p>
+<header class="pt-36 pb-12 px-6 text-center max-w-4xl mx-auto reveal-node">
+  <p class="text-xs uppercase tracking-[0.25em] text-sqMuted mb-4">Let's Build Together</p>
+  <h1 class="text-4xl md:text-7xl font-normal tracking-tight font-serif mb-6 leading-[1.1]">
+    Start Your Next <span class="italic">Project</span>
+  </h1>
+  <p class="text-sm md:text-base text-sqMuted max-w-2xl mx-auto font-light leading-relaxed">
+    Ready to bring your digital vision to life? Fill out the form below with your project details, and Prince will get back to you within 24 hours.
+  </p>
 </header>
 
 <!-- FORM SECTION -->
-<main class="project-form-section reveal">
-  <div class="form-box">
+<section class="py-12 px-6 max-w-4xl mx-auto reveal-node">
+  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950">
     
-    <div class="form-intro">
-        <h2>Project Inquiry Form</h2>
-        <p>Provide us with as much information as possible to help us understand your needs better. All fields marked with `*` are required.</p>
-    </div>
-
-    <form onsubmit="event.preventDefault(); submitProjectForm();" id="project-form">
-      <div class="form-row">
-        <div class="form-group"><label>Full Name *</label><input type="text" id="p-name" placeholder="John Doe" required></div>
-        <div class="form-group"><label>Email Address *</label><input type="email" id="p-email" placeholder="john@example.com" required></div>
+    <div id="form-area" class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Your Name *</label>
+          <input type="text" id="p-name" placeholder="Prince Verma" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+        </div>
+        <div>
+          <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Your Email *</label>
+          <input type="email" id="p-email" placeholder="you@example.com" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+        </div>
       </div>
       
-      <div class="form-row">
-        <div class="form-group"><label>Phone / WhatsApp Number</label><input type="tel" id="p-phone" placeholder="+91 98765 43210"></div>
-        <div class="form-group"><label>Company / Organization Name</label><input type="text" id="p-business" placeholder="ProjectX Hub"></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Phone / WhatsApp</label>
+          <input type="text" id="p-phone" placeholder="+91 XXXXX XXXXX" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+        </div>
+        <div>
+          <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Company / Organization</label>
+          <input type="text" id="p-business" placeholder="ProjectX Hub" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+        </div>
       </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label>What Service Do You Need? *</label>
-          <select id="p-service" required>
-            <option value="">Select a service</option>
-            <option>Web Development & Design</option>
-            <option>Mobile App Development</option>
-            <option>Software & SaaS Development</option>
-            <option>AI Solutions & Automation</option>
-            <option>UI/UX & Graphic Design</option>
-            <option>Digital Marketing & SEO</option>
-            <option>E-commerce Solutions</option>
-            <option>Other / Consultation</option>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Service Category *</label>
+          <select id="p-service" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+            <option value="">— Select a Service —</option>
+            <option>📊 Data Analysis & Reporting</option>
+            <option>📈 Digital Marketing & SEO</option>
+            <option>🤖 AI & Strategy Projects</option>
+            <option>💻 Website & Digital Development</option>
+            <option>🎨 UI/UX & Creative Design</option>
+            <option>📣 Social Media Management</option>
+            <option>📉 Performance Marketing (Ads)</option>
+            <option>📚 Academic Projects</option>
+            <option>🧠 Business & Research</option>
+            <option>🎬 AI Video & Editing</option>
+            <option>✍️ Content Writing & Blogging</option>
           </select>
         </div>
-        <div class="form-group">
-            <label>Project Type *</label>
-            <select id="p-type" required>
-              <option value="">Select project type</option>
-              <option>New Idea / Start from Scratch</option>
-              <option>Redesign / Upgrade Existing</option>
-              <option>Ongoing Support / Maintenance</option>
-              <option>Consultation / Strategy</option>
-            </select>
-          </div>
-      </div>
-
-      <div class="form-group">
-        <label>Project Description & Goals *</label>
-        <textarea id="p-desc" placeholder="Tell us about your vision, the problem you're solving, and what you hope to achieve..." required></textarea>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Estimated Budget Range (INR)</label>
-          <select id="p-budget">
-            <option value="">Select budget range</option>
-            <option>₹10,000 – ₹25,000</option>
-            <option>₹25,000 – ₹50,000</option>
-            <option>₹50,000 – ₹1,00,000</option>
-            <option>₹1,00,000 – ₹5,00,000</option>
-            <option>₹5,00,000+</option>
-            <option>Not Sure Yet</option>
+        <div>
+          <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Project Type *</label>
+          <select id="p-type" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+            <option value="">— Select Type —</option>
+            <option>New Project / Scratch</option>
+            <option>Redesign / Upgrade</option>
+            <option>Ongoing Maintenance</option>
+            <option>Consultation</option>
           </select>
         </div>
-        <div class="form-group">
-          <label>Expected Timeline *</label>
-          <select id="p-timeline" required>
-            <option value="">Select timeline</option>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Budget Range</label>
+          <select id="p-budget" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+            <option value="">— Select Budget —</option>
+            <option>Below ₹1,000</option>
+            <option>₹1,000 – ₹5,000</option>
+            <option>₹5,000 – ₹20,000</option>
+            <option>₹20,000+</option>
+            <option>Let's Discuss</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Expected Timeline *</label>
+          <select id="p-timeline" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+            <option value="">— Select Timeline —</option>
             <option>As Soon As Possible</option>
-            <option>Within 2 Weeks</option>
-            <option>Within 1 Month</option>
-            <option>1–3 Months</option>
+            <option>Within 1 Week</option>
+            <option>1–3 Weeks</option>
             <option>Flexible</option>
           </select>
         </div>
       </div>
 
-      <div class="form-group"><label>Reference Links (Competitors, Inspiration, Existing Site)</label><input type="text" id="p-refs" placeholder="https://site1.com, https://site2.com"></div>
-      
-      <div class="form-group">
-        <label>Link to Reference Files (Designs, Docs, etc.)</label>
-        <p class="form-tip">Upload your files to Google Drive, Dropbox, or Figma and paste the public link here.</p>
-        <input type="text" id="p-files" placeholder="https://drive.google.com/...">
+      <div>
+        <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Reference Links (Optional)</label>
+        <input type="text" id="p-refs" placeholder="Competitors, inspiration, or existing site links" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
       </div>
-      
-      <div class="form-group"><label>Any Additional Information?</label><textarea id="p-additional" placeholder="Anything else we should know?"></textarea></div>
 
-      <button type="submit" class="btn-submit" id="p-btn">🚀 Submit Project Inquiry</button>
-      <p style="font-size:0.8rem; color:var(--muted); text-align:center; margin-top:20px;">We typically respond within one business day.</p>
-    </form>
+      <div>
+        <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Project Description & Goals *</label>
+        <textarea id="p-desc" rows="4" placeholder="Tell us about your vision, goals, and specific requirements..." class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white"></textarea>
+      </div>
 
-    <!-- SUCCESS MESSAGE -->
-    <div class="success-msg" id="p-success">
-      <div class="success-icon">✅</div>
-      <h3>Thank You! Your Request is Received.</h3>
-      <p>Your inquiry has been successfully submitted. Prince or a team member from ProjectX Hub will review your details and get back to you within 24 hours via email.</p>
-      <a href="index.html" class="btn-submit" style="max-width:200px; margin-top:36px; display:inline-block;">← Back to Home</a>
+      <button id="applyBtn" onclick="submitProjectForm()" class="w-full py-4 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-widest hover:bg-neutral-200 transition">
+        🚀 Submit Project Application
+      </button>
     </div>
+
+    <!-- Success Message -->
+    <div id="success-msg" class="hidden text-center py-12">
+      <div class="text-4xl mb-3">🎉</div>
+      <h3 class="text-2xl font-serif mb-2 text-white">Application Transmitted!</h3>
+      <p class="text-xs text-sqMuted leading-relaxed">Thank you! Your project request has been prepared for Prince.<br>He will contact you at <strong id="user-email-display" class="text-white"></strong> within 24 hours.<br><br><em class="text-white">📩 princeverma50055@gmail.com</em></p>
+      <a href="index.html" class="mt-6 inline-block px-6 py-3 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition">Return Home</a>
+    </div>
+
   </div>
-</main>
+</section>
 
 <!-- FOOTER -->
-<footer>
-  <a href="index.html" class="nav-brand" style="font-size:1.2rem; gap:8px;">
-      <span>&#127760;</span>
-      <strong>ProjectX Hub</strong>
-    </a>
-  <div class="footer-col">
-      <h5>Explore</h5>
-      <a href="services.html">Services</a>
-      <a href="about.html">About Us</a>
-      <a href="blog.html">Resources</a>
+<footer class="border-t border-sqBorder py-12 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-sqMuted">
+  <div class="flex items-center gap-2">
+    <span class="font-heading font-bold text-white tracking-wider">PROJECTX HUB</span>
   </div>
-  <div class="footer-col">
-      <h5>Connect</h5>
-      <a href="mailto:princeverma50055@gmail.com">princeverma50055@gmail.com</a>
-      <a href="https://wa.me/917376654990" target="_blank">WhatsApp Business</a>
-  </div>
-  <div class="footer-col">
-      <h5>Legal</h5>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="terms.html">Terms of Service</a>
-  </div>
-  <div class="footer-bottom">
-      &copy; 2026 ProjectX Hub. All Rights Reserved. | Built by Prince Verma
+  <div class="italic">⭐ "Ideas are easy. Execution is everything." — Prince Verma</div>
+  <div class="flex gap-6">
+    <a href="privacy-policy.html" class="hover:text-white transition">Privacy Policy</a>
+    <a href="terms-and-conditions.html" class="hover:text-white transition">Terms & Conditions</a>
+    <a href="disclaimer.html" class="hover:text-white transition">Disclaimer</a>
   </div>
 </footer>
 
+<!-- SCRIPTS -->
 <script>
-  // NAV TOGGLE
-  const navToggle = document.getElementById('nav-toggle');
-  const navLinksEl = document.getElementById('nav-links');
-  const navOverlay = document.getElementById('nav-overlay');
-  if (navToggle && navLinksEl && navOverlay) {
-    const closeMenu = () => {
-      navToggle.classList.remove('open');
-      navLinksEl.classList.remove('open');
-      navOverlay.classList.remove('open');
-    };
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('open');
-      navLinksEl.classList.toggle('open');
-      navOverlay.classList.toggle('open');
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mobileDropdown = document.getElementById('mobile-dropdown');
+  if(mobileToggle && mobileDropdown) {
+    mobileToggle.addEventListener('click', () => {
+      mobileDropdown.classList.toggle('hidden');
     });
-    navOverlay.addEventListener('click', closeMenu);
-    navLinksEl.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
   }
 
-  // REVEAL ANIMATION
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+  const revealNodes = document.querySelectorAll('.reveal-node');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        entry.target.classList.add('visible');
       }
     });
   }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
+  revealNodes.forEach(node => revealObserver.observe(node));
 
-  // FORM SUBMISSION (Simulated Email Trigger)
   function submitProjectForm() {
     const name = document.getElementById('p-name').value.trim();
     const email = document.getElementById('p-email').value.trim();
     const service = document.getElementById('p-service').value;
     const type = document.getElementById('p-type').value;
-    const desc = document.getElementById('p-desc').value.trim();
     const timeline = document.getElementById('p-timeline').value;
+    const desc = document.getElementById('p-desc').value.trim();
 
-    if (!name || !email || !service || !type || !desc || !timeline) {
-        alert('Please fill in all required fields marked with *');
-        return;
+    if (!name || !email || !service || !type || !timeline || !desc) {
+      alert('Please fill in all required fields marked with *');
+      return;
     }
 
-    const btn = document.getElementById('p-btn');
-    btn.textContent = '⏳ Submitting Inquiry...';
-    btn.style.pointerEvents = 'none';
+    const btn = document.getElementById('applyBtn');
+    btn.textContent = '⏳ TRANSMITTING...';
+    btn.style.opacity = '0.7';
 
-    // Prepare email body
-    const subject = encodeURIComponent(`[ProjectX Hub] New Project Inquiry from ${name}`);
-    let body = `New Project Inquiry Details:\n\n`;
-    body += `Full Name: ${name}\n`;
-    body += `Email Address: ${email}\n`;
-    body += `Phone: ${document.getElementById('p-phone').value || 'Not provided'}\n`;
-    body += `Company: ${document.getElementById('p-business').value || 'Not provided'}\n`;
-    body += `Required Service: ${service}\n`;
-    body += `Project Type: ${type}\n`;
-    body += `Timeline: ${timeline}\n`;
-    body += `\n--- Project Description ---\n${desc}\n\n`;
-    body += `Budget: ${document.getElementById('p-budget').value || 'Not provided'}\n`;
-    body += `Reference Links: ${document.getElementById('p-refs').value || 'None'}\n`;
-    body += `Reference Files Link: ${document.getElementById('p-files').value || 'None'}\n`;
-    body += `Additional Info: ${document.getElementById('p-additional').value || 'None'}\n`;
+    const subject = encodeURIComponent(`[ProjectX Hub] New Project Inquiry - ${service} | ${name}`);
+    const body = encodeURIComponent(
+`New Project Application — ProjectX Hub
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 Name: ${name}
+📧 Email: ${email}
+📱 Phone / WhatsApp: ${document.getElementById('p-phone').value || 'Not provided'}
+🏢 Company: ${document.getElementById('p-business').value || 'Not provided'}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🛠 Service: ${service}
+📌 Project Type: ${type}
+💰 Budget: ${document.getElementById('p-budget').value || 'Not specified'}
+⏱ Timeline: ${timeline}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 Project Description:
+${desc}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔗 Reference Links: ${document.getElementById('p-refs').value || 'None'}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Sent via ProjectX Hub App`
+    );
 
-    // Trigger default mail client
-    window.location.href = `mailto:princeverma50055@gmail
+    setTimeout(() => {
+      window.location.href = `mailto:princeverma50055@gmail.com?subject=${subject}&body=${body}`;
+      document.getElementById('user-email-display').textContent = email;
+      document.getElementById('form-area').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }, 700);
+  }
+
+  function initGlobe(canvasId, particleCount, pointSize, radiusSize) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+    const cx = width / 2;
+    const cy = height / 2;
+    const radius = radiusSize;
+    const numPoints = particleCount;
+    const points = [];
+
+    for (let i = 0; i < numPoints; i++) {
+      const theta = Math.acos(2 * Math.random() - 1);
+      const phi = 2 * Math.PI * Math.random();
+      points.push({
+        x: radius * Math.sin(theta) * Math.cos(phi),
+        y: radius * Math.sin(theta) * Math.sin(phi),
+        z: radius * Math.cos(theta)
+      });
+    }
+
+    let angle = 0;
+    function renderGlobe() {
+      ctx.clearRect(0, 0, width, height);
+      angle += 0.006;
+      const cosA = Math.cos(angle);
+      const sinA = Math.sin(angle);
+
+      points.forEach(p => {
+        const xRot = p.x * cosA - p.z * sinA;
+        const zRot = p.z * cosA + p.x * sinA;
+
+        const scale = 250 / (250 + zRot);
+        const x2d = cx + xRot * scale;
+        const y2d = cy + p.y * scale;
+        const alpha = Math.max(0.15, (zRot + radius) / (2 * radius));
+
+        ctx.beginPath();
+        ctx.arc(x2d, y2d, pointSize * scale, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+        ctx.fill();
+      });
+
+      requestAnimationFrame(renderGlobe);
+    }
+    renderGlobe();
+  }
+
+  initGlobe('navGlobe', 90, 1.1, 14);
+</script>
+</body>
+</html>
