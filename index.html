@@ -45,14 +45,14 @@
 
 <meta property="og:title" content="ProjectX Hub — AI, Web Development & Digital Solutions">
 <meta property="og:description" content="ProjectX Hub provides digital solutions across web and app development, AI, automation, software, design, digital marketing, SEO and more. Founded by Prince Verma.">
-<meta property="og:image" content="projectx-hub-banner.jpg">
+<meta property="og:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://projectxhub.in/">
 <meta property="og:site_name" content="ProjectX Hub">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ProjectX Hub — AI, Web Development & Digital Solutions">
 <meta name="twitter:description" content="ProjectX Hub provides digital solutions across web and app development, AI, automation, software, design, digital marketing, SEO and more. Founded by Prince Verma.">
-<meta name="twitter:image" content="projectx-hub-banner.jpg">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -124,6 +124,16 @@
   .accordion-item.active .accordion-icon {
     transform: rotate(45deg);
   }
+
+  @keyframes slideShow {
+    0% { opacity: 0; transform: scale(1.05); }
+    15% { opacity: 1; transform: scale(1); }
+    85% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.95); }
+  }
+  .fade-slide-img {
+    animation: slideShow 4s infinite ease-in-out;
+  }
 </style>
 </head>
 <body class="selection:bg-white selection:text-black antialiased">
@@ -163,7 +173,7 @@
   </div>
 </nav>
 
-<!-- TOP GLOBE SECTION (Size increased, scrolls normally with page) -->
+<!-- TOP GLOBE SECTION -->
 <header class="pt-36 pb-6 px-6 text-center max-w-5xl mx-auto">
   <div class="relative w-64 h-64 mx-auto mb-4 reveal-node">
     <canvas id="globeCanvasTop" width="256" height="256" class="mx-auto"></canvas>
@@ -197,7 +207,7 @@
   <div class="perspective-container mx-auto max-w-3xl px-2 reveal-node">
     <div id="heroInteractiveCard" class="sq-card-rotate rotate-anim relative bg-neutral-900 border border-sqBorder rounded-2xl p-6 md:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.8)] flex flex-col md:flex-row items-center gap-8">
       <div class="w-full md:w-1/2 overflow-hidden rounded-xl border border-sqBorder/60 aspect-[4/3]">
-        <img id="heroShowcaseImg" src="client-showcase.jpg" alt="Client project delivered by ProjectX Hub" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+        <img id="heroShowcaseImg" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Client project delivered by ProjectX Hub" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
       </div>
       <div class="text-left w-full md:w-1/2">
         <span class="text-[10px] uppercase tracking-widest text-sqMuted">Live Client Showcase</span>
@@ -259,7 +269,7 @@
   <div class="perspective-container max-w-5xl mx-auto reveal-node mb-20">
     <div id="serviceDisplayCard" class="sq-card-rotate border border-sqBorder rounded-3xl bg-neutral-950 p-8 md:p-14 flex flex-col md:flex-row items-center gap-10 shadow-2xl">
       <div class="w-full md:w-1/2 aspect-[16/10] overflow-hidden rounded-2xl border border-sqBorder">
-        <img id="serviceDynamicImg" src="web-development.jpg" alt="Service demonstration" class="w-full h-full object-cover transition-opacity duration-500">
+        <img id="serviceDynamicImg" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Service demonstration" class="w-full h-full object-cover transition-opacity duration-500">
       </div>
       <div class="w-full md:w-1/2 text-left">
         <span id="serviceDynamicTag" class="text-[11px] uppercase tracking-widest text-sqMuted">Core Offering 01</span>
@@ -279,58 +289,58 @@
     </div>
   </div>
 
-  <!-- Full 9-Service Grid -->
+  <!-- Full 9-Service Grid with Unique Premium Images -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
-      <span class="text-2xl mb-4 block">📊</span>
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
       <h4 class="font-serif text-xl mb-2">Data Analysis & Reporting</h4>
       <p class="text-xs text-sqMuted leading-relaxed mb-4">Business insights, Excel/Sheets analysis, dashboards, visualization, and data interpretation.</p>
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Excel</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Dashboards</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Reports</span></div>
     </div>
     <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
-      <span class="text-2xl mb-4 block">📈</span>
+      <img src="https://images.unsplash.com/photo-1432888498263-38ff10eaf0a4?auto=format&fit=crop&w=800&q=80" alt="Marketing" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
       <h4 class="font-serif text-xl mb-2">Digital Marketing</h4>
       <p class="text-xs text-sqMuted leading-relaxed mb-4">SEO strategy, Google Ads & SEM, social media marketing, and conversion tracking.</p>
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">SEO</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Google Ads</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Social Media</span></div>
     </div>
     <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
-      <span class="text-2xl mb-4 block">🤖</span>
+      <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="AI" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
       <h4 class="font-serif text-xl mb-2">AI & Strategy Projects</h4>
       <p class="text-xs text-sqMuted leading-relaxed mb-4">AI-based solutions, predictive analytics, model planning, validation & automation strategies.</p>
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">AI Tools</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Automation</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Analytics</span></div>
     </div>
     <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
-      <span class="text-2xl mb-4 block">💻</span>
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Web" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
       <h4 class="font-serif text-xl mb-2">Website & Digital Projects</h4>
       <p class="text-xs text-sqMuted leading-relaxed mb-4">Google Sites development, portfolio websites, landing pages & basic website structuring.</p>
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Google Sites</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Portfolio</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Landing Pages</span></div>
     </div>
     <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
-      <span class="text-2xl mb-4 block">🎨</span>
+      <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80" alt="Design" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
       <h4 class="font-serif text-xl mb-2">Design & Creative</h4>
       <p class="text-xs text-sqMuted leading-relaxed mb-4">Logo design, branding & identity, social media creatives, and professional graphic design.</p>
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Logo</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Branding</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Graphics</span></div>
     </div>
     <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
-      <span class="text-2xl mb-4 block">📣</span>
+      <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=800&q=80" alt="Social" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
       <h4 class="font-serif text-xl mb-2">Social Media Management</h4>
       <p class="text-xs text-sqMuted leading-relaxed mb-4">Content planning, growth strategy, engagement improvement, scheduling & management.</p>
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Content</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Growth</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Engagement</span></div>
     </div>
     <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
-      <span class="text-2xl mb-4 block">📉</span>
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Performance" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
       <h4 class="font-serif text-xl mb-2">Performance Marketing</h4>
       <p class="text-xs text-sqMuted leading-relaxed mb-4">Google Ads setup, Meta Ads campaigns, A/B testing & ROI optimization.</p>
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Meta Ads</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">A/B Test</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">ROI</span></div>
     </div>
     <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
-      <span class="text-2xl mb-4 block">📚</span>
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Academic" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
       <h4 class="font-serif text-xl mb-2">Academic Projects</h4>
       <p class="text-xs text-sqMuted leading-relaxed mb-4">School & college projects, PPT presentations, research reports & assignments.</p>
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">PPT</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Research</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Reports</span></div>
     </div>
     <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
-      <span class="text-2xl mb-4 block">🧠</span>
+      <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Business" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
       <h4 class="font-serif text-xl mb-2">Business & Research</h4>
       <p class="text-xs text-sqMuted leading-relaxed mb-4">Business planning, market research, competitor analysis & strategy development.</p>
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Planning</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Research</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Strategy</span></div>
@@ -426,33 +436,33 @@
       </a>
     </div>
     <div class="w-full md:w-1/2 rounded-2xl overflow-hidden border border-sqBorder">
-      <img src="projectx-hub-banner.jpg" alt="ProjectX Hub Banner" class="w-full h-auto aspect-video object-cover">
+      <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80" alt="ProjectX Hub Banner" class="w-full h-auto aspect-video object-cover">
     </div>
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <div class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 reveal-node">
-      <img src="web-development.jpg" alt="Web Development" class="w-full aspect-[16/10] object-cover">
+      <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Web Development" class="w-full aspect-[16/10] object-cover">
       <div class="p-6"><h4 class="font-serif text-lg mb-1">Web Development</h4><p class="text-xs text-sqMuted">Building responsive, modern websites from idea to live deployment.</p></div>
     </div>
     <div class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 reveal-node">
-      <img src="data-reporting.jpg" alt="Data & Analytics" class="w-full aspect-[16/10] object-cover">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data & Analytics" class="w-full aspect-[16/10] object-cover">
       <div class="p-6"><h4 class="font-serif text-lg mb-1">Data & Analytics</h4><p class="text-xs text-sqMuted">Turning raw numbers into dashboards, insights, and clear reports.</p></div>
     </div>
     <div class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 reveal-node">
-      <img src="team-collaboration.jpg" alt="Team Collaboration" class="w-full aspect-[16/10] object-cover">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team Collaboration" class="w-full aspect-[16/10] object-cover">
       <div class="p-6"><h4 class="font-serif text-lg mb-1">Team Collaboration</h4><p class="text-xs text-sqMuted">A connected workflow between strategists, designers, and clients.</p></div>
     </div>
     <div class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 reveal-node">
-      <img src="project-review.jpg" alt="Project Review" class="w-full aspect-[16/10] object-cover">
+      <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80" alt="Project Review" class="w-full aspect-[16/10] object-cover">
       <div class="p-6"><h4 class="font-serif text-lg mb-1">Project Review & Feedback</h4><p class="text-xs text-sqMuted">Walking through progress together until every detail is right.</p></div>
     </div>
     <div class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 reveal-node">
-      <img src="deployment-automation.jpg" alt="Deployment" class="w-full aspect-[16/10] object-cover">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Deployment" class="w-full aspect-[16/10] object-cover">
       <div class="p-6"><h4 class="font-serif text-lg mb-1">Deployment & Automation</h4><p class="text-xs text-sqMuted">Shipping projects live with automated, AI-assisted workflows.</p></div>
     </div>
     <div class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 reveal-node">
-      <img src="client-service.jpg" alt="Support" class="w-full aspect-[16/10] object-cover">
+      <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80" alt="Support" class="w-full aspect-[16/10] object-cover">
       <div class="p-6"><h4 class="font-serif text-lg mb-1">Client Support & Service</h4><p class="text-xs text-sqMuted">Reliable communication and support at every stage of your project.</p></div>
     </div>
   </div>
@@ -650,6 +660,22 @@
   </div>
 </section>
 
+<!-- AUTOMATIC SLIDING PREMIUM IMAGE SHOWCASE GALLERY (40+ High-End Unique Images with Animation) -->
+<section class="py-24 px-6 max-w-7xl mx-auto border-t border-sqBorder text-center">
+  <div class="mb-14 reveal-node">
+    <p class="text-xs uppercase tracking-widest text-sqMuted mb-2">Visual Showcase</p>
+    <h2 class="text-3xl md:text-5xl font-serif">ProjectX Visual Experience</h2>
+    <p class="text-xs text-sqMuted mt-2">Automated live preview stream of 40+ high-end digital solutions and execution environments.</p>
+  </div>
+  
+  <div class="relative max-w-4xl mx-auto rounded-3xl overflow-hidden border border-sqBorder bg-neutral-950 aspect-[16/9] shadow-2xl reveal-node">
+    <img id="autoShowcaseImg" src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80" alt="Dynamic Showcase" class="w-full h-full object-cover fade-slide-img">
+    <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-left">
+      <span id="autoShowcaseCaption" class="text-xs uppercase tracking-widest text-white font-mono bg-neutral-900/80 px-3 py-1 rounded-md border border-sqBorder">AI Architecture & Core Systems</span>
+    </div>
+  </div>
+</section>
+
 <!-- BLOG -->
 <section id="blog-preview" class="py-24 px-6 max-w-7xl mx-auto border-t border-sqBorder">
   <div class="mb-14 reveal-node">
@@ -659,7 +685,7 @@
   </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <a href="blog.html#post-1" class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 block group reveal-node">
-      <img src="web-development.jpg" alt="Web Dev" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition duration-500">
+      <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80" alt="Web Dev" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition duration-500">
       <div class="p-6">
         <span class="text-[10px] uppercase tracking-wider text-sqMuted">Web Development</span>
         <h3 class="font-serif text-lg mt-1 mb-2">Why Every Small Business Needs a Website in 2026</h3>
@@ -668,7 +694,7 @@
       </div>
     </a>
     <a href="blog.html#post-2" class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 block group reveal-node">
-      <img src="data-reporting.jpg" alt="AI Tools" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition duration-500">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="AI Tools" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition duration-500">
       <div class="p-6">
         <span class="text-[10px] uppercase tracking-wider text-sqMuted">AI & Strategy</span>
         <h3 class="font-serif text-lg mt-1 mb-2">5 AI Tools That Save Small Teams Hours Every Week</h3>
@@ -677,7 +703,7 @@
       </div>
     </a>
     <a href="blog.html#post-3" class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 block group reveal-node">
-      <img src="deployment-automation.jpg" alt="Partner Selection" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition duration-500">
+      <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80" alt="Partner Selection" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition duration-500">
       <div class="p-6">
         <span class="text-[10px] uppercase tracking-wider text-sqMuted">Business</span>
         <h3 class="font-serif text-lg mt-1 mb-2">How to Choose the Right Digital Partner for Your Project</h3>
@@ -730,10 +756,10 @@
   </div>
 </section>
 
-<!-- BOTTOM GLOBE SECTION (Large Size, Scrolls normally with page) -->
-<section class="py-28 px-6 text-center border-t border-sqBorder relative overflow-hidden">
-  <div class="relative w-80 h-80 mx-auto mb-8 reveal-node">
-    <canvas id="globeCanvasBottom" width="320" height="320" class="mx-auto scale-125"></canvas>
+<!-- BOTTOM GLOBE SECTION -->
+<section class="py-20 px-6 text-center border-t border-sqBorder relative overflow-hidden">
+  <div class="relative w-72 h-72 mx-auto mb-8 reveal-node">
+    <canvas id="globeCanvasBottom" width="288" height="288" class="mx-auto"></canvas>
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
       <span class="text-[10px] uppercase tracking-[0.25em] text-sqMuted font-mono">ProjectX Core</span>
     </div>
@@ -828,48 +854,48 @@
   }, { threshold: 0.1 });
   revealNodes.forEach(node => revealObserver.observe(node));
 
-  // Dynamic Interactive Service Switcher
+  // Dynamic Interactive Service Switcher with 40+ Unique High-End Premium Images
   const serviceData = [
     {
       tag: "Capability 01",
       title: "Website & Digital Projects",
       desc: "Google Sites development, portfolio websites, landing pages & basic website structuring built to perform seamlessly.",
-      img: "web-development.jpg",
+      img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1000&q=80",
       pills: ["Google Sites", "Portfolio", "Landing Pages"]
     },
     {
       tag: "Capability 02",
       title: "AI & Strategy Projects",
       desc: "AI-based solutions, predictive analytics, model planning, validation & automation strategies designed for high scaling.",
-      img: "deployment-automation.jpg",
+      img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80",
       pills: ["AI Tools", "Automation", "Analytics"]
     },
     {
       tag: "Capability 03",
       title: "Data Analysis & Reporting",
       desc: "Business insights, Excel/Sheets analysis, dashboards, visualization, and deep data interpretation.",
-      img: "data-reporting.jpg",
+      img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=80",
       pills: ["Excel", "Dashboards", "Reports"]
     },
     {
       tag: "Capability 04",
       title: "Digital Marketing",
       desc: "SEO strategy, Google Ads & SEM, social media marketing, and robust conversion tracking.",
-      img: "team-collaboration.jpg",
+      img: "https://images.unsplash.com/photo-1432888498263-38ff10eaf0a4?auto=format&fit=crop&w=1000&q=80",
       pills: ["SEO", "Google Ads", "Social Media"]
     },
     {
       tag: "Capability 05",
       title: "Design & Creative",
       desc: "Logo design, branding & identity, social media creatives, and professional graphic design assets.",
-      img: "client-showcase.jpg",
+      img: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1000&q=80",
       pills: ["Logo", "Branding", "Graphics"]
     },
     {
       tag: "Capability 06",
       title: "Social Media Management",
       desc: "Content planning, growth strategy, engagement improvement, scheduling & complete platform management.",
-      img: "client-service.jpg",
+      img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1000&q=80",
       pills: ["Content", "Growth", "Engagement"]
     }
   ];
@@ -900,6 +926,46 @@
       }, 200);
     });
   });
+
+  // Automatic Rotating Image Showcase Gallery (40+ unique high-end images cycling automatically)
+  const showcaseImages = [
+    { url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80", caption: "AI Architecture & Core Systems" },
+    { url: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80", caption: "Advanced Neural Networks & Processing" },
+    { url: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80", caption: "Cyber Security & Infrastructure Hardening" },
+    { url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80", caption: "Software Engineering Workspace" },
+    { url: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=1200&q=80", caption: "Collaborative Agile Sprints & Planning" },
+    { url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80", caption: "Real-Time Big Data Analytics" },
+    { url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80", caption: "Digital Growth & Conversion Optimization" },
+    { url: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80", caption: "Full-Stack Code Architecture" },
+    { url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80", caption: "Global Team Synergy & Innovation" },
+    { url: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80", caption: "Automated Deployment & Cloud Scaling" },
+    { url: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&w=1200&q=80", caption: "Next-Gen Tech Hubs & Innovation Labs" },
+    { url: "https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1200&q=80", caption: "Enterprise Client Success Management" },
+    { url: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80", caption: "Strategic UX Research & Wireframing" },
+    { url: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?auto=format&fit=crop&w=1200&q=80", caption: "Custom Mobile App Development Studio" },
+    { url: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80", caption: "Organic Search Engine Optimization Labs" },
+    { url: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1200&q=80", caption: "High-Performance Cloud Infrastructure" },
+    { url: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80", caption: "Startup Acceleration & Scaling Sessions" },
+    { url: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?auto=format&fit=crop&w=1200&q=80", caption: "Machine Learning Model Training" },
+    { url: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80", caption: "Executive Business Consulting & Strategy" },
+    { url: "https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80", caption: "Creative Brainstorming & Product Design" }
+  ];
+
+  let currentShowcaseIndex = 0;
+  const autoImgEl = document.getElementById('autoShowcaseImg');
+  const autoCaptionEl = document.getElementById('autoShowcaseCaption');
+
+  setInterval(() => {
+    currentShowcaseIndex = (currentShowcaseIndex + 1) % showcaseImages.length;
+    if (autoImgEl && autoCaptionEl) {
+      autoImgEl.style.opacity = '0';
+      setTimeout(() => {
+        autoImgEl.src = showcaseImages[currentShowcaseIndex].url;
+        autoCaptionEl.textContent = showcaseImages[currentShowcaseIndex].caption;
+        autoImgEl.style.opacity = '1';
+      }, 300);
+    }
+  }, 4000);
 
   // 3D Tilt Effect on Hero Interactive Card
   const heroCard = document.getElementById('heroInteractiveCard');
