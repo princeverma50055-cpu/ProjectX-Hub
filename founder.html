@@ -113,15 +113,14 @@
   </div>
 </nav>
 
-<!-- HERO SECTION WITH LARGE VIBRANT BACKGROUND GLOBE & CLEAN OVERLAY TEXT -->
-<header class="relative pt-36 pb-28 px-6 text-center max-w-4xl mx-auto overflow-hidden">
-  <!-- Absolute Background Rotating Globe (Bright & Large) -->
-  <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-70 z-0">
-    <canvas id="globeCanvasCenter" width="500" height="500" class="mx-auto"></canvas>
-  </div>
+<!-- FIXED BACKGROUND GLOBE CONTAINER (Stays fixed in center while scrolling) -->
+<div class="fixed inset-0 flex items-center justify-center pointer-events-none opacity-60 z-0 overflow-hidden">
+  <canvas id="globeCanvasCenter" width="500" height="500" class="mx-auto"></canvas>
+</div>
 
-  <!-- Foreground Content -->
-  <div class="relative z-10 reveal-node pt-12">
+<!-- HERO SECTION -->
+<header class="relative pt-40 pb-28 px-6 text-center max-w-4xl mx-auto z-10">
+  <div class="reveal-node pt-12">
     <p class="text-xs uppercase tracking-[0.25em] text-sqMuted mb-4">Founder, Entrepreneur & Technology Builder</p>
     <h1 class="text-4xl md:text-7xl font-normal tracking-tight font-serif mb-6 leading-[1.1]">
       Prince Verma <span class="italic">— Founder of ProjectX Hub</span>
@@ -133,10 +132,10 @@
 </header>
 
 <!-- FULL DETAILED FOUNDER TEXT CONTENT (100% Original Content) -->
-<section class="py-12 px-6 max-w-4xl mx-auto space-y-16 text-sqMuted font-light leading-relaxed">
+<section class="relative z-10 py-12 px-6 max-w-4xl mx-auto space-y-16 text-sqMuted font-light leading-relaxed">
   
   <!-- Journey Foundation -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node space-y-6">
+  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
     <h2 class="text-2xl font-serif text-white">The Beginning of the Journey</h2>
     <p>Prince Verma's entrepreneurial journey began with a strong interest in the possibilities of the internet and technology. The internet represented something much larger than a place to consume information.</p>
     <p class="text-white font-mono text-xs bg-neutral-900 p-4 rounded-xl border border-sqBorder text-center">
@@ -146,7 +145,7 @@
   </div>
 
   <!-- Founder of ProjectX Hub -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node space-y-6">
+  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
     <h2 class="text-2xl font-serif text-white">Founder of ProjectX Hub</h2>
     <p>Prince Verma is the founder of ProjectX Hub, a digital technology and innovation ecosystem designed to bring together technology, creativity, talent, businesses, digital products, and opportunities.</p>
     <p>The original idea behind ProjectX Hub was to create something larger than a traditional digital service company. The vision was to build an ecosystem where developers could build, designers could create, marketers could grow brands, startups could develop products, and technology could connect all of them.</p>
@@ -154,7 +153,7 @@
   </div>
 
   <!-- Vision as a Founder -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node space-y-6">
+  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
     <h2 class="text-2xl font-serif text-white">His Vision as a Founder</h2>
     <p>Prince believes that the future belongs to people and organizations that are willing to continuously learn and adapt. Technology changes quickly, artificial intelligence is transforming software, and startups can build products faster than ever before.</p>
     <p class="text-white font-medium">The larger vision is:</p>
@@ -164,7 +163,7 @@
   </div>
 
   <!-- Builder's Mindset -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node space-y-6">
+  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
     <h2 class="text-2xl font-serif text-white">A Builder's Mindset</h2>
     <p>One of the strongest characteristics of Prince's approach is his focus on building. Ideas are important, but execution is what turns ideas into reality. Instead of waiting for perfect conditions, his approach is to start with what is available, build an initial version, learn from the process, and improve continuously.</p>
     <p class="text-white font-mono text-xs bg-neutral-900 p-3 rounded-lg border border-sqBorder text-center">
@@ -173,7 +172,7 @@
   </div>
 
   <!-- Technology, AI & Product Building -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node space-y-6">
+  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
     <h2 class="text-2xl font-serif text-white">Technology, AI & Product Building</h2>
     <p>Prince has a strong interest in emerging technologies. Rather than seeing technology as an end in itself, Prince focuses on how technology can solve real problems: <em class="text-white">"What problem can we solve with technology?"</em></p>
     
@@ -187,7 +186,7 @@
   </div>
 
   <!-- Twittoo -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node space-y-6">
+  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
     <h2 class="text-2xl font-serif text-white">Twittoo — Independent Social Platform</h2>
     <p>One of the independent product initiatives associated with Prince's technology journey is <strong class="text-white font-semibold">Twittoo</strong>, an independent social media platform designed to create a modern space for people to connect, share ideas, publish content, discover opportunities, build communities, and communicate online.</p>
     <p>Building Twittoo requires thinking about user experience, product design, technology, performance, content, community, moderation, growth, and long-term sustainability. It represents a core philosophy:</p>
@@ -196,7 +195,7 @@
   </div>
 
   <!-- Leadership Philosophy & Approach -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node space-y-6">
+  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
     <h2 class="text-2xl font-serif text-white">Leadership Philosophy & Approach</h2>
     <p><strong class="text-white">Leadership:</strong> Prince's leadership philosophy is based on creating an environment where people can contribute their skills and grow through real opportunities. A company is not created by one person alone; it is built through collective teamwork.</p>
     <p><strong class="text-white">Learning Through Execution:</strong> Some of the most valuable lessons come from actually building and experiencing things. A theoretical concept may seem simple, but a real product reveals hundreds of unexpected challenges.</p>
@@ -204,7 +203,7 @@
   </div>
 
   <!-- Founder Message & Philosophy -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node space-y-6 text-center">
+  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6 text-center">
     <h2 class="text-2xl font-serif text-white">A Message From Prince Verma</h2>
     <blockquote class="italic text-sm text-white max-w-2xl mx-auto space-y-4">
       <p>"I believe that every great product begins with a simple idea. But an idea alone is not enough. Someone has to believe in it, start, build the first version, face problems, and keep improving.</p>
@@ -216,7 +215,7 @@
 </section>
 
 <!-- BOTTOM GLOBE SECTION -->
-<section class="py-20 px-6 text-center border-t border-sqBorder relative overflow-hidden">
+<section class="relative z-10 py-20 px-6 text-center border-t border-sqBorder overflow-hidden bg-black/80 backdrop-blur-md">
   <div class="relative w-72 h-72 mx-auto mb-8 reveal-node">
     <canvas id="globeCanvasBottom" width="288" height="288" class="mx-auto"></canvas>
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -231,7 +230,7 @@
 </section>
 
 <!-- SOCIAL ICON ROW -->
-<div class="py-12 border-t border-sqBorder text-center">
+<div class="relative z-10 py-12 border-t border-sqBorder text-center bg-black">
   <p class="text-xs uppercase tracking-widest text-sqMuted mb-6">Follow & Connect</p>
   <div class="flex flex-wrap justify-center items-center gap-6">
     <a href="https://x.com/PrinceProjectX" target="_blank" class="text-sqMuted hover:text-white transition" title="Twitter / X" aria-label="Twitter / X">
@@ -262,7 +261,7 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="border-t border-sqBorder py-12 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-sqMuted">
+<footer class="relative z-10 border-t border-sqBorder py-12 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-sqMuted bg-black">
   <div class="flex items-center gap-2">
     <span class="font-heading font-bold text-white tracking-wider">PROJECTX HUB</span>
   </div>
@@ -335,7 +334,7 @@
         const scale = 250 / (250 + zRot);
         const x2d = cx + xRot * scale;
         const y2d = cy + p.y * scale;
-        const alpha = Math.max(0.2, (zRot + radius) / (2 * radius));
+        const alpha = Math.max(0.25, (zRot + radius) / (2 * radius));
 
         ctx.beginPath();
         ctx.arc(x2d, y2d, pointSize * scale, 0, Math.PI * 2);
@@ -349,7 +348,7 @@
   }
 
   initGlobe('navGlobe', 90, 1.1, 14);
-  initGlobe('globeCanvasCenter', 420, 1.4, 150);
+  initGlobe('globeCanvasCenter', 380, 1.5, 140);
   initGlobe('globeCanvasBottom', 260, 1.3, 100);
 </script>
 </body>
