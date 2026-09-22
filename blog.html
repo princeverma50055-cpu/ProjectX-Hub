@@ -61,6 +61,17 @@
     opacity: 1;
     transform: translateY(0);
   }
+  .blog-full-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s ease;
+  }
+  .blog-card-item.active .blog-full-content {
+    max-height: 2000px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top: 20px;
+  }
 </style>
 </head>
 <body class="selection:bg-white selection:text-black antialiased">
@@ -102,181 +113,243 @@
 
 <!-- PAGE HERO -->
 <header class="pt-36 pb-16 px-6 text-center max-w-4xl mx-auto reveal-node">
-  <p class="text-xs uppercase tracking-[0.25em] text-sqMuted mb-4">Knowledge Base</p>
+  <p class="text-xs uppercase tracking-[0.25em] text-sqMuted mb-4">Knowledge Base & Insights</p>
   <h1 class="text-4xl md:text-7xl font-normal tracking-tight font-serif mb-6 leading-[1.1]">
-    Insights & <span class="italic">Resources</span>
+    Articles, Guides & <span class="italic">Digital Strategy</span>
   </h1>
   <p class="text-sm md:text-base text-sqMuted max-w-2xl mx-auto font-light leading-relaxed">
-    Practical guides, strategic thoughts, and industry insights on web development, AI automation, digital strategy, and building digital success.
+    Explore 10 comprehensive articles curated by ProjectX Hub. Click on any article below to read the full breakdown, insights, and actionable advice.
   </p>
 </header>
 
-<!-- BLOG GRID SECTION (10 POSTS) -->
-<main class="py-12 px-6 max-w-7xl mx-auto">
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- BLOG LISTING SECTION (10 LONG POSTS WITH EXPANDABLE DEEP CONTENT) -->
+<main class="py-12 px-6 max-w-5xl mx-auto space-y-12">
 
-    <!-- POST 1 -->
-    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
-      <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800" alt="Web Development" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
-      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
-        <div>
-          <span class="text-[10px] uppercase tracking-widest text-sqMuted">Web Development</span>
-          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">Why Every Small Business Needs a Professional Website in 2026</h2>
-          <p class="text-xs text-sqMuted leading-relaxed">In a digital-first world, a social media page isn't enough. Discover why owning a custom website is the foundational requirement for trust and growth.</p>
-        </div>
-        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
-          <span>10 Min Read</span>
-          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
-        </div>
+  <!-- POST 1 -->
+  <article class="blog-card-item border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800" alt="Web Development" class="w-full md:w-1/3 aspect-[4/3] object-cover rounded-2xl border border-sqBorder">
+      <div class="w-full md:w-2/3 space-y-4">
+        <span class="text-[10px] uppercase tracking-widest text-sqMuted font-mono">Web Development · 10 Min Read</span>
+        <h2 class="font-serif text-2xl md:text-3xl text-white leading-tight">Why Every Small Business Needs a Professional Website in 2026</h2>
+        <p class="text-xs md:text-sm text-sqMuted leading-relaxed font-light">In a digital-first world, relying solely on social media pages is a major growth bottleneck. Discover why owning a custom website is non-negotiable for lasting trust and global reach.</p>
+        <button onclick="toggleBlog(this)" class="inline-block px-5 py-2.5 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition">Read Full Article ↓</button>
       </div>
-    </article>
+    </div>
+    <div class="blog-full-content text-sqMuted text-xs md:text-sm font-light space-y-6 leading-relaxed">
+      <h3 class="text-lg font-serif text-white pt-2">The Illusion of Social-Only Presence</h3>
+      <p>Many entrepreneurs believe that having an active Instagram profile, a Facebook business page, and a WhatsApp catalog is enough to establish a digital footprint. While these social channels are great for direct engagement, they do not constitute digital ownership. Social media algorithms shift unpredictably, meaning your reach can vanish overnight without warning.</p>
+      <h3 class="text-lg font-serif text-white">Establishing Absolute Credibility & Brand Authority</h3>
+      <p>A custom-built website acts as your permanent digital headquarters. When potential customers search for your services, finding a polished, lightning-fast website immediately validates your professionalism. It communicates that your business is established, reliable, and deeply committed to quality.</p>
+      <h3 class="text-lg font-serif text-white">The SEO & Conversion Advantage</h3>
+      <p>Unlike social media posts that disappear in a fast-moving feed, optimized web pages compound in value over time through search engine optimization (SEO). Combined with seamless conversion funnels, your website works 24/7 to capture leads, showcase products, and close sales automatically.</p>
+    </div>
+  </article>
 
-    <!-- POST 2 -->
-    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
-      <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=800" alt="AI Automation" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
-      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
-        <div>
-          <span class="text-[10px] uppercase tracking-widest text-sqMuted">AI & Automation</span>
-          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">5 AI Tools That Save Small Teams Hundreds of Hours Per Week</h2>
-          <p class="text-xs text-sqMuted leading-relaxed">Small teams need to work smarter. Explore top low-code AI automation tools for streamlining workflows, support, and content scheduling.</p>
-        </div>
-        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
-          <span>7 Min Read</span>
-          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
-        </div>
+  <!-- POST 2 -->
+  <article class="blog-card-item border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=800" alt="AI Automation" class="w-full md:w-1/3 aspect-[4/3] object-cover rounded-2xl border border-sqBorder">
+      <div class="w-full md:w-2/3 space-y-4">
+        <span class="text-[10px] uppercase tracking-widest text-sqMuted font-mono">AI & Automation · 7 Min Read</span>
+        <h2 class="font-serif text-2xl md:text-3xl text-white leading-tight">5 AI Tools That Save Small Teams Hundreds of Hours Per Week</h2>
+        <p class="text-xs md:text-sm text-sqMuted leading-relaxed font-light">Small teams must work smarter, not harder. Explore top low-code AI automation tools that streamline customer support, content creation, and data workflows.</p>
+        <button onclick="toggleBlog(this)" class="inline-block px-5 py-2.5 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition">Read Full Article ↓</button>
       </div>
-    </article>
+    </div>
+    <div class="blog-full-content text-sqMuted text-xs md:text-sm font-light space-y-6 leading-relaxed">
+      <h3 class="text-lg font-serif text-white pt-2">Amplifying Output Without Expanding Headcount</h3>
+      <p>The traditional model of scaling a business meant hiring dozens of employees to handle manual operations. Today, artificial intelligence has completely rewritten that rulebook. Small teams of 2 to 5 people can achieve the operational output of a 30-person agency by deploying targeted AI tools.</p>
+      <h3 class="text-lg font-serif text-white">Eliminating Administrative Friction</h3>
+      <p>From transposing client meeting notes into structured CRM entries to generating multi-channel marketing calendars in seconds, AI administrative agents eliminate the cognitive fatigue of repetitive tasks. This frees human talent to focus exclusively on high-value creative and strategic problem-solving.</p>
+    </div>
+  </article>
 
-    <!-- POST 3 -->
-    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
-      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800" alt="Digital Strategy" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
-      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
-        <div>
-          <span class="text-[10px] uppercase tracking-widest text-sqMuted">Digital Strategy</span>
-          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">How to Choose the Right Digital Partner for Your Next Project</h2>
-          <p class="text-xs text-sqMuted leading-relaxed">Selecting a web agency is a critical decision. Learn key questions to ask, red flags to watch for, and how to find a partner invested in your success.</p>
-        </div>
-        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
-          <span>8 Min Read</span>
-          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
-        </div>
+  <!-- POST 3 -->
+  <article class="blog-card-item border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800" alt="Digital Strategy" class="w-full md:w-1/3 aspect-[4/3] object-cover rounded-2xl border border-sqBorder">
+      <div class="w-full md:w-2/3 space-y-4">
+        <span class="text-[10px] uppercase tracking-widest text-sqMuted font-mono">Digital Strategy · 8 Min Read</span>
+        <h2 class="font-serif text-2xl md:text-3xl text-white leading-tight">How to Choose the Right Digital Partner for Your Next Project</h2>
+        <p class="text-xs md:text-sm text-sqMuted leading-relaxed font-light">Selecting a technology partner is a critical decision. Learn essential questions to ask, red flags to avoid, and how to collaborate effectively.</p>
+        <button onclick="toggleBlog(this)" class="inline-block px-5 py-2.5 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition">Read Full Article ↓</button>
       </div>
-    </article>
+    </div>
+    <div class="blog-full-content text-sqMuted text-xs md:text-sm font-light space-y-6 leading-relaxed">
+      <h3 class="text-lg font-serif text-white pt-2">Beyond Price Tags: Evaluating Technical Competence</h3>
+      <p>When searching for a digital solutions provider, business owners often make the mistake of selecting the lowest bidder. True partnership requires evaluating architectural vision, communication transparency, and a proven track record of delivering resilient digital products under strict deadlines.</p>
+      <h3 class="text-lg font-serif text-white">The 5 Pillars of Successful Collaboration</h3>
+      <p>A healthy project lifecycle depends on clear milestones, proactive status reporting, rigorous code testing, intuitive UI/UX standards, and comprehensive post-launch support. Ensure your chosen partner aligns with these core operational pillars.</p>
+    </div>
+  </article>
 
-    <!-- POST 4 -->
-    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
-      <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800" alt="UI/UX Design" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
-      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
-        <div>
-          <span class="text-[10px] uppercase tracking-widest text-sqMuted">UI/UX Design</span>
-          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">The Impact of UI/UX Design on Conversion Rates</h2>
-          <p class="text-xs text-sqMuted leading-relaxed">Good design is about usability and guiding visitors to take action. Understand core user experience principles affecting your bottom line.</p>
-        </div>
-        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
-          <span>9 Min Read</span>
-          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
-        </div>
+  <!-- POST 4 -->
+  <article class="blog-card-item border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800" alt="UI/UX Design" class="w-full md:w-1/3 aspect-[4/3] object-cover rounded-2xl border border-sqBorder">
+      <div class="w-full md:w-2/3 space-y-4">
+        <span class="text-[10px] uppercase tracking-widest text-sqMuted font-mono">UI/UX Design · 9 Min Read</span>
+        <h2 class="font-serif text-2xl md:text-3xl text-white leading-tight">The Impact of UI/UX Design on Conversion Rates</h2>
+        <p class="text-xs md:text-sm text-sqMuted leading-relaxed font-light">Great design is not just aesthetic beauty; it is rigorous usability science that directly dictates user retention and revenue growth.</p>
+        <button onclick="toggleBlog(this)" class="inline-block px-5 py-2.5 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition">Read Full Article ↓</button>
       </div>
-    </article>
+    </div>
+    <div class="blog-full-content text-sqMuted text-xs md:text-sm font-light space-y-6 leading-relaxed">
+      <h3 class="text-lg font-serif text-white pt-2">Frictionless User Journeys</h3>
+      <p>Every extra click, slow-loading animation, or confusing checkout field introduces friction that bleeds potential revenue. Great UI/UX design maps intuitive user pathways, anticipating user intent and removing cognitive roadblocks before they cause drop-offs.</p>
+    </div>
+  </article>
 
-    <!-- POST 5 -->
-    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
-      <img src="https://images.unsplash.com/photo-1432888498263-38ff10eaf0a4?q=80&w=800" alt="Content Marketing" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
-      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
-        <div>
-          <span class="text-[10px] uppercase tracking-widest text-sqMuted">Content Marketing</span>
-          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">Content Pillars That Convert: Building an Authority-Driven Blog</h2>
-          <p class="text-xs text-sqMuted leading-relaxed">Stop random blogging. Define core content pillars that establish your brand as an industry leader and drive organic traffic and leads.</p>
-        </div>
-        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
-          <span>12 Min Read</span>
-          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
-        </div>
+  <!-- POST 5 -->
+  <article class="blog-card-item border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <img src="https://images.unsplash.com/photo-1432888498263-38ff10eaf0a4?q=80&w=800" alt="Content Strategy" class="w-full md:w-1/3 aspect-[4/3] object-cover rounded-2xl border border-sqBorder">
+      <div class="w-full md:w-2/3 space-y-4">
+        <span class="text-[10px] uppercase tracking-widest text-sqMuted font-mono">Content Marketing · 12 Min Read</span>
+        <h2 class="font-serif text-2xl md:text-3xl text-white leading-tight">Content Pillars That Convert: Building an Authority-Driven Blog</h2>
+        <p class="text-xs md:text-sm text-sqMuted leading-relaxed font-light">Stop random blogging. Define core editorial pillars that establish your brand as an industry authority and drive organic inbound leads.</p>
+        <button onclick="toggleBlog(this)" class="inline-block px-5 py-2.5 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition">Read Full Article ↓</button>
       </div>
-    </article>
+    </div>
+    <div class="blog-full-content text-sqMuted text-xs md:text-sm font-light space-y-6 leading-relaxed">
+      <h3 class="text-lg font-serif text-white pt-2">Structuring Intent-Driven Content</h3>
+      <p>Publishing random articles without a overarching keyword strategy yields zero return. By anchoring your content around 3 to 5 core topical pillars, search engines recognize your domain as an authoritative source within your niche.</p>
+    </div>
+  </article>
 
-    <!-- POST 6 -->
-    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
-      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800" alt="SEO" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
-      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
-        <div>
-          <span class="text-[10px] uppercase tracking-widest text-sqMuted">SEO</span>
-          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">Technical SEO Checklist 2026: Ensuring Your Site is Crawlable</h2>
-          <p class="text-xs text-sqMuted leading-relaxed">Even great content won't rank if Google can't read your site. This checklist covers essential technical factors like speed and structured data.</p>
-        </div>
-        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
-          <span>15 Min Read</span>
-          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
-        </div>
+  <!-- POST 6 -->
+  <article class="blog-card-item border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800" alt="Technical SEO" class="w-full md:w-1/3 aspect-[4/3] object-cover rounded-2xl border border-sqBorder">
+      <div class="w-full md:w-2/3 space-y-4">
+        <span class="text-[10px] uppercase tracking-widest text-sqMuted font-mono">SEO Optimization · 15 Min Read</span>
+        <h2 class="font-serif text-2xl md:text-3xl text-white leading-tight">Technical SEO Checklist 2026: Ensuring Your Site is Crawlable</h2>
+        <p class="text-xs md:text-sm text-sqMuted leading-relaxed font-light">Even pristine content fails to rank if web crawlers encounter rendering errors or slow site architecture.</p>
+        <button onclick="toggleBlog(this)" class="inline-block px-5 py-2.5 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition">Read Full Article ↓</button>
       </div>
-    </article>
+    </div>
+    <div class="blog-full-content text-sqMuted text-xs md:text-sm font-light space-y-6 leading-relaxed">
+      <h3 class="text-lg font-serif text-white pt-2">Core Web Vitals & Indexing Performance</h3>
+      <p>Modern search algorithms heavily penalize sites with sluggish server response times and shifting layout elements. Optimizing your JavaScript bundles, utilizing next-gen image formats, and implementing robust schema markup are mandatory baseline practices.</p>
+    </div>
+  </article>
 
-    <!-- POST 7 -->
-    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
-      <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800" alt="Cloud Hosting" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
-      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
-        <div>
-          <span class="text-[10px] uppercase tracking-widest text-sqMuted">Cloud Hosting</span>
-          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">Shared vs. Managed Cloud Hosting: What's Best for Your Business?</h2>
-          <p class="text-xs text-sqMuted leading-relaxed">Hosting performance directly impacts SEO and UX. We break down differences between budget shared hosting and managed cloud solutions.</p>
-        </div>
-        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
-          <span>8 Min Read</span>
-          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
-        </div>
+  <!-- POST 7 -->
+  <article class="blog-card-item border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800" alt="Cloud Hosting" class="w-full md:w-1/3 aspect-[4/3] object-cover rounded-2xl border border-sqBorder">
+      <div class="w-full md:w-2/3 space-y-4">
+        <span class="text-[10px] uppercase tracking-widest text-sqMuted font-mono">Cloud Infrastructure · 8 Min Read</span>
+        <h2 class="font-serif text-2xl md:text-3xl text-white leading-tight">Shared vs. Managed Cloud Hosting: What's Best for Your Business?</h2>
+        <p class="text-xs md:text-sm text-sqMuted leading-relaxed font-light">Infrastructure reliability dictates application uptime. Understand when to upgrade from budget shared servers to scalable cloud setups.</p>
+        <button onclick="toggleBlog(this)" class="inline-block px-5 py-2.5 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition">Read Full Article ↓</button>
       </div>
-    </article>
+    </div>
+    <div class="blog-full-content text-sqMuted text-xs md:text-sm font-light space-y-6 leading-relaxed">
+      <h3 class="text-lg font-serif text-white pt-2">Scalability and Security Trade-offs</h3>
+      <p>Shared hosting exposes your application to noisy neighbors and security vulnerabilities. Transitioning to managed cloud infrastructure guarantees isolated resources, automatic SSL management, and instantaneous vertical scaling during traffic spikes.</p>
+    </div>
+  </article>
 
-    <!-- POST 8 -->
-    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
-      <img src="https://images.unsplash.com/photo-1518932945647-7a1c969f8be2?q=80&w=800" alt="No-Code Development" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
-      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
-        <div>
-          <span class="text-[10px] uppercase tracking-widest text-sqMuted">No-Code / Webflow</span>
-          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">The Rise of No-Code: Building Enterprise-Grade Sites Without Code</h2>
-          <p class="text-xs text-sqMuted leading-relaxed">Explore how modern no-code development delivers complex, high-performance websites faster and more affordably.</p>
-        </div>
-        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
-          <span>9 Min Read</span>
-          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
-        </div>
+  <!-- POST 8 -->
+  <article class="blog-card-item border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <img src="https://images.unsplash.com/photo-1518932945647-7a1c969f8be2?q=80&w=800" alt="No-Code Ecosystem" class="w-full md:w-1/3 aspect-[4/3] object-cover rounded-2xl border border-sqBorder">
+      <div class="w-full md:w-2/3 space-y-4">
+        <span class="text-[10px] uppercase tracking-widest text-sqMuted font-mono">No-Code Development · 9 Min Read</span>
+        <h2 class="font-serif text-2xl md:text-3xl text-white leading-tight">The Rise of No-Code: Building Enterprise-Grade Sites Without Code</h2>
+        <p class="text-xs md:text-sm text-sqMuted leading-relaxed font-light">Advanced visual development frameworks allow teams to launch lightning-fast web applications at a fraction of traditional costs.</p>
+        <button onclick="toggleBlog(this)" class="inline-block px-5 py-2.5 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition">Read Full Article ↓</button>
       </div>
-    </article>
+    </div>
+    <div class="blog-full-content text-sqMuted text-xs md:text-sm font-light space-y-6 leading-relaxed">
+      <h3 class="text-lg font-serif text-white pt-2">Agility and Rapid Prototyping</h3>
+      <p>No-code tools do not mean sacrificing quality; rather, they abstract away repetitive boilerplate code. Startups can test hypotheses, iterate on user feedback, and deploy production-ready web platforms in days instead of months.</p>
+    </div>
+  </article>
 
-    <!-- POST 9 -->
-    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
-      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800" alt="Analytics" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
-      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
-        <div>
-          <span class="text-[10px] uppercase tracking-widest text-sqMuted">Data Analytics</span>
-          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">Turning Website Traffic into Actionable Business Insights</h2>
-          <p class="text-xs text-sqMuted leading-relaxed">Getting visitors is only half the battle. Learn how to analyze user behavior data to increase conversions and sales.</p>
-        </div>
-        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
-          <span>11 Min Read</span>
-          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
-        </div>
+  <!-- POST 9 -->
+  <article class="blog-card-item border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800" alt="Data Analytics" class="w-full md:w-1/3 aspect-[4/3] object-cover rounded-2xl border border-sqBorder">
+      <div class="w-full md:w-2/3 space-y-4">
+        <span class="text-[10px] uppercase tracking-widest text-sqMuted font-mono">Data Analytics · 11 Min Read</span>
+        <h2 class="font-serif text-2xl md:text-3xl text-white leading-tight">Turning Website Traffic into Actionable Business Insights</h2>
+        <p class="text-xs md:text-sm text-sqMuted leading-relaxed font-light">Traffic volume means nothing without behavioral interpretation. Learn how to track user funnels and eliminate drop-off points.</p>
+        <button onclick="toggleBlog(this)" class="inline-block px-5 py-2.5 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition">Read Full Article ↓</button>
       </div>
-    </article>
+    </div>
+    <div class="blog-full-content text-sqMuted text-xs md:text-sm font-light space-y-6 leading-relaxed">
+      <h3 class="text-lg font-serif text-white pt-2">Demystifying User Behavior Metrics</h3>
+      <p>By analyzing session recordings, heatmaps, and event tracking, you can pinpoint exactly where users lose interest. Data-driven iteration removes guesswork from digital product design.</p>
+    </div>
+  </article>
 
-    <!-- POST 10 -->
-    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
-      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800" alt="Team Scaling" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
-      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
-        <div>
-          <span class="text-[10px] uppercase tracking-widest text-sqMuted">Startup Scaling</span>
-          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">Scaling Your Startup Tech Stack from MVP to Growth Stage</h2>
-          <p class="text-xs text-sqMuted leading-relaxed">When to rewrite your code, how to choose scalable databases, and managing technical debt as your user base expands.</p>
-        </div>
-        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
-          <span>14 Min Read</span>
-          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
-        </div>
+  <!-- POST 10 -->
+  <article class="blog-card-item border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 reveal-node">
+    <div class="flex flex-col md:flex-row gap-8 items-center">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800" alt="Startup Scaling" class="w-full md:w-1/3 aspect-[4/3] object-cover rounded-2xl border border-sqBorder">
+      <div class="w-full md:w-2/3 space-y-4">
+        <span class="text-[10px] uppercase tracking-widest text-sqMuted font-mono">Startup Scaling · 14 Min Read</span>
+        <h2 class="font-serif text-2xl md:text-3xl text-white leading-tight">Scaling Your Startup Tech Stack from MVP to Growth Stage</h2>
+        <p class="text-xs md:text-sm text-sqMuted leading-relaxed font-light">Strategic technical planning for early-stage founders: managing technical debt and preparing database architectures for massive growth.</p>
+        <button onclick="toggleBlog(this)" class="inline-block px-5 py-2.5 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition">Read Full Article ↓</button>
       </div>
-    </article>
+    </div>
+    <div class="blog-full-content text-sqMuted text-xs md:text-sm font-light space-y-6 leading-relaxed">
+      <h3 class="text-lg font-serif text-white pt-2">Knowing When to Refactor</h3>
+      <p>An MVP is built for speed, not perfection. As your user base expands past initial validation milestones, systematic refactoring and database optimization ensure your platform remains responsive and reliable under heavy loads.</p>
+    </div>
+  </article>
 
-  </div>
 </main>
+
+<!-- BOTTOM GLOBE SECTION -->
+<section class="py-20 px-6 text-center border-t border-sqBorder relative overflow-hidden">
+  <div class="relative w-72 h-72 mx-auto mb-8 reveal-node">
+    <canvas id="globeCanvasBottom" width="288" height="288" class="mx-auto"></canvas>
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <span class="text-[10px] uppercase tracking-[0.25em] text-sqMuted font-mono">ProjectX Core</span>
+    </div>
+  </div>
+  <h2 class="text-3xl md:text-5xl font-serif max-w-xl mx-auto mb-4 reveal-node">Start your digital transformation today</h2>
+  <p class="text-xs text-sqMuted max-w-md mx-auto mb-8 reveal-node">No commitment required. Confidential roadmap delivered directly to your inbox.</p>
+  <a href="start-a-project.html" class="px-8 py-4 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition inline-block reveal-node">
+    Get Started Now
+  </a>
+</section>
+
+<!-- SOCIAL ICON ROW -->
+<div class="py-12 border-t border-sqBorder text-center">
+  <p class="text-xs uppercase tracking-widest text-sqMuted mb-6">Follow & Connect</p>
+  <div class="flex flex-wrap justify-center items-center gap-6">
+    <a href="https://x.com/PrinceProjectX" target="_blank" class="text-sqMuted hover:text-white transition" title="Twitter / X" aria-label="Twitter / X">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-6.8l-5.3-6.9L5 22H1.9l8.1-9.3L1 2h7l4.8 6.3L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg>
+    </a>
+    <a href="https://bsky.app/profile/princeverma.bsky.social" target="_blank" class="text-sqMuted hover:text-white transition" title="Bluesky" aria-label="Bluesky">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 8.4C10.6 5.7 7.7 3 4.9 3 3 3 2 4 2 5.6c0 1.3.7 3.6 4.2 4.4-3.5.6-6.2 2.2-6.2 4.8 0 2.7 2.5 3.9 4.9 3.9 2.6 0 5.2-1.6 7.1-4.9 1.9 3.3 4.5 4.9 7.1 4.9 2.4 0 4.9-1.2 4.9-3.9 0-2.6-2.7-4.2-6.2-4.8 3.5-.8 4.2-3.1 4.2-4.4 0-1.6-1-2.6-2.9-2.6-2.8 0-5.7 2.7-7.1 5.4z"/></svg>
+    </a>
+    <a href="https://www.threads.com/@__dynamic_prince3" target="_blank" class="text-sqMuted hover:text-white transition" title="Threads" aria-label="Threads">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M16.5 11.2c-.1-3.7-2.2-5.9-5.8-6-2.7 0-4.8 1.1-5.9 3.1l1.9 1.3c.6-1.1 1.7-1.7 3.2-1.7 1.9 0 3.1.9 3.4 2.5-.9-.2-1.9-.3-2.9-.2-3 .2-4.9 1.8-4.7 4.2.1 2.1 2 3.5 4.6 3.4 2.1-.1 3.5-1 4.2-2.4.5.4.9.9 1.2 1.5l2-1.1c-.4-.8-1-1.5-1.7-2.1.4-.8.6-1.7.5-2.7l-.0.0-0.0 0zm-5.6 4.6c-1.3.1-2.2-.5-2.3-1.4-.1-1 .8-1.8 2.6-1.9.5 0 1.1 0 1.7.2-.2 2-1 3-2 3.1z"/></svg>
+    </a>
+    <a href="https://www.instagram.com/__dynamic_prince3?igsh=MXMzMWlrM3FzbmNoeA==" target="_blank" class="text-sqMuted hover:text-white transition" title="Instagram" aria-label="Instagram">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.3 2.3.4.6.2 1 .5 1.4.9.4.4.7.9.9 1.4.2.4.3 1.1.4 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.9-.4 2.3-.2.6-.5 1-.9 1.4-.4.4-.9.7-1.4.9-.4.2-1.1.3-2.3.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.3-2.3-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.9-.9-1.4-.2-.4-.3-1.1-.4-2.3-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.3-1.9.4-2.3.2-.6.5-1 .9-1.4.4-.4.9-.7 1.4-.9.4-.2 1.1-.3 2.3-.4 1.3-.1 1.7-.1 4.9-.1zM12 0C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4 .6c-.8.3-1.5.7-2.2 1.4C1.1 2.7.7 3.4.4 4.2.1 5 0 5.9 0 7.2 0 8.4 0 8.8 0 12s0 3.6.1 4.8c.1 1.3.3 2.2.6 3 .3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.8.3 1.7.5 3 .6 1.3.1 1.7.1 4.9.1s3.6 0 4.9-.1c1.3-.1 2.2-.3 3-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.8.5-1.7.6-3 .1-1.3.1-1.7.1-4.9s0-3.6-.1-4.9c-.1-1.3-.3-2.2-.6-3-.3-.8-.7-1.5-1.4-2.2C21.3 1.1 20.6.7 19.8.4 19 .1 18.1 0 16.8 0 15.6 0 15.2 0 12 0zm0 5.8a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 10.2a4 4 0 110-8 4 4 0 010 8zm7.9-10.5a1.4 1.4 0 11-2.9 0 1.4 1.4 0 012.9 0z"/></svg>
+    </a>
+    <a href="https://www.facebook.com/share/1Hs6uJpxtA/" target="_blank" class="text-sqMuted hover:text-white transition" title="Facebook" aria-label="Facebook">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0022 12z"/></svg>
+    </a>
+    <a href="https://explurger.com/pf/jx3fb7fs7k2sg6rt0" target="_blank" class="text-sqMuted hover:text-white transition" title="Explurger" aria-label="Explurger">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm6.9 6h-3.2a15.6 15.6 0 00-1.4-3.4A8.03 8.03 0 0118.9 8zM12 4.1c.7 1 1.3 2.3 1.7 3.9h-3.4c.4-1.6 1-2.9 1.7-3.9zM4.3 14a8.2 8.2 0 010-4h3.7a17 17 0 000 4H4.3zm.8 2h3.2c.3 1.3.8 2.4 1.4 3.4A8.03 8.03 0 015.1 16zm3.2-8H5.1a8.03 8.03 0 014.6-3.4A15.6 15.6 0 008.3 8zM12 19.9c-.7-1-1.3-2.3-1.7-3.9h3.4c-.4 1.6-1 2.9-1.7 3.9zM13.9 14h-3.8a14.7 14.7 0 010-4h3.8a14.7 14.7 0 010 4zm.2 5.4c.6-1 1.1-2.1 1.4-3.4h3.2a8.03 8.03 0 01-4.6 3.4zM15.9 14a17 17 0 000-4h3.7a8.2 8.2 0 010 4h-3.7z"/></svg>
+    </a>
+    <a href="https://github.com/princeverma50055-cpu" target="_blank" class="text-sqMuted hover:text-white transition" title="GitHub" aria-label="GitHub">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .5C5.7.5.8 5.4.8 11.7c0 5 3.2 9.2 7.7 10.7.6.1.8-.2.8-.6v-2.2c-3.1.7-3.8-1.5-3.8-1.5-.5-1.3-1.2-1.7-1.2-1.7-1-.7.1-.6.1-.6 1.1.1 1.7 1.1 1.7 1.1 1 1.7 2.6 1.2 3.2 1 .1-.7.4-1.2.7-1.5-2.5-.3-5.1-1.2-5.1-5.5 0-1.2.4-2.2 1.1-3-.1-.3-.5-1.5.1-3.1 0 0 .9-.3 3 1.1a10.4 10.4 0 015.5 0c2.1-1.4 3-1.1 3-1.1.6 1.6.2 2.8.1 3.1.7.8 1.1 1.8 1.1 3 0 4.3-2.6 5.2-5.1 5.5.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6 4.5-1.5 7.7-5.7 7.7-10.7C23.2 5.4 18.3.5 12 .5z"/></svg>
+    </a>
+    <a href="https://wa.me/917376654990" target="_blank" class="text-sqMuted hover:text-white transition" title="WhatsApp Business" aria-label="WhatsApp Business">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 00-9.9 17.3L.5 23.5l5.9-1.5A11.5 11.5 0 1012 .5zm0 21a9.4 9.4 0 01-4.8-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9.5 9.5 0 1112 21.5zm5.2-7.1c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1s-.8.9-.9 1.1-.3.2-.6.1a7.8 7.8 0 01-2.3-1.4 8.6 8.6 0 01-1.6-2c-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.2-.5s0-.4-.1-.5c-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4S6 7.4 6 8.7s.9 2.6 1 2.8c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3z"/></svg>
+    </a>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="border-t border-sqBorder py-12 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-sqMuted">
@@ -315,6 +388,16 @@
     });
   }, { threshold: 0.1 });
   revealNodes.forEach(node => revealObserver.observe(node));
+
+  function toggleBlog(btn) {
+    const article = btn.closest('.blog-card-item');
+    article.classList.toggle('active');
+    if (article.classList.contains('active')) {
+      btn.textContent = 'Collapse Article ↑';
+    } else {
+      btn.textContent = 'Read Full Article ↓';
+    }
+  }
 
   function initGlobe(canvasId, particleCount, pointSize, radiusSize) {
     const canvas = document.getElementById(canvasId);
@@ -366,6 +449,7 @@
   }
 
   initGlobe('navGlobe', 90, 1.1, 14);
+  initGlobe('globeCanvasBottom', 260, 1.3, 100);
 </script>
 </body>
 </html>
