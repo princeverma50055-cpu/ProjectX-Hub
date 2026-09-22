@@ -128,7 +128,7 @@
 </head>
 <body class="selection:bg-white selection:text-black antialiased">
 
-<!-- NAVBAR (Fixed Logo with mini rotating globe & clean button) -->
+<!-- NAVBAR -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-sqBorder">
   <div class="max-w-7xl mx-auto px-4 md:px-12 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-2.5">
@@ -163,12 +163,12 @@
   </div>
 </nav>
 
-<!-- TOP GLOBE SECTION -->
-<header class="pt-32 pb-4 px-6 text-center max-w-5xl mx-auto">
-  <div class="relative w-48 h-48 mx-auto mb-4 reveal-node">
-    <canvas id="globeCanvasTop" width="192" height="192" class="mx-auto"></canvas>
+<!-- TOP GLOBE SECTION (Size increased, scrolls normally with page) -->
+<header class="pt-36 pb-6 px-6 text-center max-w-5xl mx-auto">
+  <div class="relative w-64 h-64 mx-auto mb-4 reveal-node">
+    <canvas id="globeCanvasTop" width="256" height="256" class="mx-auto"></canvas>
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-      <span class="text-[9px] uppercase tracking-[0.2em] text-sqMuted font-mono">Global Innovation</span>
+      <span class="text-[10px] uppercase tracking-[0.25em] text-sqMuted font-mono">Global Innovation</span>
     </div>
   </div>
 </header>
@@ -730,10 +730,10 @@
   </div>
 </section>
 
-<!-- BOTTOM GLOBE SECTION -->
-<section class="py-20 px-6 text-center border-t border-sqBorder relative overflow-hidden">
-  <div class="relative w-72 h-72 mx-auto mb-8 reveal-node">
-    <canvas id="globeCanvasBottom" width="288" height="288" class="mx-auto"></canvas>
+<!-- BOTTOM GLOBE SECTION (Large Size, Scrolls normally with page) -->
+<section class="py-28 px-6 text-center border-t border-sqBorder relative overflow-hidden">
+  <div class="relative w-80 h-80 mx-auto mb-8 reveal-node">
+    <canvas id="globeCanvasBottom" width="320" height="320" class="mx-auto scale-125"></canvas>
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
       <span class="text-[10px] uppercase tracking-[0.25em] text-sqMuted font-mono">ProjectX Core</span>
     </div>
@@ -779,7 +779,6 @@
 <!-- FOOTER -->
 <footer class="border-t border-sqBorder py-12 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-sqMuted">
   <div class="flex items-center gap-2">
-    <img src="logo.png" alt="ProjectX Hub" class="h-6 w-auto">
     <span class="font-heading font-bold text-white tracking-wider">PROJECTX HUB</span>
   </div>
   <div class="italic">⭐ "Ideas are easy. Execution is everything." — Prince Verma</div>
@@ -1048,7 +1047,7 @@ Sent via ProjectX Hub App`
   }
 
   initGlobe('navGlobe', 90, 1.1, 14);
-  initGlobe('globeCanvasTop', 260, 1.3, 70);
+  initGlobe('globeCanvasTop', 320, 1.4, 110);
   initGlobe('globeCanvasBottom', 260, 1.3, 100);
 
   if ('serviceWorker' in navigator) {
