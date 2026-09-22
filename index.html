@@ -8,29 +8,51 @@
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#000000">
 
-<title>Prince Verma — Founder of ProjectX Hub</title>
-<meta name="description" content="Prince Verma is the Founder of ProjectX Hub, a digital technology and solutions company focused on AI, software, development, automation, design, marketing and digital solutions.">
-<link rel="canonical" href="https://projectxhub.in/founder.html">
-<meta property="og:title" content="Prince Verma — Founder of ProjectX Hub">
-<meta property="og:description" content="Founder of ProjectX Hub, a digital technology and solutions company.">
-<meta property="og:type" content="profile">
-<meta property="og:image" content="projectx-hub-banner.jpg">
-<meta property="og:url" content="https://projectxhub.in/founder.html">
-<meta property="og:site_name" content="ProjectX Hub">
+<title>ProjectX Hub — AI, Web Development & Digital Solutions</title>
+<meta name="description" content="ProjectX Hub provides digital solutions across web and app development, AI, automation, software, design, digital marketing, SEO and more. Founded by Prince Verma.">
+<link rel="canonical" href="https://projectxhub.in/">
+
+<!-- Schema Markup -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfilePage",
-  "mainEntity": {
-    "@type": "Person",
-    "name": "Prince Verma",
-    "jobTitle": "Founder",
-    "worksFor": { "@type": "Organization", "name": "ProjectX Hub", "url": "https://projectxhub.in/" },
-    "url": "https://projectxhub.in/founder.html",
-    "sameAs": ["https://www.linkedin.com/in/prince-verma-2b100240a"]
-  }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "ProjectX Hub",
+      "url": "https://projectxhub.in/",
+      "founder": { "@type": "Person", "name": "Prince Verma", "url": "https://projectxhub.in/founder.html" },
+      "sameAs": ["https://www.linkedin.com/company/project-x-hub/"]
+    },
+    {
+      "@type": "Person",
+      "name": "Prince Verma",
+      "jobTitle": "Founder",
+      "worksFor": { "@type": "Organization", "name": "ProjectX Hub" },
+      "url": "https://projectxhub.in/founder.html",
+      "sameAs": ["https://www.linkedin.com/in/prince-verma-2b100240a"]
+    },
+    {
+      "@type": "WebSite",
+      "name": "ProjectX Hub",
+      "url": "https://projectxhub.in/"
+    }
+  ]
 }
 </script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2748503847431228" crossorigin="anonymous"></script>
+
+<meta property="og:title" content="ProjectX Hub — AI, Web Development & Digital Solutions">
+<meta property="og:description" content="ProjectX Hub provides digital solutions across web and app development, AI, automation, software, design, digital marketing, SEO and more. Founded by Prince Verma.">
+<meta property="og:image" content="projectx-hub-banner.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://projectxhub.in/">
+<meta property="og:site_name" content="ProjectX Hub">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ProjectX Hub — AI, Web Development & Digital Solutions">
+<meta name="twitter:description" content="ProjectX Hub provides digital solutions across web and app development, AI, automation, software, design, digital marketing, SEO and more. Founded by Prince Verma.">
+<meta name="twitter:image" content="projectx-hub-banner.jpg">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,6 +87,21 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
     overflow-x: hidden;
   }
+
+  .perspective-container { perspective: 1200px; }
+  .sq-card-rotate {
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.8s ease;
+  }
+  .rotate-anim {
+    animation: gentleWobble 9s ease-in-out infinite alternate;
+  }
+  @keyframes gentleWobble {
+    0% { transform: rotateY(-8deg) rotateX(4deg) translateY(0); }
+    50% { transform: rotateY(0deg) rotateX(-2deg) translateY(-8px); }
+    100% { transform: rotateY(8deg) rotateX(4deg) translateY(0); }
+  }
+
   .reveal-node {
     opacity: 0;
     transform: translateY(35px);
@@ -74,25 +111,38 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.3s ease;
+  }
+  .accordion-item.active .accordion-content {
+    max-height: 280px;
+    padding-bottom: 24px;
+  }
+  .accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+  }
 </style>
 </head>
 <body class="selection:bg-white selection:text-black antialiased">
 
-<!-- NAVBAR -->
+<!-- NAVBAR (Fixed Logo with mini rotating globe & clean button) -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-sqBorder">
   <div class="max-w-7xl mx-auto px-4 md:px-12 py-3 flex items-center justify-between">
     <a href="index.html" class="flex items-center gap-2.5">
-      <div class="w-10 h-10 relative flex items-center justify-center">
-        <canvas id="navGlobe" width="40" height="40" class="absolute inset-0"></canvas>
+      <div class="w-8 h-8 relative flex items-center justify-center">
+        <canvas id="navGlobe" width="32" height="32" class="absolute inset-0"></canvas>
       </div>
       <span class="font-heading tracking-tight font-bold text-sm md:text-base text-white">ProjectX Hub</span>
     </a>
 
     <ul class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest text-sqMuted font-medium">
-      <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+      <li><a href="index.html" class="text-white">Home</a></li>
       <li><a href="services.html" class="hover:text-white transition">Services</a></li>
       <li><a href="about.html" class="hover:text-white transition">About</a></li>
-      <li><a href="founder.html" class="text-white">Founder</a></li>
+      <li><a href="founder.html" class="hover:text-white transition">Founder</a></li>
       <li><a href="blog.html" class="hover:text-white transition">Resources</a></li>
     </ul>
 
@@ -105,132 +155,598 @@
   </div>
 
   <div id="mobile-dropdown" class="hidden md:hidden px-6 py-6 bg-sqDark border-b border-sqBorder flex flex-col gap-4 text-xs uppercase tracking-wider font-semibold">
-    <a href="index.html" class="text-sqMuted hover:text-white">Home</a>
+    <a href="index.html" class="text-white">Home</a>
     <a href="services.html" class="text-sqMuted hover:text-white">Services</a>
     <a href="about.html" class="text-sqMuted hover:text-white">About</a>
-    <a href="founder.html" class="text-white">Founder</a>
+    <a href="founder.html" class="text-sqMuted hover:text-white">Founder</a>
     <a href="blog.html" class="text-sqMuted hover:text-white">Resources</a>
   </div>
 </nav>
 
-<!-- FIXED BACKGROUND LARGE GLOBE CONTAINER (Stays fixed in center while scrolling) -->
-<div class="fixed inset-0 flex items-center justify-center pointer-events-none opacity-80 z-0 overflow-hidden">
-  <canvas id="globeCanvasCenter" width="700" height="700" class="mx-auto scale-125 md:scale-150"></canvas>
-</div>
-
-<!-- HERO SECTION -->
-<header class="relative pt-44 pb-28 px-6 text-center max-w-4xl mx-auto z-10">
-  <div class="reveal-node pt-12">
-    <p class="text-xs uppercase tracking-[0.25em] text-sqMuted mb-4">Founder, Entrepreneur & Technology Builder</p>
-    <h1 class="text-4xl md:text-7xl font-normal tracking-tight font-serif mb-6 leading-[1.1]">
-      Prince Verma <span class="italic">— Founder of ProjectX Hub</span>
-    </h1>
-    <p class="text-sm md:text-base text-sqMuted max-w-2xl mx-auto font-light leading-relaxed">
-      Prince Verma is an entrepreneur, technology enthusiast, product builder, and the founder of ProjectX Hub — a growing digital technology ecosystem focused on building digital solutions, exploring emerging technologies, creating products, connecting talented people, and developing new opportunities.
-    </p>
+<!-- TOP GLOBE SECTION -->
+<header class="pt-32 pb-4 px-6 text-center max-w-5xl mx-auto">
+  <div class="relative w-48 h-48 mx-auto mb-4 reveal-node">
+    <canvas id="globeCanvasTop" width="192" height="192" class="mx-auto"></canvas>
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <span class="text-[9px] uppercase tracking-[0.2em] text-sqMuted font-mono">Global Innovation</span>
+    </div>
   </div>
 </header>
 
-<!-- FULL DETAILED FOUNDER TEXT CONTENT (100% Original Content) -->
-<section class="relative z-10 py-12 px-6 max-w-4xl mx-auto space-y-16 text-sqMuted font-light leading-relaxed">
-  
-  <!-- Journey Foundation -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
-    <h2 class="text-2xl font-serif text-white">The Beginning of the Journey</h2>
-    <p>Prince Verma's entrepreneurial journey began with a strong interest in the possibilities of the internet and technology. The internet represented something much larger than a place to consume information.</p>
-    <p class="text-white font-mono text-xs bg-neutral-900 p-4 rounded-xl border border-sqBorder text-center">
-      A website could become a business. → A software application could become a product. → A small team could build something used globally.
+<!-- HERO SECTION -->
+<section class="pb-20 px-6 text-center max-w-5xl mx-auto">
+  <div class="reveal-node">
+    <p class="text-xs uppercase tracking-[0.25em] text-sqMuted mb-6">A website makes it real.</p>
+    <h1 class="text-5xl md:text-8xl font-normal tracking-tight font-serif mb-8 leading-[1.08]">
+      Build. Grow. <span class="italic">Automate.</span>
+    </h1>
+    <p class="text-base md:text-lg text-sqMuted max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+      ProjectX Hub provides digital solutions across technology, AI, development, automation, design, marketing and business — helping businesses, creators and organizations build, improve and grow.
     </p>
-    <p>Instead of focusing only on learning technology theoretically, he became interested in actually building things, testing ideas, understanding users, experimenting with products, and learning through real-world execution. This mindset eventually contributed to the creation of ProjectX Hub.</p>
-  </div>
 
-  <!-- Founder of ProjectX Hub -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
-    <h2 class="text-2xl font-serif text-white">Founder of ProjectX Hub</h2>
-    <p>Prince Verma is the founder of ProjectX Hub, a digital technology and innovation ecosystem designed to bring together technology, creativity, talent, businesses, digital products, and opportunities.</p>
-    <p>The original idea behind ProjectX Hub was to create something larger than a traditional digital service company. The vision was to build an ecosystem where developers could build, designers could create, marketers could grow brands, startups could develop products, and technology could connect all of them.</p>
-    <p>Under Prince's leadership, ProjectX Hub continues to evolve across software development, web and app development, AI, automation, UI/UX, digital marketing, SEO, branding, e-commerce, content, business technology, and digital products.</p>
-  </div>
-
-  <!-- Vision as a Founder -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
-    <h2 class="text-2xl font-serif text-white">His Vision as a Founder</h2>
-    <p>Prince believes that the future belongs to people and organizations that are willing to continuously learn and adapt. Technology changes quickly, artificial intelligence is transforming software, and startups can build products faster than ever before.</p>
-    <p class="text-white font-medium">The larger vision is:</p>
-    <p class="text-xs uppercase tracking-widest text-white font-mono bg-neutral-900 p-4 rounded-xl border border-sqBorder text-center">
-      Build technology → Create products → Support people → Solve problems → Explore opportunities → Grow globally
-    </p>
-  </div>
-
-  <!-- Builder's Mindset -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
-    <h2 class="text-2xl font-serif text-white">A Builder's Mindset</h2>
-    <p>One of the strongest characteristics of Prince's approach is his focus on building. Ideas are important, but execution is what turns ideas into reality. Instead of waiting for perfect conditions, his approach is to start with what is available, build an initial version, learn from the process, and improve continuously.</p>
-    <p class="text-white font-mono text-xs bg-neutral-900 p-3 rounded-lg border border-sqBorder text-center">
-      Idea → Research → Planning → Building → Testing → Launch → Feedback → Improvement → Growth
-    </p>
-  </div>
-
-  <!-- Technology, AI & Product Building -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
-    <h2 class="text-2xl font-serif text-white">Technology, AI & Product Building</h2>
-    <p>Prince has a strong interest in emerging technologies. Rather than seeing technology as an end in itself, Prince focuses on how technology can solve real problems: <em class="text-white">"What problem can we solve with technology?"</em></p>
-    
-    <div class="space-y-4 text-xs pt-2">
-      <h3 class="text-sm font-semibold text-white">🤖 Artificial Intelligence</h3>
-      <p>He believes AI has the potential to fundamentally change software, business operations, productivity, and communication. His interest extends to AI-powered applications, intelligent agents, business automation, workflows, assistants, and AI SaaS products.</p>
-      
-      <h3 class="text-sm font-semibold text-white pt-2">💻 Product Building</h3>
-      <p>A service project solves a requirement for a specific client. A product can potentially solve a problem for thousands or millions of users. Product development requires understanding users, designing experiences, developing technology, collecting feedback, and continuously evolving.</p>
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
+      <a href="start-a-project.html" class="px-8 py-4 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-widest hover:bg-neutral-200 transition">
+        🚀 Start a Project
+      </a>
+      <a href="#services" class="px-8 py-4 rounded-full border border-sqBorder text-white text-xs uppercase tracking-widest hover:border-white transition">
+        Explore Our Services
+      </a>
     </div>
   </div>
 
-  <!-- Twittoo -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
-    <h2 class="text-2xl font-serif text-white">Twittoo — Independent Social Platform</h2>
-    <p>One of the independent product initiatives associated with Prince's technology journey is <strong class="text-white font-semibold">Twittoo</strong>, an independent social media platform designed to create a modern space for people to connect, share ideas, publish content, discover opportunities, build communities, and communicate online.</p>
-    <p>Building Twittoo requires thinking about user experience, product design, technology, performance, content, community, moderation, growth, and long-term sustainability. It represents a core philosophy:</p>
-    <p class="text-white font-medium bg-neutral-900 p-3 rounded-lg border border-sqBorder text-center">"Don't only build for others. Build your own products too."</p>
-    <p><a href="https://twittoo.in" target="_blank" class="text-white underline font-semibold">Visit Twittoo: https://twittoo.in</a></p>
+  <div class="perspective-container mx-auto max-w-3xl px-2 reveal-node">
+    <div id="heroInteractiveCard" class="sq-card-rotate rotate-anim relative bg-neutral-900 border border-sqBorder rounded-2xl p-6 md:p-8 shadow-[0_25px_70px_rgba(0,0,0,0.8)] flex flex-col md:flex-row items-center gap-8">
+      <div class="w-full md:w-1/2 overflow-hidden rounded-xl border border-sqBorder/60 aspect-[4/3]">
+        <img id="heroShowcaseImg" src="client-showcase.jpg" alt="Client project delivered by ProjectX Hub" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+      </div>
+      <div class="text-left w-full md:w-1/2">
+        <span class="text-[10px] uppercase tracking-widest text-sqMuted">Live Client Showcase</span>
+        <h3 id="heroShowcaseTitle" class="text-2xl font-serif mt-2 mb-3">Seamless Digital Handover</h3>
+        <p id="heroShowcaseDesc" class="text-xs text-sqMuted leading-relaxed mb-6">
+          A recent client project reviewed and delivered — built, tested, and handed over smoothly.
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-neutral-800 border border-sqBorder flex items-center justify-center text-xs font-bold text-white">PV</div>
+          <div class="text-[11px] text-sqMuted">Founder & Lead Strategist — <span class="text-white font-medium">Prince Verma</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mt-8 text-xs text-sqMuted reveal-node">✅ Replies within 24 hrs · 🔒 Secure & Confidential · 🇮🇳 India-based</div>
+</section>
+
+<!-- STATS BAR -->
+<section class="border-y border-sqBorder bg-sqDark/40 py-12 px-6">
+  <div class="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal-node">
+    <div>
+      <div class="text-4xl md:text-5xl font-serif">9+</div>
+      <div class="text-xs uppercase tracking-widest text-sqMuted mt-2">Service Categories</div>
+    </div>
+    <div>
+      <div class="text-4xl md:text-5xl font-serif">100%</div>
+      <div class="text-xs uppercase tracking-widest text-sqMuted mt-2">Client Focused</div>
+    </div>
+    <div>
+      <div class="text-4xl md:text-5xl font-serif">AI</div>
+      <div class="text-xs uppercase tracking-widest text-sqMuted mt-2">Powered Strategies</div>
+    </div>
+    <div>
+      <div class="text-4xl md:text-5xl font-serif">∞</div>
+      <div class="text-xs uppercase tracking-widest text-sqMuted mt-2">Ideas Supported</div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE SERVICE SWITCHER -->
+<section id="services" class="py-24 px-6 max-w-7xl mx-auto">
+  <div class="text-center max-w-2xl mx-auto mb-12 reveal-node">
+    <p class="text-xs uppercase tracking-widest text-sqMuted mb-3">What We Do</p>
+    <h2 class="text-3xl md:text-5xl font-serif mb-4">Services We Offer</h2>
+    <p class="text-sm text-sqMuted leading-relaxed">
+      Complete end-to-end project support — from concept to final delivery. You share the idea, we make it real. Select a category below:
+    </p>
   </div>
 
-  <!-- Leadership Philosophy & Approach -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6">
-    <h2 class="text-2xl font-serif text-white">Leadership Philosophy & Approach</h2>
-    <p><strong class="text-white">Leadership:</strong> Prince's leadership philosophy is based on creating an environment where people can contribute their skills and grow through real opportunities. A company is not created by one person alone; it is built through collective teamwork.</p>
-    <p><strong class="text-white">Learning Through Execution:</strong> Some of the most valuable lessons come from actually building and experiencing things. A theoretical concept may seem simple, but a real product reveals hundreds of unexpected challenges.</p>
-    <p><strong class="text-white">Global Ambition:</strong> Prince's ambition is not limited to a local market. The internet makes it possible to serve users globally. His ambition is to collaborate with people and businesses worldwide.</p>
+  <div class="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto mb-14 reveal-node" id="servicePills">
+    <button class="sq-pill px-5 py-2 rounded-full border border-white bg-white text-black text-xs uppercase tracking-wider font-semibold transition" data-index="0">Website & Digital</button>
+    <button class="sq-pill px-5 py-2 rounded-full border border-sqBorder bg-transparent text-sqMuted text-xs uppercase tracking-wider font-semibold hover:border-white transition" data-index="1">AI & Strategy</button>
+    <button class="sq-pill px-5 py-2 rounded-full border border-sqBorder bg-transparent text-sqMuted text-xs uppercase tracking-wider font-semibold hover:border-white transition" data-index="2">Data Analysis</button>
+    <button class="sq-pill px-5 py-2 rounded-full border border-sqBorder bg-transparent text-sqMuted text-xs uppercase tracking-wider font-semibold hover:border-white transition" data-index="3">Digital Marketing</button>
+    <button class="sq-pill px-5 py-2 rounded-full border border-sqBorder bg-transparent text-sqMuted text-xs uppercase tracking-wider font-semibold hover:border-white transition" data-index="4">Design & Creative</button>
+    <button class="sq-pill px-5 py-2 rounded-full border border-sqBorder bg-transparent text-sqMuted text-xs uppercase tracking-wider font-semibold hover:border-white transition" data-index="5">Social Media</button>
   </div>
 
-  <!-- Founder Message & Philosophy -->
-  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950/90 backdrop-blur-md reveal-node space-y-6 text-center">
-    <h2 class="text-2xl font-serif text-white">A Message From Prince Verma</h2>
-    <blockquote class="italic text-sm text-white max-w-2xl mx-auto space-y-4">
-      <p>"I believe that every great product begins with a simple idea. But an idea alone is not enough. Someone has to believe in it, start, build the first version, face problems, and keep improving.</p>
-      <p>ProjectX Hub is one part of that journey. Twittoo is another. The journey is still beginning, and there is still a lot to build."</p>
-    </blockquote>
-    <div class="pt-4 font-heading font-bold text-white">— Prince Verma <br><span class="text-xs text-sqMuted font-normal">Founder & Entrepreneur, ProjectX Hub</span></div>
+  <div class="perspective-container max-w-5xl mx-auto reveal-node mb-20">
+    <div id="serviceDisplayCard" class="sq-card-rotate border border-sqBorder rounded-3xl bg-neutral-950 p-8 md:p-14 flex flex-col md:flex-row items-center gap-10 shadow-2xl">
+      <div class="w-full md:w-1/2 aspect-[16/10] overflow-hidden rounded-2xl border border-sqBorder">
+        <img id="serviceDynamicImg" src="web-development.jpg" alt="Service demonstration" class="w-full h-full object-cover transition-opacity duration-500">
+      </div>
+      <div class="w-full md:w-1/2 text-left">
+        <span id="serviceDynamicTag" class="text-[11px] uppercase tracking-widest text-sqMuted">Core Offering 01</span>
+        <h3 id="serviceDynamicTitle" class="text-3xl md:text-4xl font-serif mt-2 mb-4">Website & Digital Projects</h3>
+        <p id="serviceDynamicDesc" class="text-sm text-sqMuted leading-relaxed mb-6">
+          Google Sites development, portfolio websites, landing pages & basic website structuring built to perform seamlessly.
+        </p>
+        <div id="serviceDynamicPills" class="flex flex-wrap gap-2 mb-8">
+          <span class="text-[10px] uppercase tracking-wider px-3 py-1 rounded-md border border-sqBorder bg-neutral-900 text-sqMuted">Google Sites</span>
+          <span class="text-[10px] uppercase tracking-wider px-3 py-1 rounded-md border border-sqBorder bg-neutral-900 text-sqMuted">Portfolio</span>
+          <span class="text-[10px] uppercase tracking-wider px-3 py-1 rounded-md border border-sqBorder bg-neutral-900 text-sqMuted">Landing Pages</span>
+        </div>
+        <a href="start-a-project.html" class="inline-block px-6 py-3 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-widest hover:bg-neutral-200 transition">
+          Start This Project →
+        </a>
+      </div>
+    </div>
   </div>
 
+  <!-- Full 9-Service Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
+      <span class="text-2xl mb-4 block">📊</span>
+      <h4 class="font-serif text-xl mb-2">Data Analysis & Reporting</h4>
+      <p class="text-xs text-sqMuted leading-relaxed mb-4">Business insights, Excel/Sheets analysis, dashboards, visualization, and data interpretation.</p>
+      <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Excel</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Dashboards</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Reports</span></div>
+    </div>
+    <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
+      <span class="text-2xl mb-4 block">📈</span>
+      <h4 class="font-serif text-xl mb-2">Digital Marketing</h4>
+      <p class="text-xs text-sqMuted leading-relaxed mb-4">SEO strategy, Google Ads & SEM, social media marketing, and conversion tracking.</p>
+      <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">SEO</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Google Ads</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Social Media</span></div>
+    </div>
+    <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
+      <span class="text-2xl mb-4 block">🤖</span>
+      <h4 class="font-serif text-xl mb-2">AI & Strategy Projects</h4>
+      <p class="text-xs text-sqMuted leading-relaxed mb-4">AI-based solutions, predictive analytics, model planning, validation & automation strategies.</p>
+      <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">AI Tools</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Automation</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Analytics</span></div>
+    </div>
+    <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
+      <span class="text-2xl mb-4 block">💻</span>
+      <h4 class="font-serif text-xl mb-2">Website & Digital Projects</h4>
+      <p class="text-xs text-sqMuted leading-relaxed mb-4">Google Sites development, portfolio websites, landing pages & basic website structuring.</p>
+      <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Google Sites</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Portfolio</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Landing Pages</span></div>
+    </div>
+    <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
+      <span class="text-2xl mb-4 block">🎨</span>
+      <h4 class="font-serif text-xl mb-2">Design & Creative</h4>
+      <p class="text-xs text-sqMuted leading-relaxed mb-4">Logo design, branding & identity, social media creatives, and professional graphic design.</p>
+      <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Logo</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Branding</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Graphics</span></div>
+    </div>
+    <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
+      <span class="text-2xl mb-4 block">📣</span>
+      <h4 class="font-serif text-xl mb-2">Social Media Management</h4>
+      <p class="text-xs text-sqMuted leading-relaxed mb-4">Content planning, growth strategy, engagement improvement, scheduling & management.</p>
+      <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Content</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Growth</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Engagement</span></div>
+    </div>
+    <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
+      <span class="text-2xl mb-4 block">📉</span>
+      <h4 class="font-serif text-xl mb-2">Performance Marketing</h4>
+      <p class="text-xs text-sqMuted leading-relaxed mb-4">Google Ads setup, Meta Ads campaigns, A/B testing & ROI optimization.</p>
+      <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Meta Ads</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">A/B Test</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">ROI</span></div>
+    </div>
+    <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
+      <span class="text-2xl mb-4 block">📚</span>
+      <h4 class="font-serif text-xl mb-2">Academic Projects</h4>
+      <p class="text-xs text-sqMuted leading-relaxed mb-4">School & college projects, PPT presentations, research reports & assignments.</p>
+      <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">PPT</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Research</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Reports</span></div>
+    </div>
+    <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
+      <span class="text-2xl mb-4 block">🧠</span>
+      <h4 class="font-serif text-xl mb-2">Business & Research</h4>
+      <p class="text-xs text-sqMuted leading-relaxed mb-4">Business planning, market research, competitor analysis & strategy development.</p>
+      <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Planning</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Research</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Strategy</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section id="how" class="py-24 px-6 max-w-7xl mx-auto border-t border-sqBorder">
+  <div class="mb-14 reveal-node">
+    <p class="text-xs uppercase tracking-widest text-sqMuted mb-2">Process</p>
+    <h2 class="text-3xl md:text-4xl font-serif">How We Work</h2>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+    <div class="p-6 rounded-2xl border border-sqBorder bg-neutral-950 reveal-node">
+      <div class="text-3xl font-serif text-sqMuted mb-4">01</div>
+      <h4 class="font-semibold text-sm mb-1">Share Idea</h4>
+      <p class="text-xs text-sqMuted">You share your idea or requirement with us.</p>
+    </div>
+    <div class="p-6 rounded-2xl border border-sqBorder bg-neutral-950 reveal-node">
+      <div class="text-3xl font-serif text-sqMuted mb-4">02</div>
+      <h4 class="font-semibold text-sm mb-1">Strategy</h4>
+      <p class="text-xs text-sqMuted">We design a clear, actionable strategy.</p>
+    </div>
+    <div class="p-6 rounded-2xl border border-sqBorder bg-neutral-950 reveal-node">
+      <div class="text-3xl font-serif text-sqMuted mb-4">03</div>
+      <h4 class="font-semibold text-sm mb-1">Execution</h4>
+      <p class="text-xs text-sqMuted">Proper execution with full focus.</p>
+    </div>
+    <div class="p-6 rounded-2xl border border-sqBorder bg-neutral-950 reveal-node">
+      <div class="text-3xl font-serif text-sqMuted mb-4">04</div>
+      <h4 class="font-semibold text-sm mb-1">Review</h4>
+      <p class="text-xs text-sqMuted">Review & improvements until perfect.</p>
+    </div>
+    <div class="p-6 rounded-2xl border border-sqBorder bg-neutral-950 reveal-node">
+      <div class="text-3xl font-serif text-sqMuted mb-4">05</div>
+      <h4 class="font-semibold text-sm mb-1">Delivery</h4>
+      <p class="text-xs text-sqMuted">Final polished delivery to you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" class="py-24 px-6 max-w-7xl mx-auto border-t border-sqBorder">
+  <div class="mb-14 reveal-node">
+    <p class="text-xs uppercase tracking-widest text-sqMuted mb-2">Why Choose Us</p>
+    <h2 class="text-3xl md:text-4xl font-serif">Our Strengths</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="p-6 rounded-2xl border border-sqBorder bg-neutral-950 flex items-start gap-4 reveal-node">
+      <div class="w-6 h-6 rounded-full border border-sqBorder flex items-center justify-center text-xs shrink-0 text-white">✓</div>
+      <div class="text-sm font-light leading-relaxed">Multi-skill expertise across 9+ domains</div>
+    </div>
+    <div class="p-6 rounded-2xl border border-sqBorder bg-neutral-950 flex items-start gap-4 reveal-node">
+      <div class="w-6 h-6 rounded-full border border-sqBorder flex items-center justify-center text-xs shrink-0 text-white">✓</div>
+      <div class="text-sm font-light leading-relaxed">Business + Technical + Creative approach</div>
+    </div>
+    <div class="p-6 rounded-2xl border border-sqBorder bg-neutral-950 flex items-start gap-4 reveal-node">
+      <div class="w-6 h-6 rounded-full border border-sqBorder flex items-center justify-center text-xs shrink-0 text-white">✓</div>
+      <div class="text-sm font-light leading-relaxed">Real-world practical execution</div>
+    </div>
+    <div class="p-6 rounded-2xl border border-sqBorder bg-neutral-950 flex items-start gap-4 reveal-node">
+      <div class="w-6 h-6 rounded-full border border-sqBorder flex items-center justify-center text-xs shrink-0 text-white">✓</div>
+      <div class="text-sm font-light leading-relaxed">Fast & structured workflow</div>
+    </div>
+    <div class="p-6 rounded-2xl border border-sqBorder bg-neutral-950 flex items-start gap-4 reveal-node">
+      <div class="w-6 h-6 rounded-full border border-sqBorder flex items-center justify-center text-xs shrink-0 text-white">✓</div>
+      <div class="text-sm font-light leading-relaxed">Complete end-to-end project support</div>
+    </div>
+    <div class="p-6 rounded-2xl border border-sqBorder bg-neutral-950 flex items-start gap-4 reveal-node">
+      <div class="w-6 h-6 rounded-full border border-sqBorder flex items-center justify-center text-xs shrink-0 text-white">✓</div>
+      <div class="text-sm font-light leading-relaxed">AI-powered modern strategies</div>
+    </div>
+  </div>
+</section>
+
+<!-- AI STUDIO -->
+<section id="ai-studio" class="py-24 px-6 max-w-7xl mx-auto border-t border-sqBorder">
+  <div class="mb-14 reveal-node">
+    <p class="text-xs uppercase tracking-widest text-sqMuted mb-2">New Launch</p>
+    <h2 class="text-3xl md:text-4xl font-serif">ProjectX AI Studio</h2>
+    <p class="text-sm text-sqMuted mt-2">Our dedicated AI-powered platform for building, automating, and scaling digital projects faster.</p>
+  </div>
+
+  <div class="border border-sqBorder rounded-3xl p-8 md:p-12 bg-neutral-950 flex flex-col md:flex-row items-center gap-10 mb-12 reveal-node">
+    <div class="w-full md:w-1/2">
+      <h3 class="text-2xl md:text-3xl font-serif mb-4">🤖 Explore ProjectX AI Studio</h3>
+      <p class="text-sm text-sqMuted leading-relaxed mb-6">
+        A separate AI-first workspace built by ProjectX Hub — for smarter project planning, content generation, and automation workflows.
+      </p>
+      <a href="https://project-x-ai-studio-v2.vercel.app" target="_blank" class="inline-block px-8 py-3.5 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition">
+        🚀 Open AI Studio
+      </a>
+    </div>
+    <div class="w-full md:w-1/2 rounded-2xl overflow-hidden border border-sqBorder">
+      <img src="projectx-hub-banner.jpg" alt="ProjectX Hub Banner" class="w-full h-auto aspect-video object-cover">
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 reveal-node">
+      <img src="web-development.jpg" alt="Web Development" class="w-full aspect-[16/10] object-cover">
+      <div class="p-6"><h4 class="font-serif text-lg mb-1">Web Development</h4><p class="text-xs text-sqMuted">Building responsive, modern websites from idea to live deployment.</p></div>
+    </div>
+    <div class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 reveal-node">
+      <img src="data-reporting.jpg" alt="Data & Analytics" class="w-full aspect-[16/10] object-cover">
+      <div class="p-6"><h4 class="font-serif text-lg mb-1">Data & Analytics</h4><p class="text-xs text-sqMuted">Turning raw numbers into dashboards, insights, and clear reports.</p></div>
+    </div>
+    <div class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 reveal-node">
+      <img src="team-collaboration.jpg" alt="Team Collaboration" class="w-full aspect-[16/10] object-cover">
+      <div class="p-6"><h4 class="font-serif text-lg mb-1">Team Collaboration</h4><p class="text-xs text-sqMuted">A connected workflow between strategists, designers, and clients.</p></div>
+    </div>
+    <div class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 reveal-node">
+      <img src="project-review.jpg" alt="Project Review" class="w-full aspect-[16/10] object-cover">
+      <div class="p-6"><h4 class="font-serif text-lg mb-1">Project Review & Feedback</h4><p class="text-xs text-sqMuted">Walking through progress together until every detail is right.</p></div>
+    </div>
+    <div class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 reveal-node">
+      <img src="deployment-automation.jpg" alt="Deployment" class="w-full aspect-[16/10] object-cover">
+      <div class="p-6"><h4 class="font-serif text-lg mb-1">Deployment & Automation</h4><p class="text-xs text-sqMuted">Shipping projects live with automated, AI-assisted workflows.</p></div>
+    </div>
+    <div class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 reveal-node">
+      <img src="client-service.jpg" alt="Support" class="w-full aspect-[16/10] object-cover">
+      <div class="p-6"><h4 class="font-serif text-lg mb-1">Client Support & Service</h4><p class="text-xs text-sqMuted">Reliable communication and support at every stage of your project.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-24 px-6 max-w-7xl mx-auto border-t border-sqBorder">
+  <div class="mb-14 reveal-node text-center max-w-xl mx-auto">
+    <p class="text-xs uppercase tracking-widest text-sqMuted mb-2">Investment</p>
+    <h2 class="text-3xl md:text-4xl font-serif">Simple, Transparent Pricing</h2>
+    <p class="text-xs text-sqMuted mt-2">Every project is different — these are starting ranges. Final quote depends on scope, timeline, and complexity.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="p-8 rounded-3xl border border-sqBorder bg-neutral-950 text-left reveal-node">
+      <h3 class="text-lg font-serif">Starter</h3>
+      <div class="text-4xl font-serif mt-3 mb-2">₹699+</div>
+      <p class="text-xs text-sqMuted mb-6">For small, focused projects</p>
+      <ul class="text-xs text-sqMuted space-y-3 border-t border-sqBorder pt-6">
+        <li>• Single-page website / landing page</li>
+        <li>• Basic data analysis reports</li>
+        <li>• Social media content (10 posts)</li>
+        <li>• 1 round of revisions</li>
+      </ul>
+    </div>
+    <div class="p-8 rounded-3xl border border-white bg-neutral-900 text-left relative reveal-node">
+      <span class="absolute top-4 right-6 text-[10px] uppercase tracking-wider px-2 py-0.5 rounded bg-white text-black font-semibold">Most Popular</span>
+      <h3 class="text-lg font-serif">Growth</h3>
+      <div class="text-4xl font-serif mt-3 mb-2">₹2,999+</div>
+      <p class="text-xs text-sqMuted mb-6">For growing businesses</p>
+      <ul class="text-xs text-sqMuted space-y-3 border-t border-sqBorder pt-6">
+        <li>• Multi-page website + basic SEO</li>
+        <li>• AI strategy & automation setup</li>
+        <li>• Monthly social media management</li>
+        <li>• 3 rounds of revisions</li>
+      </ul>
+    </div>
+    <div class="p-8 rounded-3xl border border-sqBorder bg-neutral-950 text-left reveal-node">
+      <h3 class="text-lg font-serif">Custom</h3>
+      <div class="text-4xl font-serif mt-3 mb-2">Let's Talk</div>
+      <p class="text-xs text-sqMuted mb-6">For larger, ongoing engagements</p>
+      <ul class="text-xs text-sqMuted space-y-3 border-t border-sqBorder pt-6">
+        <li>• Full digital ecosystem builds</li>
+        <li>• Performance marketing campaigns</li>
+        <li>• Business research & consulting</li>
+        <li>• Dedicated support & unlimited revisions</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-16 px-6 max-w-7xl mx-auto border-t border-sqBorder text-center">
+  <div class="reveal-node">
+    <p class="text-xs uppercase tracking-widest text-sqMuted mb-2">Client Voices</p>
+    <h2 class="text-3xl font-serif mb-4">What People Say</h2>
+    <p class="text-xs text-sqMuted max-w-lg mx-auto">ProjectX Hub is an early-stage studio. Client testimonials will be featured here as projects are completed and reviews are shared.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-24 px-6 max-w-4xl mx-auto border-t border-sqBorder">
+  <div class="mb-12 reveal-node text-center">
+    <p class="text-xs uppercase tracking-widest text-sqMuted mb-2">Questions</p>
+    <h2 class="text-3xl md:text-4xl font-serif">Frequently Asked Questions</h2>
+    <p class="text-xs text-sqMuted mt-2">Everything you need to know before starting a project.</p>
+  </div>
+  <div class="space-y-4">
+    <div class="accordion-item border border-sqBorder rounded-2xl px-6 py-4 bg-neutral-950 reveal-node">
+      <button class="w-full flex items-center justify-between py-2 text-left font-serif text-base focus:outline-none">
+        <span>How do I get started with a project?</span>
+        <span class="accordion-icon text-xl transition-transform duration-300">+</span>
+      </button>
+      <div class="accordion-content text-xs text-sqMuted leading-relaxed">
+        Fill out the application form below with your project details, or reach out directly via WhatsApp or email. Prince will review your requirements and get back to you within 24 hours to discuss scope, timeline, and pricing.
+      </div>
+    </div>
+    <div class="accordion-item border border-sqBorder rounded-2xl px-6 py-4 bg-neutral-950 reveal-node">
+      <button class="w-full flex items-center justify-between py-2 text-left font-serif text-base focus:outline-none">
+        <span>What is the typical project timeline?</span>
+        <span class="accordion-icon text-xl transition-transform duration-300">+</span>
+      </button>
+      <div class="accordion-content text-xs text-sqMuted leading-relaxed">
+        Simple projects (landing pages, basic reports) usually take 3-5 days. Larger projects like full websites, AI automation, or ongoing marketing typically take 1-3 weeks depending on scope and revisions.
+      </div>
+    </div>
+    <div class="accordion-item border border-sqBorder rounded-2xl px-6 py-4 bg-neutral-950 reveal-node">
+      <button class="w-full flex items-center justify-between py-2 text-left font-serif text-base focus:outline-none">
+        <span>How does payment work?</span>
+        <span class="accordion-icon text-xl transition-transform duration-300">+</span>
+      </button>
+      <div class="accordion-content text-xs text-sqMuted leading-relaxed">
+        Payment terms are discussed after the initial scope call — typically a partial advance to begin work, with the remaining balance on delivery. Details are shared once your project requirements are confirmed.
+      </div>
+    </div>
+    <div class="accordion-item border border-sqBorder rounded-2xl px-6 py-4 bg-neutral-950 reveal-node">
+      <button class="w-full flex items-center justify-between py-2 text-left font-serif text-base focus:outline-none">
+        <span>Do you offer revisions?</span>
+        <span class="accordion-icon text-xl transition-transform duration-300">+</span>
+      </button>
+      <div class="accordion-content text-xs text-sqMuted leading-relaxed">
+        Yes — every package includes a set number of revision rounds so the final result matches your vision. Additional revisions beyond the included rounds can be arranged if needed.
+      </div>
+    </div>
+    <div class="accordion-item border border-sqBorder rounded-2xl px-6 py-4 bg-neutral-950 reveal-node">
+      <button class="w-full flex items-center justify-between py-2 text-left font-serif text-base focus:outline-none">
+        <span>Can you handle academic or research projects too?</span>
+        <span class="accordion-icon text-xl transition-transform duration-300">+</span>
+      </button>
+      <div class="accordion-content text-xs text-sqMuted leading-relaxed">
+        Yes — alongside commercial digital services, ProjectX Hub also supports academic projects, business research, and data analysis assignments with clear documentation and timely delivery.
+      </div>
+    </div>
+    <div class="accordion-item border border-sqBorder rounded-2xl px-6 py-4 bg-neutral-950 reveal-node">
+      <button class="w-full flex items-center justify-between py-2 text-left font-serif text-base focus:outline-none">
+        <span>Is my project idea kept confidential?</span>
+        <span class="accordion-icon text-xl transition-transform duration-300">+</span>
+      </button>
+      <div class="accordion-content text-xs text-sqMuted leading-relaxed">
+        Absolutely. All project details shared with ProjectX Hub are treated as confidential and used only for the purpose of delivering your project.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY FORM -->
+<section id="apply" class="py-24 px-6 max-w-4xl mx-auto border-t border-sqBorder">
+  <div class="text-center mb-12 reveal-node">
+    <p class="text-xs uppercase tracking-widest text-sqMuted mb-2">Get Started</p>
+    <h2 class="text-3xl md:text-4xl font-serif">Apply For Your Project</h2>
+    <p class="text-xs text-sqMuted mt-2">Fill the form below and Prince will contact you via Gmail to discuss your project.</p>
+  </div>
+
+  <div class="border border-sqBorder bg-neutral-950 rounded-3xl p-8 md:p-12 reveal-node">
+    <div id="form-area" class="space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Your Name *</label>
+          <input type="text" id="name" placeholder="Prince Verma" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+        </div>
+        <div>
+          <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Your Email *</label>
+          <input type="email" id="email" placeholder="you@example.com" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Phone / WhatsApp</label>
+          <input type="text" id="phone" placeholder="+91 XXXXX XXXXX" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+        </div>
+        <div>
+          <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Service Category *</label>
+          <select id="service" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+            <option value="">— Select a Service —</option>
+            <option>📊 Data Analysis & Reporting</option>
+            <option>📈 Digital Marketing</option>
+            <option>🤖 AI & Strategy Projects</option>
+            <option>💻 Website & Digital Projects</option>
+            <option>🎨 Design & Creative</option>
+            <option>📣 Social Media Management</option>
+            <option>📉 Performance Marketing (Ads)</option>
+            <option>📚 Academic Projects</option>
+            <option>🧠 Business & Research</option>
+            <option>🎬 AI Video & Editing</option>
+            <option>✍️ Content Writing & Blogging</option>
+          </select>
+        </div>
+      </div>
+      <div>
+        <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Budget Range</label>
+        <select id="budget" class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white">
+          <option value="">— Select Budget —</option>
+          <option>Below ₹500</option>
+          <option>₹500 – ₹2,000</option>
+          <option>₹2,000 – ₹5,000</option>
+          <option>₹5,000 – ₹10,000</option>
+          <option>₹10,000+</option>
+          <option>Let's Discuss</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-[11px] uppercase tracking-widest text-sqMuted mb-2">Project Description *</label>
+        <textarea id="desc" rows="4" placeholder="Tell us about your project idea, goals, and any specific requirements..." class="w-full bg-black border border-sqBorder rounded-xl px-4 py-3 text-sm focus:border-white outline-none text-white"></textarea>
+      </div>
+      <button id="applyBtn" onclick="submitForm()" class="w-full py-4 rounded-full bg-white text-black font-semibold text-xs uppercase tracking-widest hover:bg-neutral-200 transition">
+        🚀 Submit Application
+      </button>
+    </div>
+
+    <!-- Success Message -->
+    <div id="success-msg" class="hidden text-center py-8">
+      <div class="text-4xl mb-3">🎉</div>
+      <h3 class="text-2xl font-serif mb-2">Application Sent!</h3>
+      <p class="text-xs text-sqMuted leading-relaxed">Thank you! Your project application has been sent to Prince.<br>He will contact you at <strong id="user-email-display" class="text-white"></strong> very soon.<br><br><em class="text-white">📩 princeverma50055@gmail.com</em></p>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog-preview" class="py-24 px-6 max-w-7xl mx-auto border-t border-sqBorder">
+  <div class="mb-14 reveal-node">
+    <p class="text-xs uppercase tracking-widest text-sqMuted mb-2">Insights</p>
+    <h2 class="text-3xl md:text-4xl font-serif">From The Blog</h2>
+    <p class="text-xs text-sqMuted mt-2">Fresh reads on digital strategy, web, and building online.</p>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <a href="blog.html#post-1" class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 block group reveal-node">
+      <img src="web-development.jpg" alt="Web Dev" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition duration-500">
+      <div class="p-6">
+        <span class="text-[10px] uppercase tracking-wider text-sqMuted">Web Development</span>
+        <h3 class="font-serif text-lg mt-1 mb-2">Why Every Small Business Needs a Website in 2026</h3>
+        <p class="text-xs text-sqMuted line-clamp-2">A simple breakdown of why a professional website still matters more than ever for local and small businesses.</p>
+        <div class="text-[10px] text-sqMuted mt-4 opacity-70">5 min read</div>
+      </div>
+    </a>
+    <a href="blog.html#post-2" class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 block group reveal-node">
+      <img src="data-reporting.jpg" alt="AI Tools" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition duration-500">
+      <div class="p-6">
+        <span class="text-[10px] uppercase tracking-wider text-sqMuted">AI & Strategy</span>
+        <h3 class="font-serif text-lg mt-1 mb-2">5 AI Tools That Save Small Teams Hours Every Week</h3>
+        <p class="text-xs text-sqMuted line-clamp-2">Practical, easy-to-adopt AI tools that help small teams automate repetitive work without a big budget.</p>
+        <div class="text-[10px] text-sqMuted mt-4 opacity-70">4 min read</div>
+      </div>
+    </a>
+    <a href="blog.html#post-3" class="border border-sqBorder rounded-2xl overflow-hidden bg-neutral-950 block group reveal-node">
+      <img src="deployment-automation.jpg" alt="Partner Selection" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition duration-500">
+      <div class="p-6">
+        <span class="text-[10px] uppercase tracking-wider text-sqMuted">Business</span>
+        <h3 class="font-serif text-lg mt-1 mb-2">How to Choose the Right Digital Partner for Your Project</h3>
+        <p class="text-xs text-sqMuted line-clamp-2">Key questions to ask before hiring a freelancer or agency for your next website or marketing project.</p>
+        <div class="text-[10px] text-sqMuted mt-4 opacity-70">6 min read</div>
+      </div>
+    </a>
+  </div>
+  <div class="text-center mt-10 reveal-node">
+    <a href="blog.html" class="inline-block px-8 py-3.5 rounded-full border border-sqBorder text-xs uppercase tracking-widest font-semibold hover:border-white transition">Read All Posts →</a>
+  </div>
+</section>
+
+<!-- USEFUL LINKS -->
+<section class="py-24 px-6 max-w-7xl mx-auto border-t border-sqBorder">
+  <div class="mb-14 reveal-node">
+    <p class="text-xs uppercase tracking-widest text-sqMuted mb-2">Connect</p>
+    <h2 class="text-3xl md:text-4xl font-serif">Useful Links</h2>
+    <p class="text-xs text-sqMuted mt-2">Explore ProjectX Hub's platforms and official profiles.</p>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <a href="https://project-x-hub-careers.vercel.app/" target="_blank" class="p-5 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-white transition block reveal-node">
+      <div class="text-xs text-sqMuted uppercase tracking-widest">Careers</div>
+      <div class="font-serif text-base mt-1">Join ProjectX Hub →</div>
+    </a>
+    <a href="https://project-x-hub.vercel.app/" target="_blank" class="p-5 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-white transition block reveal-node">
+      <div class="text-xs text-sqMuted uppercase tracking-widest">Platform</div>
+      <div class="font-serif text-base mt-1">ProjectX Hub Platform →</div>
+    </a>
+    <a href="https://princeverma50055-cpu.github.io/ProjectX-store/" target="_blank" class="p-5 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-white transition block reveal-node">
+      <div class="text-xs text-sqMuted uppercase tracking-widest">Store</div>
+      <div class="font-serif text-base mt-1">ProjectX Store →</div>
+    </a>
+    <a href="https://prismorahub.blogspot.com/" target="_blank" class="p-5 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-white transition block reveal-node">
+      <div class="text-xs text-sqMuted uppercase tracking-widest">Blog & Updates</div>
+      <div class="font-serif text-base mt-1">Prismora Hub →</div>
+    </a>
+    <a href="mailto:princeverma50055@gmail.com" class="p-5 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-white transition block reveal-node sm:col-span-2">
+      <div class="text-xs text-sqMuted uppercase tracking-widest">Direct Email</div>
+      <div class="font-serif text-base mt-1">princeverma50055@gmail.com →</div>
+    </a>
+    <a href="https://www.linkedin.com/company/project-x-hub/" target="_blank" class="p-5 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-white transition block reveal-node">
+      <div class="text-xs text-sqMuted uppercase tracking-widest">Company Page</div>
+      <div class="font-serif text-base mt-1">ProjectX Hub on LinkedIn →</div>
+    </a>
+    <a href="https://www.linkedin.com/in/prince-verma-2b100240a" target="_blank" class="p-5 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-white transition block reveal-node sm:col-span-2 lg:col-span-1">
+      <div class="text-xs text-sqMuted uppercase tracking-widest">Founder Network</div>
+      <div class="font-serif text-base mt-1">LinkedIn — Prince Verma →</div>
+    </a>
+  </div>
 </section>
 
 <!-- BOTTOM GLOBE SECTION -->
-<section class="relative z-10 py-20 px-6 text-center border-t border-sqBorder overflow-hidden bg-black/90 backdrop-blur-md">
-  <div class="relative w-80 h-80 mx-auto mb-8 reveal-node">
-    <canvas id="globeCanvasBottom" width="320" height="320" class="mx-auto scale-110"></canvas>
+<section class="py-20 px-6 text-center border-t border-sqBorder relative overflow-hidden">
+  <div class="relative w-72 h-72 mx-auto mb-8 reveal-node">
+    <canvas id="globeCanvasBottom" width="288" height="288" class="mx-auto"></canvas>
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
       <span class="text-[10px] uppercase tracking-[0.25em] text-sqMuted font-mono">ProjectX Core</span>
     </div>
   </div>
   <h2 class="text-3xl md:text-5xl font-serif max-w-xl mx-auto mb-4 reveal-node">Start your digital transformation today</h2>
   <p class="text-xs text-sqMuted max-w-md mx-auto mb-8 reveal-node">No commitment required. Confidential roadmap delivered directly to your inbox.</p>
-  <a href="start-a-project.html" class="px-8 py-4 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition inline-block reveal-node">
+  <a href="#apply" class="px-8 py-4 rounded-full bg-white text-black text-xs uppercase tracking-widest font-semibold hover:bg-neutral-200 transition inline-block reveal-node">
     Get Started Now
   </a>
 </section>
 
 <!-- SOCIAL ICON ROW -->
-<div class="relative z-10 py-12 border-t border-sqBorder text-center bg-black">
+<div class="py-12 border-t border-sqBorder text-center">
   <p class="text-xs uppercase tracking-widest text-sqMuted mb-6">Follow & Connect</p>
   <div class="flex flex-wrap justify-center items-center gap-6">
     <a href="https://x.com/PrinceProjectX" target="_blank" class="text-sqMuted hover:text-white transition" title="Twitter / X" aria-label="Twitter / X">
@@ -261,8 +777,9 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="relative z-10 border-t border-sqBorder py-12 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-sqMuted bg-black">
+<footer class="border-t border-sqBorder py-12 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-sqMuted">
   <div class="flex items-center gap-2">
+    <img src="logo.png" alt="ProjectX Hub" class="h-6 w-auto">
     <span class="font-heading font-bold text-white tracking-wider">PROJECTX HUB</span>
   </div>
   <div class="italic">⭐ "Ideas are easy. Execution is everything." — Prince Verma</div>
@@ -278,16 +795,30 @@
   <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 00-9.9 17.3L.5 23.5l5.9-1.5A11.5 11.5 0 1012 .5zm0 21a9.4 9.4 0 01-4.8-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9.5 9.5 0 1112 21.5zm5.2-7.1c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1s-.8.9-.9 1.1-.3.2-.6.1a7.8 7.8 0 01-2.3-1.4 8.6 8.6 0 01-1.6-2c-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.2-.5s0-.4-.1-.5c-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4S6 7.4 6 8.7s.9 2.6 1 2.8c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3z"/></svg>
 </a>
 
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[300] bg-neutral-950 border-t border-sqBorder p-5 hidden items-center justify-center gap-6 flex-wrap shadow-2xl">
+  <div class="text-xs text-sqMuted max-w-xl leading-relaxed">
+    🍪 We use cookies to improve your experience and support advertising. By using this site, you agree to our <a href="privacy-policy.html" class="text-white underline">Privacy Policy</a>.
+  </div>
+  <div class="flex gap-3 shrink-0">
+    <button id="cookie-decline" class="px-4 py-2 rounded-full border border-sqBorder text-sqMuted text-xs font-semibold hover:border-white transition">Decline</button>
+    <button id="cookie-accept" class="px-4 py-2 rounded-full bg-white text-black text-xs font-semibold hover:bg-neutral-200 transition">Accept</button>
+  </div>
+</div>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="back-to-top" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full border border-sqBorder bg-neutral-900 text-white hidden items-center justify-center text-sm shadow-xl hover:border-white transition" aria-label="Back to top">↑</button>
+
 <!-- SCRIPTS -->
 <script>
+  // Mobile Menu Toggle
   const mobileToggle = document.getElementById('mobile-toggle');
   const mobileDropdown = document.getElementById('mobile-dropdown');
-  if(mobileToggle && mobileDropdown) {
-    mobileToggle.addEventListener('click', () => {
-      mobileDropdown.classList.toggle('hidden');
-    });
-  }
+  mobileToggle.addEventListener('click', () => {
+    mobileDropdown.classList.toggle('hidden');
+  });
 
+  // Scroll Reveal Observer
   const revealNodes = document.querySelectorAll('.reveal-node');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -298,6 +829,175 @@
   }, { threshold: 0.1 });
   revealNodes.forEach(node => revealObserver.observe(node));
 
+  // Dynamic Interactive Service Switcher
+  const serviceData = [
+    {
+      tag: "Capability 01",
+      title: "Website & Digital Projects",
+      desc: "Google Sites development, portfolio websites, landing pages & basic website structuring built to perform seamlessly.",
+      img: "web-development.jpg",
+      pills: ["Google Sites", "Portfolio", "Landing Pages"]
+    },
+    {
+      tag: "Capability 02",
+      title: "AI & Strategy Projects",
+      desc: "AI-based solutions, predictive analytics, model planning, validation & automation strategies designed for high scaling.",
+      img: "deployment-automation.jpg",
+      pills: ["AI Tools", "Automation", "Analytics"]
+    },
+    {
+      tag: "Capability 03",
+      title: "Data Analysis & Reporting",
+      desc: "Business insights, Excel/Sheets analysis, dashboards, visualization, and deep data interpretation.",
+      img: "data-reporting.jpg",
+      pills: ["Excel", "Dashboards", "Reports"]
+    },
+    {
+      tag: "Capability 04",
+      title: "Digital Marketing",
+      desc: "SEO strategy, Google Ads & SEM, social media marketing, and robust conversion tracking.",
+      img: "team-collaboration.jpg",
+      pills: ["SEO", "Google Ads", "Social Media"]
+    },
+    {
+      tag: "Capability 05",
+      title: "Design & Creative",
+      desc: "Logo design, branding & identity, social media creatives, and professional graphic design assets.",
+      img: "client-showcase.jpg",
+      pills: ["Logo", "Branding", "Graphics"]
+    },
+    {
+      tag: "Capability 06",
+      title: "Social Media Management",
+      desc: "Content planning, growth strategy, engagement improvement, scheduling & complete platform management.",
+      img: "client-service.jpg",
+      pills: ["Content", "Growth", "Engagement"]
+    }
+  ];
+
+  const pills = document.querySelectorAll('.sq-pill');
+  const tagEl = document.getElementById('serviceDynamicTag');
+  const titleEl = document.getElementById('serviceDynamicTitle');
+  const descEl = document.getElementById('serviceDynamicDesc');
+  const imgEl = document.getElementById('serviceDynamicImg');
+  const pillsEl = document.getElementById('serviceDynamicPills');
+
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => {
+        p.className = "sq-pill px-5 py-2 rounded-full border border-sqBorder bg-transparent text-sqMuted text-xs uppercase tracking-wider font-semibold hover:border-white transition";
+      });
+      pill.className = "sq-pill px-5 py-2 rounded-full border border-white bg-white text-black text-xs uppercase tracking-wider font-semibold transition";
+
+      imgEl.style.opacity = '0';
+      setTimeout(() => {
+        const item = serviceData[pill.dataset.index];
+        tagEl.textContent = item.tag;
+        titleEl.textContent = item.title;
+        descEl.textContent = item.desc;
+        imgEl.src = item.img;
+        pillsEl.innerHTML = item.pills.map(p => `<span class="text-[10px] uppercase tracking-wider px-3 py-1 rounded-md border border-sqBorder bg-neutral-900 text-sqMuted">${p}</span>`).join('');
+        imgEl.style.opacity = '1';
+      }, 200);
+    });
+  });
+
+  // 3D Tilt Effect on Hero Interactive Card
+  const heroCard = document.getElementById('heroInteractiveCard');
+  if (heroCard) {
+    heroCard.addEventListener('mousemove', (e) => {
+      heroCard.classList.remove('rotate-anim');
+      const rect = heroCard.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      heroCard.style.transform = `rotateY(${x * 0.03}deg) rotateX(${-y * 0.03}deg)`;
+    });
+    heroCard.addEventListener('mouseleave', () => {
+      heroCard.style.transform = '';
+      heroCard.classList.add('rotate-anim');
+    });
+  }
+
+  // FAQ Accordion Toggle
+  document.querySelectorAll('.accordion-item').forEach(item => {
+    item.querySelector('button').addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    });
+  });
+
+  // Cookie Consent Logic
+  const cookieBanner = document.getElementById('cookie-banner');
+  if (!localStorage.getItem('px-cookie-consent')) {
+    setTimeout(() => cookieBanner.style.display = 'flex', 800);
+  }
+  document.getElementById('cookie-accept').addEventListener('click', () => {
+    localStorage.setItem('px-cookie-consent', 'accepted');
+    cookieBanner.style.display = 'none';
+  });
+  document.getElementById('cookie-decline').addEventListener('click', () => {
+    localStorage.setItem('px-cookie-consent', 'declined');
+    cookieBanner.style.display = 'none';
+  });
+
+  // Back To Top Button
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      backToTop.style.display = 'flex';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // Form Submission Logic
+  function submitForm() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const service = document.getElementById('service').value;
+    const budget = document.getElementById('budget').value;
+    const desc = document.getElementById('desc').value.trim();
+
+    if (!name) { alert('Please enter your name.'); return; }
+    if (!email || !email.includes('@')) { alert('Please enter a valid email.'); return; }
+    if (!service) { alert('Please select a service.'); return; }
+    if (!desc) { alert('Please describe your project.'); return; }
+
+    const btn = document.getElementById('applyBtn');
+    btn.textContent = '⏳ TRANSMITTING...';
+    btn.style.opacity = '0.7';
+
+    const subject = encodeURIComponent(`[ProjectX Hub] New Project - ${service} | ${name}`);
+    const body = encodeURIComponent(
+`New Project Application — ProjectX Hub
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👤 Name: ${name}
+📧 Email: ${email}
+📱 Phone / WhatsApp: ${phone || 'Not provided'}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🛠 Service: ${service}
+💰 Budget: ${budget || 'Not specified'}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 Project Description:
+${desc}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Sent via ProjectX Hub App`
+    );
+
+    setTimeout(() => {
+      window.location.href = `mailto:princeverma50055@gmail.com?subject=${subject}&body=${body}`;
+      document.getElementById('user-email-display').textContent = email;
+      document.getElementById('form-area').style.display = 'none';
+      document.getElementById('success-msg').style.display = 'block';
+    }, 700);
+  }
+
+  // 3D Particle Rotating Globes (Canvas Setup for Navbar, Top and Bottom)
   function initGlobe(canvasId, particleCount, pointSize, radiusSize) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
@@ -334,7 +1034,7 @@
         const scale = 250 / (250 + zRot);
         const x2d = cx + xRot * scale;
         const y2d = cy + p.y * scale;
-        const alpha = Math.max(0.2, (zRot + radius) / (2 * radius));
+        const alpha = Math.max(0.15, (zRot + radius) / (2 * radius));
 
         ctx.beginPath();
         ctx.arc(x2d, y2d, pointSize * scale, 0, Math.PI * 2);
@@ -348,8 +1048,14 @@
   }
 
   initGlobe('navGlobe', 90, 1.1, 14);
-  initGlobe('globeCanvasCenter', 350, 1.4, 130);
+  initGlobe('globeCanvasTop', 260, 1.3, 70);
   initGlobe('globeCanvasBottom', 260, 1.3, 100);
+
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js').catch(() => {});
+    });
+  }
 </script>
 </body>
 </html>
