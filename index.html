@@ -173,11 +173,11 @@
   </div>
 </nav>
 
-<!-- HERO SECTION WITH BACKGROUND GLOBE -->
+<!-- HERO SECTION WITH FIXED BACKGROUND GLOBE -->
 <header class="relative pt-36 pb-20 px-6 text-center max-w-5xl mx-auto overflow-hidden">
-  <!-- Absolute Background Rotating Globe -->
-  <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-40 z-0">
-    <canvas id="globeCanvasTop" width="450" height="450" class="mx-auto"></canvas>
+  <!-- Absolute Background Rotating Globe (Properly positioned behind text with opacity) -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-25 z-0">
+    <canvas id="globeCanvasTop" width="550" height="550" class="mx-auto"></canvas>
   </div>
 
   <div class="relative z-10 reveal-node pt-6">
@@ -284,7 +284,7 @@
     </div>
   </div>
 
-  <!-- Full 9-Service Grid with Fixed Verified Images -->
+  <!-- Full 9-Service Grid with Fixed Verified Marketing Image -->
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
       <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
@@ -293,7 +293,7 @@
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Excel</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Dashboards</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Reports</span></div>
     </div>
     <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
-      <img src="https://images.unsplash.com/photo-1432888498263-38ff10eaf0a4?auto=format&fit=crop&w=800&q=80" alt="Marketing" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Marketing" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
       <h4 class="font-serif text-xl mb-2">Digital Marketing</h4>
       <p class="text-xs text-sqMuted leading-relaxed mb-4">SEO strategy, Google Ads & SEM, social media marketing, and conversion tracking.</p>
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">SEO</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Google Ads</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Social Media</span></div>
@@ -323,7 +323,7 @@
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Content</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Growth</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Engagement</span></div>
     </div>
     <div class="p-8 rounded-2xl border border-sqBorder bg-neutral-950 hover:border-neutral-600 transition reveal-node">
-      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Performance" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
+      <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=800&q=80" alt="Performance" class="w-full aspect-[16/10] object-cover rounded-xl mb-4 border border-sqBorder">
       <h4 class="font-serif text-xl mb-2">Performance Marketing</h4>
       <p class="text-xs text-sqMuted leading-relaxed mb-4">Google Ads setup, Meta Ads campaigns, A/B testing & ROI optimization.</p>
       <div class="flex gap-2"><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">Meta Ads</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">A/B Test</span><span class="text-[10px] border border-sqBorder px-2 py-0.5 rounded text-sqMuted">ROI</span></div>
@@ -876,7 +876,7 @@
       tag: "Capability 04",
       title: "Digital Marketing",
       desc: "SEO strategy, Google Ads & SEM, social media marketing, and robust conversion tracking.",
-      img: "https://images.unsplash.com/photo-1432888498263-38ff10eaf0a4?auto=format&fit=crop&w=1000&q=80",
+      img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=80",
       pills: ["SEO", "Google Ads", "Social Media"]
     },
     {
@@ -1128,7 +1128,7 @@ Sent via ProjectX Hub App`
   }
 
   initGlobe('navGlobe', 90, 1.1, 14);
-  initGlobe('globeCanvasTop', 350, 1.4, 130);
+  initGlobe('globeCanvasTop', 400, 1.4, 150);
   initGlobe('globeCanvasBottom', 260, 1.3, 100);
 
   if ('serviceWorker' in navigator) {
