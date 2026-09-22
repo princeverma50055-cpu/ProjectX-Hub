@@ -113,15 +113,15 @@
   </div>
 </nav>
 
-<!-- HERO SECTION WITH CENTERED BIG ROTATING GLOBE & TEXT OVER IT -->
-<header class="relative pt-36 pb-20 px-6 text-center max-w-5xl mx-auto overflow-hidden">
-  <!-- Big Center Rotating Globe Background/Hero Element -->
-  <div class="relative w-80 h-80 md:w-96 md:h-96 mx-auto mb-[-60px] md:mb-[-80px] pointer-events-none opacity-80 z-0">
-    <canvas id="globeCanvasCenter" width="384" height="384" class="mx-auto"></canvas>
+<!-- HERO SECTION WITH BACKGROUND GLOBE AND CLEAN OVERLAY TEXT -->
+<header class="relative pt-36 pb-24 px-6 text-center max-w-4xl mx-auto overflow-hidden">
+  <!-- Absolute Background Rotating Globe -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30 z-0">
+    <canvas id="globeCanvasCenter" width="400" height="400" class="mx-auto"></canvas>
   </div>
 
-  <!-- Content Overlapping/Above the Globe -->
-  <div class="relative z-10 reveal-node pt-10">
+  <!-- Foreground Content -->
+  <div class="relative z-10 reveal-node pt-12">
     <p class="text-xs uppercase tracking-[0.25em] text-sqMuted mb-4">Founder, Entrepreneur & Technology Builder</p>
     <h1 class="text-4xl md:text-7xl font-normal tracking-tight font-serif mb-6 leading-[1.1]">
       Prince Verma <span class="italic">— Founder of ProjectX Hub</span>
@@ -349,7 +349,7 @@
   }
 
   initGlobe('navGlobe', 90, 1.1, 14);
-  initGlobe('globeCanvasCenter', 350, 1.4, 130);
+  initGlobe('globeCanvasCenter', 300, 1.3, 110);
   initGlobe('globeCanvasBottom', 260, 1.3, 100);
 </script>
 </body>
