@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#000000">
+
 <title>Blog & Resources — ProjectX Hub</title>
 <link rel="canonical" href="https://projectxhub.in/blog.html">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2748503847431228" crossorigin="anonymous"></script>
@@ -17,609 +18,354 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://projectxhub.in/blog.html">
 <meta property="og:site_name" content="ProjectX Hub">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #ffffff;
-    --surface: #f7f8fc;
-    --surface2: #eef0f7;
-    --accent: #635bff;
-    --accent2: #4f46e5;
-    --accent3: #22d3ee;
-    --gold: #f5b94d;
-    --text: #1a1d29;
-    --muted: #5b6478;
-    --border: rgba(99,91,255,0.18);
-    --glow: 0 0 40px rgba(99,91,255,0.15);
-  }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    overflow-x: hidden;
-    cursor: default;
-    line-height: 1.6;
-  }
-
-  /* ── NOISE OVERLAY ── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.5;
-  }
-
-  /* ── SCROLLBAR ── */
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: var(--accent2); border-radius: 2px; }
-
-  /* ── NAV ── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 18px 40px;
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  .nav-logo {
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.3rem;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .nav-logo-img {
-    height: 36px;
-    width: auto;
-    display: block;
-  }
-
-  .nav-links {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-  }
-
-  .nav-links a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: color 0.2s;
-  }
-
-  .nav-links a:hover { color: var(--accent); }
-
-  .nav-cta {
-    background: linear-gradient(135deg, var(--accent2), var(--accent));
-    color: #050810 !important;
-    padding: 10px 22px;
-    border-radius: 50px;
-    font-weight: 600 !important;
-    font-size: 0.85rem !important;
-    transition: opacity 0.2s, transform 0.2s !important;
-  }
-
-  .nav-cta:hover { opacity: 0.85; transform: scale(1.04) !important; color: #050810 !important; }
-
-  /* ── HERO (Home Page Style) ── */
-  .page-hero {
-    padding: 150px 40px 100px;
-    text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    border-bottom: 1px solid var(--border);
-  }
-  
-  .hero-orb1 {
-    position: absolute;
-    width: 700px; height: 700px;
-    background: radial-gradient(circle, rgba(79,70,229,0.12) 0%, transparent 70%);
-    top: -150px; left: -200px;
-    animation: drift1 8s ease-in-out infinite alternate;
-    pointer-events: none;
-  }
-
-  .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(99,91,255,0.08);
-    border: 1px solid rgba(99,91,255,0.25);
-    border-radius: 50px;
-    padding: 8px 18px;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 28px;
-    animation: fadeUp 0.6s ease both;
-  }
-
-  .badge-dot {
-    width: 7px; height: 7px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: pulse 1.5s ease infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(0.7); }
-  }
-
-  .page-hero h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2.8rem, 7vw, 5.5rem);
-    font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -2px;
-    animation: fadeUp 0.6s ease 0.1s both;
-  }
-  
-  .page-hero h1 span {
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 50%, var(--accent3) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    background-size: 200% auto;
-    animation: gradMove 3s linear infinite;
-  }
-
-  @keyframes gradMove { to { background-position: 200% center; } }
-
-  .page-hero p {
-    font-size: 1.1rem;
-    color: var(--muted);
-    max-width: 600px;
-    margin: 24px auto 0;
-    line-height: 1.7;
-    font-weight: 300;
-    font-style: italic;
-    animation: fadeUp 0.6s ease 0.3s both;
-  }
-  
-  @keyframes drift1 { from { transform: translate(0,0); } to { transform: translate(60px, 40px); } }
-
-  /* ── BLOG GRID SECTION (10 POSTS) ── */
-  .blog-listing {
-    padding: 80px 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-    gap: 40px;
-  }
-
-  .blog-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    overflow: hidden;
-    text-decoration: none;
-    display: block;
-    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .blog-card:hover {
-    transform: translateY(-8px);
-    border-color: rgba(99, 91, 255, 0.4);
-    box-shadow: 0 20px 40px rgba(99, 91, 255, 0.12);
-  }
-
-  .blog-card-img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 16/10;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-  
-  .blog-card:hover .blog-card-img {
-    transform: scale(1.03);
-  }
-
-  .blog-card-body {
-    padding: 32px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .blog-tag {
-    display: inline-block;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 16px;
-    padding: 4px 12px;
-    border-radius: 20px;
-    background: rgba(99,91,255,0.08);
-  }
-
-  .blog-card-title {
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1.4rem;
-    color: var(--text);
-    margin-bottom: 16px;
-    line-height: 1.3;
-    flex-grow: 1;
-  }
-
-  .blog-card-desc {
-    font-size: 0.95rem;
-    color: var(--muted);
-    line-height: 1.7;
-    margin-bottom: 24px;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-  
-  .blog-card-meta {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 0.85rem;
-    color: var(--muted);
-    border-top: 1px solid var(--border);
-    padding-top: 20px;
-    margin-top: auto;
-  }
-  
-  .read-more {
-    font-family: 'Syne', sans-serif;
-    font-weight: 600;
-    color: var(--accent2);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  
-  .blog-card:hover .read-more { color: var(--accent3); }
-
-  /* ── SUBSCRIBE SECTION ── */
-  .subscribe-section {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 100px 40px;
-    text-align: center;
-    margin-top: 40px;
-  }
-  
-  .subscribe-box {
-    max-width: 600px;
-    margin: 0 auto;
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 24px;
-    border: 1px solid var(--border);
-    box-shadow: var(--glow);
-  }
-  
-  .sub-input-group {
-    display: flex;
-    gap: 16px;
-    margin-top: 32px;
-    flex-wrap: wrap;
-  }
-  
-  .sub-input {
-    flex-grow: 1;
-    padding: 18px 24px;
-    border-radius: 14px;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-  }
-  
-  .btn-subscribe {
-    background: linear-gradient(135deg, var(--accent2), var(--accent));
-    color: #050810;
-    border: none;
-    padding: 18px 36px;
-    border-radius: 14px;
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    flex-shrink: 0;
-  }
-  
-  .btn-subscribe:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(79,70,229,0.3);
-  }
-
-  /* ── FOOTER (Home Page Style) ── */
-  footer {
-    border-top: 1px solid var(--border);
-    padding: 60px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 32px;
-    max-width: 1200px;
-    margin: 0 auto;
-    font-size: 0.85rem;
-    color: var(--muted);
-  }
-
-  .footer-col { display: flex; flex-direction: column; gap: 12px; }
-  .footer-col h5 { font-family: 'Syne', sans-serif; font-size: 0.9rem; color: var(--text); margin-bottom: 8px; }
-  .footer-col a { text-decoration: none; color: var(--muted); transition: color 0.2s; }
-  .footer-col a:hover { color: var(--accent); }
-  
-  .footer-bottom {
-    width: 100%;
-    border-top: 1px solid var(--border);
-    margin-top: 60px;
-    padding-top: 40px;
-    text-align: center;
-    font-size: 0.8rem;
-  }
-  
-  .footer-logo-img { height: 32px; width: auto; display: block; }
-
-  /* ── ANIMATIONS & MOBILE ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-  }
-
-  .reveal.visible { opacity: 1; transform: translateY(0); }
-
-  .nav-toggle {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    width: 42px; height: 42px;
-    background: rgba(99,91,255,0.08);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    cursor: pointer;
-    z-index: 210;
-  }
-  .nav-toggle span {
-    width: 20px; height: 2px;
-    background: var(--accent);
-    border-radius: 2px;
-    transition: transform 0.3s ease, opacity 0.2s ease;
-  }
-  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .nav-toggle.open span:nth-child(2) { opacity: 0; }
-  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-  .nav-overlay {
-    display: none;
-    position: fixed; inset: 0;
-    background: rgba(0,0,0,0.6);
-    z-index: 90;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  .nav-overlay.open { display: block; opacity: 1; }
-
-  @media (max-width: 768px) {
-    nav { padding: 18px 20px; }
-    .nav-toggle { display: flex; }
-    .nav-links {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      position: fixed;
-      top: 0; right: -85%;
-      width: 78%;
-      max-width: 320px;
-      height: 100vh;
-      background: #ffffff;
-      padding: 100px 30px 40px;
-      gap: 24px;
-      transition: right 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-      z-index: 200;
-      border-left: 1px solid var(--border);
-      box-shadow: -20px 0 60px rgba(0,0,0,0.1);
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          serif: ['"Playfair Display"', 'serif'],
+          heading: ['"Syne"', 'sans-serif'],
+        },
+        colors: {
+          sqDark: '#0a0a0a',
+          sqMuted: '#8e8e93',
+          sqBorder: 'rgba(255, 255, 255, 0.12)'
+        }
+      }
     }
-    .nav-links.open { right: 0; }
-    .nav-links a { font-size: 1rem; color: var(--text); font-weight: 600; }
-    .nav-links .nav-cta { margin-top: 16px; width: 100%; text-align: center; }
-    
-    .page-hero { padding: 120px 20px 80px; }
-    .page-hero h1 { font-size: 3.2rem; }
-    .blog-listing { padding: 60px 20px; }
-    .blog-grid { gap: 30px; grid-template-columns: 1fr; }
-    footer { padding: 60px 20px; flex-direction: column; text-align: center; gap: 40px; }
-    .footer-col { align-items: center; }
+  }
+</script>
+
+<style>
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+  .reveal-node {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-node.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 </style>
 </head>
-<body>
+<body class="selection:bg-white selection:text-black antialiased">
 
-<!-- NAV -->
-<nav>
-  <a href="index.html" style="display:flex; align-items:center;"><img src="logo.png" alt="ProjectX Hub" class="nav-logo-img"></a>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="founder.html">Founder</a></li>
-    <li><a href="blog.html" style="color:var(--accent);">Resources</a></li>
-    <li><a href="start-a-project.html" class="nav-cta">Start a Project →</a></li>
-  </ul>
-  <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-sqBorder">
+  <div class="max-w-7xl mx-auto px-4 md:px-12 py-3 flex items-center justify-between">
+    <a href="index.html" class="flex items-center gap-2.5">
+      <div class="w-8 h-8 relative flex items-center justify-center">
+        <canvas id="navGlobe" width="32" height="32" class="absolute inset-0"></canvas>
+      </div>
+      <span class="font-heading tracking-tight font-bold text-sm md:text-base text-white">ProjectX Hub</span>
+    </a>
+
+    <ul class="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest text-sqMuted font-medium">
+      <li><a href="index.html" class="hover:text-white transition">Home</a></li>
+      <li><a href="services.html" class="hover:text-white transition">Services</a></li>
+      <li><a href="about.html" class="hover:text-white transition">About</a></li>
+      <li><a href="founder.html" class="hover:text-white transition">Founder</a></li>
+      <li><a href="blog.html" class="text-white">Resources</a></li>
+    </ul>
+
+    <div class="flex items-center gap-3">
+      <a href="start-a-project.html" class="px-4 py-2 rounded-full bg-white text-black text-[11px] md:text-xs font-semibold uppercase tracking-wider hover:bg-neutral-200 transition shadow-sm whitespace-nowrap">
+        Start a Project
+      </a>
+      <button id="mobile-toggle" class="md:hidden text-white text-xl focus:outline-none p-1" aria-label="Toggle Navigation">☰</button>
+    </div>
+  </div>
+
+  <div id="mobile-dropdown" class="hidden md:hidden px-6 py-6 bg-sqDark border-b border-sqBorder flex flex-col gap-4 text-xs uppercase tracking-wider font-semibold">
+    <a href="index.html" class="text-sqMuted hover:text-white">Home</a>
+    <a href="services.html" class="text-sqMuted hover:text-white">Services</a>
+    <a href="about.html" class="text-sqMuted hover:text-white">About</a>
+    <a href="founder.html" class="text-sqMuted hover:text-white">Founder</a>
+    <a href="blog.html" class="text-white">Resources</a>
+  </div>
 </nav>
-<div class="nav-overlay" id="nav-overlay"></div>
 
 <!-- PAGE HERO -->
-<header class="page-hero reveal">
-  <div class="hero-orb1"></div>
-  <div class="hero-badge"><span class="badge-dot"></span> KNOWLEDGE BASE</div>
-  <h1>Insights & <span>Resources</span></h1>
-  <p>Practical guides, strategic thoughts, and industry insights on web development, AI automation, and building digital success.</p>
+<header class="pt-36 pb-16 px-6 text-center max-w-4xl mx-auto reveal-node">
+  <p class="text-xs uppercase tracking-[0.25em] text-sqMuted mb-4">Knowledge Base</p>
+  <h1 class="text-4xl md:text-7xl font-normal tracking-tight font-serif mb-6 leading-[1.1]">
+    Insights & <span class="italic">Resources</span>
+  </h1>
+  <p class="text-sm md:text-base text-sqMuted max-w-2xl mx-auto font-light leading-relaxed">
+    Practical guides, strategic thoughts, and industry insights on web development, AI automation, digital strategy, and building digital success.
+  </p>
 </header>
 
-<!-- BLOG GRID SECTION -->
-<main class="blog-listing">
-  <div class="blog-grid">
+<!-- BLOG GRID SECTION (10 POSTS) -->
+<main class="py-12 px-6 max-w-7xl mx-auto">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
     <!-- POST 1 -->
-    <article class="blog-card reveal" id="post-1">
-        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800" width="800" height="500" loading="lazy" alt="Web Development" class="blog-card-img">
-        <div class="blog-card-body">
-            <span class="blog-tag">Web Development</span>
-            <h2 class="blog-card-title">Why Every Small Business Needs a Professional Website in 2026</h2>
-            <p class="blog-card-desc">In a digital-first world, a social media page isn't enough. Discover why owning a custom website is the foundational requirement for building trust, credibility, and long-term business growth.</p>
-            <div class="blog-card-meta">
-                <span>10 Min Read</span>
-                <a href="blog/why-small-business-needs-website.html" class="read-more">Read Full Article →</a>
-            </div>
+    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
+      <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=800" alt="Web Development" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
+      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-sqMuted">Web Development</span>
+          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">Why Every Small Business Needs a Professional Website in 2026</h2>
+          <p class="text-xs text-sqMuted leading-relaxed">In a digital-first world, a social media page isn't enough. Discover why owning a custom website is the foundational requirement for trust and growth.</p>
         </div>
+        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
+          <span>10 Min Read</span>
+          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
+        </div>
+      </div>
     </article>
 
     <!-- POST 2 -->
-    <article class="blog-card reveal" id="post-2">
-        <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=800" width="800" height="500" loading="lazy" alt="AI Automation" class="blog-card-img">
-        <div class="blog-card-body">
-            <span class="blog-tag">AI & Automation</span>
-            <h2 class="blog-card-title">5 AI Tools That Save Small Teams Hundreds of Hours Per Week</h2>
-            <p class="blog-card-desc">Small teams need to work smarter, not harder. We explore the top low-code AI automation tools for streamlining workflows, from customer support to content scheduling.</p>
-            <div class="blog-card-meta">
-                <span>7 Min Read</span>
-                <a href="blog/ai-tools-for-small-teams.html" class="read-more">Read Full Article →</a>
-            </div>
+    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
+      <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=800" alt="AI Automation" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
+      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-sqMuted">AI & Automation</span>
+          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">5 AI Tools That Save Small Teams Hundreds of Hours Per Week</h2>
+          <p class="text-xs text-sqMuted leading-relaxed">Small teams need to work smarter. Explore top low-code AI automation tools for streamlining workflows, support, and content scheduling.</p>
         </div>
+        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
+          <span>7 Min Read</span>
+          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
+        </div>
+      </div>
     </article>
 
     <!-- POST 3 -->
-    <article class="blog-card reveal" id="post-3">
-        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800" width="800" height="500" loading="lazy" alt="Digital Strategy" class="blog-card-img">
-        <div class="blog-card-body">
-            <span class="blog-tag">Digital Strategy</span>
-            <h2 class="blog-card-title">How to Choose the Right Digital Partner for Your Next Project</h2>
-            <p class="blog-card-desc">Selecting a web development agency is a critical decision. Learn the key questions to ask, red flags to watch for, and how to find a partner invested in your success.</p>
-            <div class="blog-card-meta">
-                <span>8 Min Read</span>
-                <a href="blog/how-to-choose-digital-partner.html" class="read-more">Read Full Article →</a>
-            </div>
+    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800" alt="Digital Strategy" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
+      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-sqMuted">Digital Strategy</span>
+          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">How to Choose the Right Digital Partner for Your Next Project</h2>
+          <p class="text-xs text-sqMuted leading-relaxed">Selecting a web agency is a critical decision. Learn key questions to ask, red flags to watch for, and how to find a partner invested in your success.</p>
         </div>
+        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
+          <span>8 Min Read</span>
+          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
+        </div>
+      </div>
     </article>
 
-    <!-- POST 4 (New) -->
-    <article class="blog-card reveal" id="post-4">
-        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800" width="800" height="500" loading="lazy" alt="UI/UX Design" class="blog-card-img">
-        <div class="blog-card-body">
-            <span class="blog-tag">UI/UX Design</span>
-            <h2 class="blog-card-title">The Impact of UI/UX Design on Conversion Rates</h2>
-            <p class="blog-card-desc">Good design isn't just about looks; it's about usability and guiding your visitors to take action. Understand the core principles of user experience that directly affect your bottom line.</p>
-            <div class="blog-card-meta">
-                <span>9 Min Read</span>
-                <a href="blog/ui-ux-impact-on-conversions.html" class="read-more">Read Full Article →</a>
-            </div>
+    <!-- POST 4 -->
+    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
+      <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800" alt="UI/UX Design" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
+      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-sqMuted">UI/UX Design</span>
+          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">The Impact of UI/UX Design on Conversion Rates</h2>
+          <p class="text-xs text-sqMuted leading-relaxed">Good design is about usability and guiding visitors to take action. Understand core user experience principles affecting your bottom line.</p>
         </div>
+        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
+          <span>9 Min Read</span>
+          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
+        </div>
+      </div>
     </article>
 
-    <!-- POST 5 (New) -->
-    <article class="blog-card reveal" id="post-5">
-        <img src="https://images.unsplash.com/photo-1432888498263-38ff10eaf0a4?q=80&w=800" width="800" height="500" loading="lazy" alt="Content Marketing" class="blog-card-img">
-        <div class="blog-card-body">
-            <span class="blog-tag">Content Marketing</span>
-            <h2 class="blog-card-title">Content Pillars That Convert: Building an Authority-Driven Blog</h2>
-            <p class="blog-card-desc">Stop random blogging. Learn how to define 3-5 core content pillars that establish your brand as an industry leader and consistently drive organic traffic and leads.</p>
-            <div class="blog-card-meta">
-                <span>12 Min Read</span>
-                <a href="blog/content-pillars-for-authority.html" class="read-more">Read Full Article →</a>
-            </div>
+    <!-- POST 5 -->
+    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
+      <img src="https://images.unsplash.com/photo-1432888498263-38ff10eaf0a4?q=80&w=800" alt="Content Marketing" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
+      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-sqMuted">Content Marketing</span>
+          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">Content Pillars That Convert: Building an Authority-Driven Blog</h2>
+          <p class="text-xs text-sqMuted leading-relaxed">Stop random blogging. Define core content pillars that establish your brand as an industry leader and drive organic traffic and leads.</p>
         </div>
+        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
+          <span>12 Min Read</span>
+          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
+        </div>
+      </div>
     </article>
 
-    <!-- POST 6 (New) -->
-    <article class="blog-card reveal" id="post-6">
-        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800" width="800" height="500" loading="lazy" alt="SEO" class="blog-card-img">
-        <div class="blog-card-body">
-            <span class="blog-tag">SEO</span>
-            <h2 class="blog-card-title">Technical SEO Checklist 2026: Ensuring Your Site is Crawlable</h2>
-            <p class="blog-card-desc">Even great content won't rank if Google can't read your site. This actionable checklist covers the essential technical factors—from site speed to structured data—that you need to check in 2026.</p>
-            <div class="blog-card-meta">
-                <span>15 Min Read</span>
-                <a href="blog/technical-seo-checklist-2026.html" class="read-more">Read Full Article →</a>
-            </div>
+    <!-- POST 6 -->
+    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800" alt="SEO" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
+      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-sqMuted">SEO</span>
+          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">Technical SEO Checklist 2026: Ensuring Your Site is Crawlable</h2>
+          <p class="text-xs text-sqMuted leading-relaxed">Even great content won't rank if Google can't read your site. This checklist covers essential technical factors like speed and structured data.</p>
         </div>
+        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
+          <span>15 Min Read</span>
+          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
+        </div>
+      </div>
     </article>
 
-    <!-- POST 7 (New) -->
-    <article class="blog-card reveal" id="post-7">
-        <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800" width="800" height="500" loading="lazy" alt="Cloud Hosting" class="blog-card-img">
-        <div class="blog-card-body">
-            <span class="blog-tag">Cloud Hosting</span>
-            <h2 class="blog-card-title">Shared vs. Managed Cloud Hosting: What's Best for Your Business?</h2>
-            <p class="blog-card-desc">Hosting performance directly impacts SEO and user experience. We break down the differences between budget shared hosting and managed cloud solutions to help you choose the right infrastructure.</p>
-            <div class="blog-card-meta">
-                <span>8 Min Read</span>
-                <a href="blog/hosting-comparison-2026.html" class="read-more">Read Full Article →</a>
-            </div>
+    <!-- POST 7 -->
+    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
+      <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800" alt="Cloud Hosting" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
+      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-sqMuted">Cloud Hosting</span>
+          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">Shared vs. Managed Cloud Hosting: What's Best for Your Business?</h2>
+          <p class="text-xs text-sqMuted leading-relaxed">Hosting performance directly impacts SEO and UX. We break down differences between budget shared hosting and managed cloud solutions.</p>
         </div>
+        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
+          <span>8 Min Read</span>
+          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
+        </div>
+      </div>
     </article>
 
-    <!-- POST 8 (New) -->
-    <article class="blog-card reveal" id="post-8">
-        <img src="https://images.unsplash.com/photo-1518932945647-7a1c969f8be2?q=80&w=800" width="800" height="500" loading="lazy" alt="No-Code Development" class="blog-card-img">
-        <div class="blog-card-body">
-            <span class="blog-tag">No-Code / Webflow</span>
-            <h2 class="blog-card-title">The Rise of No-Code: Building Enterprise-Grade Sites Without Code</h2>
-            <p class="blog-card-desc">Platforms like Webflow are changing the game. Explore how no-code development can deliver complex, high-performance websites faster and more affordably than traditional coding.</p>
-            <div class="blog-card-meta">
-                <span>9 Min Read</span>
-                <a href="blog/no-code-enterprise-webflow.html" class="read-more">Read Full Article →</a>
-            </div>
+    <!-- POST 8 -->
+    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
+      <img src="https://images.unsplash.com/photo-1518932945647-7a1c969f8be2?q=80&w=800" alt="No-Code Development" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
+      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-sqMuted">No-Code / Webflow</span>
+          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">The Rise of No-Code: Building Enterprise-Grade Sites Without Code</h2>
+          <p class="text-xs text-sqMuted leading-relaxed">Explore how modern no-code development delivers complex, high-performance websites faster and more affordably.</p>
         </div>
+        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
+          <span>9 Min Read</span>
+          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
+        </div>
+      </div>
     </article>
 
-    <!-- POST 9 (New) -->
-    <article class="blog-card reveal" id="post-9">
-        <img src="
+    <!-- POST 9 -->
+    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
+      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800" alt="Analytics" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
+      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-sqMuted">Data Analytics</span>
+          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">Turning Website Traffic into Actionable Business Insights</h2>
+          <p class="text-xs text-sqMuted leading-relaxed">Getting visitors is only half the battle. Learn how to analyze user behavior data to increase conversions and sales.</p>
+        </div>
+        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
+          <span>11 Min Read</span>
+          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- POST 10 -->
+    <article class="border border-sqBorder rounded-3xl bg-neutral-950 overflow-hidden flex flex-col reveal-node hover:border-neutral-500 transition duration-300">
+      <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800" alt="Team Scaling" class="w-full aspect-[16/10] object-cover border-b border-sqBorder">
+      <div class="p-8 flex flex-col flex-grow justify-between space-y-4">
+        <div>
+          <span class="text-[10px] uppercase tracking-widest text-sqMuted">Startup Scaling</span>
+          <h2 class="font-serif text-xl text-white mt-2 mb-3 leading-snug">Scaling Your Startup Tech Stack from MVP to Growth Stage</h2>
+          <p class="text-xs text-sqMuted leading-relaxed">When to rewrite your code, how to choose scalable databases, and managing technical debt as your user base expands.</p>
+        </div>
+        <div class="flex items-center justify-between text-[11px] text-sqMuted border-t border-sqBorder pt-4">
+          <span>14 Min Read</span>
+          <a href="#" class="text-white underline font-semibold hover:text-sqMuted transition">Read Article →</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="border-t border-sqBorder py-12 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-sqMuted">
+  <div class="flex items-center gap-2">
+    <span class="font-heading font-bold text-white tracking-wider">PROJECTX HUB</span>
+  </div>
+  <div class="italic">⭐ "Ideas are easy. Execution is everything." — Prince Verma</div>
+  <div class="flex gap-6">
+    <a href="privacy-policy.html" class="hover:text-white transition">Privacy Policy</a>
+    <a href="terms-and-conditions.html" class="hover:text-white transition">Terms & Conditions</a>
+    <a href="disclaimer.html" class="hover:text-white transition">Disclaimer</a>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/917376654990" target="_blank" class="fixed bottom-6 left-6 z-40 w-12 h-12 rounded-full bg-white text-black flex items-center justify-center shadow-2xl hover:scale-110 transition" title="Chat on WhatsApp" aria-label="Chat on WhatsApp">
+  <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 00-9.9 17.3L.5 23.5l5.9-1.5A11.5 11.5 0 1012 .5zm0 21a9.4 9.4 0 01-4.8-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9.5 9.5 0 1112 21.5zm5.2-7.1c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.7.1s-.8.9-.9 1.1-.3.2-.6.1a7.8 7.8 0 01-2.3-1.4 8.6 8.6 0 01-1.6-2c-.2-.3 0-.5.1-.6l.4-.5c.1-.1.2-.3.2-.5s0-.4-.1-.5c-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4S6 7.4 6 8.7s.9 2.6 1 2.8c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.6-.3z"/></svg>
+</a>
+
+<!-- SCRIPTS -->
+<script>
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const mobileDropdown = document.getElementById('mobile-dropdown');
+  if(mobileToggle && mobileDropdown) {
+    mobileToggle.addEventListener('click', () => {
+      mobileDropdown.classList.toggle('hidden');
+    });
+  }
+
+  const revealNodes = document.querySelectorAll('.reveal-node');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  revealNodes.forEach(node => revealObserver.observe(node));
+
+  function initGlobe(canvasId, particleCount, pointSize, radiusSize) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+    const cx = width / 2;
+    const cy = height / 2;
+    const radius = radiusSize;
+    const numPoints = particleCount;
+    const points = [];
+
+    for (let i = 0; i < numPoints; i++) {
+      const theta = Math.acos(2 * Math.random() - 1);
+      const phi = 2 * Math.PI * Math.random();
+      points.push({
+        x: radius * Math.sin(theta) * Math.cos(phi),
+        y: radius * Math.sin(theta) * Math.sin(phi),
+        z: radius * Math.cos(theta)
+      });
+    }
+
+    let angle = 0;
+    function renderGlobe() {
+      ctx.clearRect(0, 0, width, height);
+      angle += 0.006;
+      const cosA = Math.cos(angle);
+      const sinA = Math.sin(angle);
+
+      points.forEach(p => {
+        const xRot = p.x * cosA - p.z * sinA;
+        const zRot = p.z * cosA + p.x * sinA;
+
+        const scale = 250 / (250 + zRot);
+        const x2d = cx + xRot * scale;
+        const y2d = cy + p.y * scale;
+        const alpha = Math.max(0.15, (zRot + radius) / (2 * radius));
+
+        ctx.beginPath();
+        ctx.arc(x2d, y2d, pointSize * scale, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+        ctx.fill();
+      });
+
+      requestAnimationFrame(renderGlobe);
+    }
+    renderGlobe();
+  }
+
+  initGlobe('navGlobe', 90, 1.1, 14);
+</script>
+</body>
+</html>
